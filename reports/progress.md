@@ -6,7 +6,7 @@ Updated: 2026-11-04. Research status: SETUP_ONLY; no experiments executed.
 |---|---|---|
 | Preserve protocol and factorial | Complete | Byte-identical copies and SHA256 manifest |
 | Factorial preregistration structure | Validated | 144 unique configurations, five factor dimensions |
-| Repository and skills | Setup in progress | See research_tools.md and setup manifest |
+| Repository and skills | Complete | Private GitHub repository published; ARIS, 12 HKUSTDial skills, Graphify installed; dependency check passed |
 | R0 source, paper, license audit | Pending | Verify availability, record immutable SHAs, inspect code and tables |
 | R1 native environment | Pending | Linux, suitable CUDA GPU, author-pinned dependencies |
 | R2 numeric reproduction | Not run | Full metrics and parity/discrepancy report |
