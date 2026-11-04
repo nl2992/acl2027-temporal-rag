@@ -1,0 +1,12 @@
+[
+  {
+    "path": "docs/guides/ACL2027_Temporal_RAG_Replication_Protocol.md",
+    "sha256": "68847634cb50d2b48b825beb1e88c4e7b2e2b5bbd66c646b5b8ea501123afbe0",
+    "source": "user-supplied; preserved byte-for-byte"
+  },
+  {
+    "path": "docs/guides/ACL2027_Temporal_RAG_Factorial_144.jsonl",
+    "sha256": "74dd4036b1eaf7ae90afc6afd238d069bff15b162c4ae6991a27a2f73b8c18f2",
+    "source": "user-supplied; preserved byte-for-byte"
+  }
+]

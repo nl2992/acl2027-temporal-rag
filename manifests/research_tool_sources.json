@@ -1,0 +1,17 @@
+[
+  {
+    "name": "aris",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep.git",
+    "sha": "f76ec8d6b77792e2242cca049e08d0cbb7d54e19"
+  },
+  {
+    "name": "supervisor",
+    "url": "https://github.com/HKUSTDial/Supervisor-Skills.git",
+    "sha": "a20d76ef3979b804d7dbf599d577826957e0a8a9"
+  },
+  {
+    "name": "graphify",
+    "url": "https://github.com/graphify-labs/graphify.git",
+    "sha": "59b5ab1151e031fb42e39cfc9a50bf96f2d57ae0"
+  }
+]
