@@ -1,0 +1,209 @@
+{
+  "upstream": "https://github.com/kaist-dmlab/TimelyRAG",
+  "sha": "5213a0c1743f23fd52a258005c3887aaf7e8cd0f",
+  "dirty": "",
+  "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "files": {
+    "config.py": "28d9be4039b01b4412d801815bef51b08602b81d5305422ef5d4c511c12615d7",
+    "requirements.txt": "25a8906e42c451fe2c0f75263b80f54e7afd413c1a58e827fed6dec2072b1f30",
+    "pipeline.py": "d61db7758eabf05107acc661a59f288af26b4bdfbc2d505eec58a28c54a9e29a",
+    "retrieval.py": "eaceee9674628b85bfc9b76f9edd506981e2529c37bbb412df610c8cbf68ea22",
+    "metrics.py": "a3a362e47e73909e21c200c33f97f9ced4dccf44e5f97ac1765e567dfcead41d",
+    "alpha.py": "ae076d5410253cb0051639bd479b1cf49b5e26485707c4255df25e49ad33d8df",
+    "TimelyQABench_datasets.py": "524125d5bdd925a51dd32313a588dd748a1f89da617311135ed95f8f7338664e",
+    "datasets.zip": "a006481ffdf723d4b15554da2c621ebdfefd59b78ad37c58a633b3b71de247ad",
+    "TimelyRAG_paper.pdf": "f923c24f2a9427632064aa35c1dd6ddca40c81da108d3c10bd86f02b5bf94933"
+  },
+  "datasets": [
+    {
+      "archive_member": "timelyrag_university_dataset_v2.jsonl",
+      "sha256": "68e8d279c43e5c2348270693bc17c020b8f95be8e41f81dbd473614dc5f77751",
+      "records": 3000,
+      "queries": 3000,
+      "documents": 30000,
+      "unique_ids": 30000,
+      "missing_ids": 0,
+      "duplicate_ids": 0,
+      "global_gold_references": 5007,
+      "unresolved_global_gold_references": 0,
+      "document_insert_time_present": 30000,
+      "event_time_present": 0,
+      "categories": {
+        "Emergency or temporary policies": 504,
+        "Policies with multiple versions": 502,
+        "Queries requiring implicit time context": 538,
+        "Name/code/content changes of policies": 488,
+        "Exemptions": 488,
+        "Historical, retrospective fact": 466,
+        "content changes of policies": 7,
+        "내용 변경 của policies": 1,
+        "Content changes of policies": 2,
+        "내용 변경": 1,
+        "쿼리에서 암시적인 시간_context가 필요한 경우": 1,
+        "쿼리에서 암시적 시간 Context가 필요한 경우": 1,
+        "비상 또는 임시 정책": 1
+      },
+      "query_fields": [
+        "answer",
+        "category",
+        "docs_ko",
+        "gold_docs_final",
+        "gold_docs_final_global",
+        "index",
+        "query_insert_time",
+        "query_ko"
+      ],
+      "document_fields": [
+        "doc_insert_time",
+        "global_doc_id",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "archive_member": "timelyrag_terms_of_service_dataset_v2.jsonl",
+      "sha256": "61104881b49b9e2f6fe97b64966c571deeafe65ad0a3057bbb42bf65ccf6ed92",
+      "records": 3000,
+      "queries": 3000,
+      "documents": 30000,
+      "unique_ids": 30000,
+      "missing_ids": 0,
+      "duplicate_ids": 0,
+      "global_gold_references": 5014,
+      "unresolved_global_gold_references": 0,
+      "document_insert_time_present": 30000,
+      "event_time_present": 0,
+      "categories": {
+        "Exemptions": 543,
+        "Policies with multiple versions": 518,
+        "Emergency or temporary policies": 526,
+        "Historical, retrospective fact": 483,
+        "Name/code/content changes of policies": 506,
+        "Queries requiring implicit time context": 421,
+        "서비스 이용 제한에 대한 정책의 여러 버전": 1,
+        "歴史的, 回顧的事實": 1,
+        "content changes of policies": 1
+      },
+      "query_fields": [
+        "answer",
+        "category",
+        "docs_ko",
+        "gold_docs_final",
+        "gold_docs_final_global",
+        "index",
+        "query_insert_time",
+        "query_ko"
+      ],
+      "document_fields": [
+        "doc_insert_time",
+        "global_doc_id",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "archive_member": "timelyrag_law_dataset_v2.jsonl",
+      "sha256": "2dcc641c7183ee0efb2c620561c463405c969ea35b6d65c217ca95bd28769d01",
+      "records": 3000,
+      "queries": 3000,
+      "documents": 30000,
+      "unique_ids": 30000,
+      "missing_ids": 0,
+      "duplicate_ids": 0,
+      "global_gold_references": 4456,
+      "unresolved_global_gold_references": 0,
+      "document_insert_time_present": 30000,
+      "event_time_present": 0,
+      "categories": {
+        "Exemptions": 487,
+        "Queries requiring implicit time context": 510,
+        "Policies with multiple versions": 504,
+        "Emergency or temporary policies": 533,
+        "Historical": 181,
+        "Name/code/content changes of policies": 481,
+        "Historical, retrospective fact": 304
+      },
+      "query_fields": [
+        "answer",
+        "category",
+        "docs_ko",
+        "gold_docs_final",
+        "gold_docs_final_global",
+        "index",
+        "query_insert_time",
+        "query_ko"
+      ],
+      "document_fields": [
+        "doc_id",
+        "doc_insert_time",
+        "global_doc_id",
+        "text"
+      ]
+    },
+    {
+      "archive_member": "timelyrag_company_policies_dataset_v2.jsonl",
+      "sha256": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+      "records": 3000,
+      "queries": 3000,
+      "documents": 30000,
+      "unique_ids": 30000,
+      "missing_ids": 0,
+      "duplicate_ids": 0,
+      "global_gold_references": 7533,
+      "unresolved_global_gold_references": 0,
+      "document_insert_time_present": 30000,
+      "event_time_present": 0,
+      "categories": {
+        "Policies with multiple versions": 502,
+        "Exemptions": 516,
+        "Queries requiring implicit time context": 553,
+        "Emergency or temporary policies": 478,
+        "Name/code/content changes of policies": 320,
+        "Historical, retrospective fact": 469,
+        "contents changes of policies": 1,
+        "content changes of policies": 139,
+        "내용 변경": 21,
+        "쿼리에서 암시적 시간 맥락이 필요한 경우": 1
+      },
+      "query_fields": [
+        "answer",
+        "category",
+        "docs_ko",
+        "gold_docs_final",
+        "gold_docs_final_global",
+        "index",
+        "query_insert_time",
+        "query_ko"
+      ],
+      "document_fields": [
+        "doc_insert_time",
+        "global_doc_id",
+        "text",
+        "title"
+      ]
+    }
+  ],
+  "license_files": [],
+  "metric_audit": {
+    "ranking": [
+      "a",
+      "x"
+    ],
+    "gold": [
+      "a",
+      "b"
+    ],
+    "k": 2,
+    "author_hit_recall_precision_ndcg_ap": [
+      1.0,
+      0.5,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "standard_binary_ndcg": 0.6131471927654584,
+    "standard_ap_denominator_min_gold_k": 0.5,
+    "conclusion": "Author nDCG and AP condition ideal/denominator on retrieved positives; keep separate from standard metrics."
+  }
+}
