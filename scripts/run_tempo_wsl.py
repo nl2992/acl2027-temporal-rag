@@ -6,6 +6,7 @@ import datetime
 import json
 import sys
 import hashlib
+import shutil
 
 root=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser()
@@ -35,6 +36,11 @@ commands=[
 ]
 try:
     for name,cmd in zip(['prepare','inference','evaluation'],commands):
+        state.setdefault('resources_before_stage',{})[name]={
+            'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'host_disk_free_bytes':shutil.disk_usage(root).free,
+        }
+        save()
         with (out/f'{name}.log').open('wb') as log:
             subprocess.run(cmd,stdout=log,stderr=subprocess.STDOUT,check=True)
         print(name,'complete',flush=True)
