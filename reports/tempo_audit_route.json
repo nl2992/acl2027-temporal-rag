@@ -1,0 +1,16 @@
+{
+  "skill": "experiment-audit",
+  "backend": "codex",
+  "host": "codex",
+  "source": "host-default",
+  "model": "gpt-6-astra",
+  "effort": "ultra",
+  "transport": "native",
+  "fresh_tool": "collaboration.spawn_agent",
+  "task_name": "/root/tempo_integrity_audit",
+  "working_directory": "C:/Users/nigel/OneDrive/文件/ChatGPT/ACL 2027",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "dispatched_not_completed",
+  "identity_evidence": "Host accepted requested model and effort and returned canonical task name; no opaque session ID or independently observed runtime model identity returned."
+}
