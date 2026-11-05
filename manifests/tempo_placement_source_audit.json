@@ -1,0 +1,122 @@
+{
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "retrievers_blob_sha256": "90169e77aec737c238df9d682833379404d2e4381b074d43495c22bebaae27e4",
+  "method": "AST inspection only; no imports, model construction, placement or inference executed.",
+  "functions": {
+    "retrieval_sf_qwen_e5": {
+      "start_line": 86,
+      "calls": [
+        {
+          "line": 92,
+          "constructor": "AutoTokenizer.from_pretrained",
+          "checkpoint_expression": "'alibaba-nlp/gte-qwen1.5-7b-instruct'",
+          "arguments": {
+            "trust_remote_code": "True"
+          }
+        },
+        {
+          "line": 89,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "'salesforce/sfr-embedding-mistral'",
+          "arguments": {
+            "device_map": "'auto'",
+            "torch_dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "line": 97,
+          "constructor": "AutoTokenizer.from_pretrained",
+          "checkpoint_expression": "'alibaba-nlp/gte-qwen2-7b-instruct'",
+          "arguments": {
+            "trust_remote_code": "True"
+          }
+        },
+        {
+          "line": 93,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "'alibaba-nlp/gte-qwen1.5-7b-instruct'",
+          "arguments": {
+            "device_map": "'auto'",
+            "trust_remote_code": "True",
+            "torch_dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "line": 98,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "'alibaba-nlp/gte-qwen2-7b-instruct'",
+          "arguments": {
+            "device_map": "'auto'",
+            "trust_remote_code": "True",
+            "torch_dtype": "torch.bfloat16"
+          }
+        },
+        {
+          "line": 103,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "'intfloat/e5-mistral-7b-instruct'",
+          "arguments": {
+            "device_map": "'auto'",
+            "torch_dtype": "torch.bfloat16"
+          }
+        }
+      ]
+    },
+    "retrieval_grit": {
+      "start_line": 397,
+      "calls": [
+        {
+          "line": 409,
+          "constructor": "GritLM(customized_checkpoint, torch_dtype='auto', mode='embedding')"
+        }
+      ]
+    },
+    "retrieval_reasonir": {
+      "start_line": 1443,
+      "calls": [
+        {
+          "line": 1452,
+          "constructor": "AutoTokenizer.from_pretrained",
+          "checkpoint_expression": "customized_checkpoint",
+          "arguments": {
+            "torch_dtype": "torch.float16",
+            "trust_remote_code": "True"
+          }
+        },
+        {
+          "line": 1453,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "customized_checkpoint",
+          "arguments": {
+            "torch_dtype": "torch.float16",
+            "trust_remote_code": "True"
+          }
+        },
+        {
+          "line": 1455,
+          "explicit_model_move": "model.to(device)"
+        }
+      ]
+    },
+    "retrieval_rader": {
+      "start_line": 1510,
+      "calls": [
+        {
+          "line": 1516,
+          "constructor": "AutoModel.from_pretrained",
+          "checkpoint_expression": "model_name",
+          "arguments": {
+            "device_map": "'auto'",
+            "torch_dtype": "torch.float16"
+          }
+        }
+      ]
+    }
+  },
+  "classification": {
+    "e5/sf/qwen/rader": "Native automatic placement; measured local feasibility pending.",
+    "reasonir": "Explicit model move to source-selected device; CUDA selected on current GPU host.",
+    "grit": "Author constructor has no device_map override; inspect installed GritLM default device move.",
+    "diver": "Separate vLLM source path and VRAM preflight; automatic Transformers placement does not apply."
+  }
+}
