@@ -1,0 +1,68 @@
+{
+  "run_id": "tempo-hsm-bm25-20261105T075235Z",
+  "benchmark": "TEMPO",
+  "domain": "hsm",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "25f6c18188b88ac4f5dcb58c83b37ac62d1b73b7a2c5fb46d1235019c128f3f0",
+    "documents": "880c5ad095273c86b5d24833185c08ccee3915c16f4f3749348d5771f6f4bd1d"
+  },
+  "input_sha256": "ac3faf452d71a670ef12886ca496abe56c101c4d87ba6725640233c5f82fb10b",
+  "gold_sha256": "77e4dced43138472fc002af9b3c0a4bf5e6ce633c3ed8581cded035c1707a21d",
+  "queries": 150,
+  "documents": 213818,
+  "original_queries": 150,
+  "original_documents": 213818,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bm25",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0,
+  "status": "complete",
+  "worker": {
+    "status": "complete",
+    "benchmark": "TEMPO",
+    "model": "bm25",
+    "queries": 150,
+    "documents": 213818,
+    "input_sha256": "ac3faf452d71a670ef12886ca496abe56c101c4d87ba6725640233c5f82fb10b",
+    "scores_sha256": "1efcd730136f67e7fbb98a835e13e0e488714142d4881cf84e5bb0b0cc5989bd",
+    "elapsed_retrieval_seconds": 1038.9685953080002,
+    "utc_finish": "2026-11-05T08:11:07.726316+00:00",
+    "uid": 1001,
+    "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "worker_script_sha256": "f098fb069b2fe18c270ea5554be5ccaf8cd9e720fbc20ec860cdb75318214705",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "versions": {
+      "pyserini": "1.2.0",
+      "gensim": "4.4.0",
+      "pytrec-eval": "0.5",
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1"
+    },
+    "algorithm": "Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions",
+    "instructions": {
+      "query": "Represent this query for retrieving relevant documents: ",
+      "document": ""
+    },
+    "model_snapshot": null,
+    "observed_profile": {}
+  },
+  "summary_sha256": "fe3cbdeabf0c3fa2b4ae74052002212343320c68cf81c70ae42d159eaef45730",
+  "metric_roles": {
+    "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+    "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+  },
+  "deviations": [
+    "Missing InstructorEmbedding added to independent environment",
+    "Optional unused vLLM imports deferred; BM25/metric functions unchanged",
+    "True relevance/answer fields projected out; isolated inference and offline evaluation",
+    "Dataset/model inputs pinned; current unpinned package resolution differs from unspecified author environment"
+  ]
+}

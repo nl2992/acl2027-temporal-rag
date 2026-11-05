@@ -4,10 +4,10 @@
   "scope": "Ordinary retrieval metrics only; temporal LLM-judge metrics unmeasured. Smoke and oracle excluded.",
   "models": {
     "BM25": {
-      "completed_domains": 11,
+      "completed_domains": 13,
       "expected_domains": 13,
-      "full_macro_ndcg10": null,
-      "matching_domain_rounding": 11,
+      "full_macro_ndcg10": 0.1078776923076923,
+      "matching_domain_rounding": 13,
       "runs": {
         "bitcoin": {
           "run_id": "tempo-bitcoin-bm25-20261105T073857Z",
@@ -39,6 +39,22 @@
           "documents": 156228,
           "ndcg10": 0.13273,
           "author_target_percentage": 13.3,
+          "within_one_decimal_rounding_interval": true
+        },
+        "history": {
+          "run_id": "tempo-history-bm25-20261105T081124Z",
+          "queries": 801,
+          "documents": 356493,
+          "ndcg10": 0.09247,
+          "author_target_percentage": 9.2,
+          "within_one_decimal_rounding_interval": true
+        },
+        "hsm": {
+          "run_id": "tempo-hsm-bm25-20261105T075235Z",
+          "queries": 150,
+          "documents": 213818,
+          "ndcg10": 0.21165,
+          "author_target_percentage": 21.2,
           "within_one_decimal_rounding_interval": true
         },
         "iota": {
@@ -100,11 +116,20 @@
       }
     },
     "BGE": {
-      "completed_domains": 0,
+      "completed_domains": 1,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 0,
-      "runs": {}
+      "matching_domain_rounding": 1,
+      "runs": {
+        "iota": {
+          "run_id": "tempo-iota-bge-20261105T122024Z",
+          "queries": 10,
+          "documents": 10372,
+          "ndcg10": 0.36062,
+          "author_target_percentage": 36.1,
+          "within_one_decimal_rounding_interval": true
+        }
+      }
     },
     "Contriever": {
       "completed_domains": 0,

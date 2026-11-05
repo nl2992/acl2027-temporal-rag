@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-05T12:20:24.268249+00:00",
+  "old_worker_sha256": "f098fb069b2fe18c270ea5554be5ccaf8cd9e720fbc20ec860cdb75318214705",
+  "new_worker_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "completed_bm25_domains": [
+    "bitcoin",
+    "cardano",
+    "economics",
+    "genealogy",
+    "history",
+    "hsm",
+    "iota",
+    "law",
+    "monero",
+    "politics",
+    "quant",
+    "travel",
+    "workplace"
+  ],
+  "idle_check_returncode": 1,
+  "change": "Reviewed document-only cache key; no model/scoring/settings changes; no old-cache migration",
+  "command": [
+    "scripts/start_tempo_iota_bge.py"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "run_id": "tempo-iota-bge-20261105T122024Z",
+  "status": "complete",
+  "utc_start": "2026-11-05T12:20:24.413639+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
+    "--domain",
+    "iota",
+    "--model",
+    "bge"
+  ],
+  "project_sha": "3af4cf710b1af72ce6d2b9d6c39bd6834ff4d2cb",
+  "project_dirty": "?? reports/review_tools/verify_tempo_results.py\n?? reports/tempo/tempo-history-bm25-20261105T081124Z/\n?? reports/tempo/tempo-hsm-bm25-20261105T075235Z/\n?? reports/tempo_dense_deployment.json\n",
+  "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+  "resources_before_stage": {
+    "prepare": {
+      "utc": "2026-11-05T12:20:24.582363+00:00",
+      "host_disk_free_bytes": 33688473600
+    },
+    "inference": {
+      "utc": "2026-11-05T12:20:26.314974+00:00",
+      "host_disk_free_bytes": 33688465408
+    },
+    "evaluation": {
+      "utc": "2026-11-05T12:28:42.304345+00:00",
+      "host_disk_free_bytes": 33618878464
+    }
+  },
+  "utc_finish": "2026-11-05T12:28:51.696063+00:00"
+}

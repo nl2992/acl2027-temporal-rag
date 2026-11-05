@@ -1,0 +1,115 @@
+Documents in corpus: 10372
+Already cached: 0
+Need to encode: 10372
+Encoding new documents...
+Saving updated cache...
+Cache updated: 10372 total embeddings
+{
+  "status": "complete",
+  "benchmark": "TEMPO",
+  "model": "bge",
+  "queries": 10,
+  "documents": 10372,
+  "input_sha256": "bdbb21fa0622ffd3c219fe5e560e75996f4ae43b10663518f22702098f317b99",
+  "scores_sha256": "06a6d87aabbb09e488e9e072485129f8f9e793e63e405be89aca3a4020ed736d",
+  "elapsed_retrieval_seconds": 487.6437522209999,
+  "utc_finish": "2026-11-05T12:28:39.261195+00:00",
+  "uid": 1001,
+  "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+  "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+  "versions": {
+    "pyserini": "1.2.0",
+    "gensim": "4.4.0",
+    "pytrec-eval": "0.5",
+    "torch": "2.14.1",
+    "transformers": "4.40.0",
+    "numpy": "1.26.4",
+    "scipy": "1.10.1"
+  },
+  "algorithm": "Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions",
+  "instructions": {
+    "query": "Represent this query for retrieving relevant documents: ",
+    "document": ""
+  },
+  "model_snapshot": {
+    "repo": "BAAI/bge-large-en-v1.5",
+    "revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "snapshot": "/home/acl-infer/models/models--BAAI--bge-large-en-v1.5/snapshots/d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "license": "mit",
+    "files": {
+      "config.json": {
+        "sha256": "446712fac367857b4b1302762fe1cd7bfa8b3c4b77b4dc5d77c4025407660896",
+        "bytes": 779
+      },
+      "sentence_bert_config.json": {
+        "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+        "bytes": 52
+      },
+      "special_tokens_map.json": {
+        "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "bytes": 125
+      },
+      "modules.json": {
+        "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+        "bytes": 349
+      },
+      "tokenizer_config.json": {
+        "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+        "bytes": 366
+      },
+      "model.safetensors": {
+        "sha256": "45e1954914e29bd74080e6c1510165274ff5279421c89f76c418878732f64ae7",
+        "bytes": 1340616616
+      },
+      "vocab.txt": {
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "bytes": 231508
+      },
+      "tokenizer.json": {
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+        "bytes": 711396
+      },
+      "config_sentence_transformers.json": {
+        "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+        "bytes": 124
+      },
+      "1_Pooling/config.json": {
+        "sha256": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+        "bytes": 191
+      }
+    }
+  },
+  "observed_profile": {
+    "parameter_dtype": "torch.float32",
+    "tokenizer_max_length": 512,
+    "max_seq_length": 512
+  },
+  "cache_descriptor": {
+    "ordered_documents_sha256": "9a6a3db9a11d4f76da3d0a7e1c7012fb8201eb301cd338a977205a77c6ad35ed",
+    "domain": "iota",
+    "model_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "tokenizer_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "retrieval_source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "input_serialization": {
+      "query": "Represent this query for retrieving relevant documents: ",
+      "document": ""
+    },
+    "embedding_dtype": "native FP32; actual parameter dtype recorded by hook",
+    "max_length": 512,
+    "batch_size": 128,
+    "encode_parameters": "unchanged author defaults",
+    "normalization": "unchanged author normalization",
+    "cutoff_policy": "TEMPO original exclusion metadata, no added known-at filter",
+    "versions": {
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "sentence-transformers": "3.1.1",
+      "numpy": "1.26.4"
+    }
+  },
+  "peak_torch_allocated_bytes": 7796289536,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}
+52/82 [06:11<02:25,  4.86s/it]Batches:  65%|██████▍   | 53/82 [06:15<02:09,  4.46s/it]Batches:  66%|██████▌   | 54/82 [06:20<02:05,  4.49s/it]Batches:  67%|██████▋   | 55/82 [06:23<01:56,  4.32s/it]Batches:  68%|██████▊   | 56/82 [06:31<02:16,  5.24s/it]Batches:  70%|██████▉   | 57/82 [06:35<02:00,  4.81s/it]Batches:  71%|███████   | 58/82 [06:39<01:51,  4.66s/it]Batches:  72%|███████▏  | 59/82 [06:43<01:43,  4.51s/it]Batches:  73%|███████▎  | 60/82 [06:47<01:32,  4.21s/it]Batches:  74%|███████▍  | 61/82 [06:50<01:23,  4.00s/it]Batches:  76%|███████▌  | 62/82 [06:54<01:17,  3.87s/it]Batches:  77%|███████▋  | 63/82 [06:58<01:16,  4.02s/it]Batches:  78%|███████▊  | 64/82 [07:03<01:17,  4.29s/it]Batches:  79%|███████▉  | 65/82 [07:07<01:12,  4.29s/it]Batches:  80%|████████  | 66/82 [07:11<01:05,  4.08s/it]Batches:  82%|████████▏ | 67/82 [07:15<00:59,  3.99s/it]Batches:  83%|████████▎ | 68/82 [07:18<00:53,  3.80s/it]Batches:  84%|████████▍ | 69/82 [07:21<00:46,  3.61s/it]Batches:  85%|████████▌ | 70/82 [07:24<00:41,  3.45s/it]Batches:  87%|████████▋ | 71/82 [07:29<00:43,  3.91s/it]Batches:  88%|████████▊ | 72/82 [07:33<00:37,  3.74s/it]Batches:  89%|████████▉ | 73/82 [07:36<00:32,  3.58s/it]Batches:  90%|█████████ | 74/82 [07:42<00:34,  4.36s/it]Batches:  91%|█████████▏| 75/82 [07:46<00:29,  4.22s/it]Batches:  93%|█████████▎| 76/82 [07:50<00:25,  4.28s/it]Batches:  94%|█████████▍| 77/82 [07:54<00:19,  3.99s/it]Batches:  95%|█████████▌| 78/82 [07:55<00:12,  3.19s/it]Batches:  96%|█████████▋| 79/82 [07:57<00:08,  2.74s/it]Batches:  98%|█████████▊| 80/82 [07:58<00:04,  2.18s/it]Batches:  99%|█████████▉| 81/82 [07:59<00:01,  1.90s/it]Batches: 100%|██████████| 82/82 [07:59<00:00,  5.85s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.50it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.50it/s]

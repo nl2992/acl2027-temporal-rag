@@ -1,10 +1,10 @@
 {
-  "status": "partial",
+  "status": "all_domains_measured",
   "metric": "ordinary NDCG@10, not Oracle NDCG",
-  "completed_domains": 11,
+  "completed_domains": 13,
   "expected_domains": 13,
-  "macro_of_available_domains": 0.09984454545454545,
-  "full_macro_ndcg10": null,
+  "macro_of_available_domains": 0.1078776923076923,
+  "full_macro_ndcg10": 0.1078776923076923,
   "published_macro_percentage": 10.8,
   "runs": [
     {
@@ -57,6 +57,34 @@
       "ndcg10": 0.13273,
       "ndcg10_percentage": 13.272999999999998,
       "published_percentage": 13.3,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-history-bm25-20261105T081124Z",
+      "domain": "history",
+      "queries": 801,
+      "documents": 356493,
+      "ndcg10": 0.09247,
+      "ndcg10_percentage": 9.247,
+      "published_percentage": 9.2,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-hsm-bm25-20261105T075235Z",
+      "domain": "hsm",
+      "queries": 150,
+      "documents": 213818,
+      "ndcg10": 0.21165,
+      "ndcg10_percentage": 21.165,
+      "published_percentage": 21.2,
       "matches_published_rounding": true,
       "metric_roles": {
         "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",

@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-history-bm25-20261105T081124Z",
+  "benchmark": "TEMPO",
+  "domain": "history",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "56495c2b56866d44ba19eea5a9756c8216e3bd52d65949fadc3e3d17c87ffeb5",
+    "documents": "a4b22ce7a0609ca3defc14a36ce7a741cbab5ef2f2325568e483f3ee2c198cbb"
+  },
+  "input_sha256": "1c176e77e4ed3fb526bf3d235e791215da5478752c44cedf485848eb474188ab",
+  "gold_sha256": "c2708d71e423778e33722382d2dfa4bc4627ad2d835335890d4d3e4188bdda3f",
+  "queries": 801,
+  "documents": 356493,
+  "original_queries": 801,
+  "original_documents": 356493,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bm25",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}
