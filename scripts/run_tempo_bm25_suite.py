@@ -26,7 +26,7 @@ for domain in domains:
     if domain in ['bitcoin','genealogy','politics','hsm','history']:
         # Serialize all heavy retrieval workers, including TEMPO dense encoders.
         while True:
-            probe=subprocess.run(['wsl','-d','Ubuntu-24.04','-u','root','--','pgrep','-f','baseline_isolated.py worker|tempo_isolated.py (worker|evaluate)|stage_tempo_data.py'],capture_output=True)
+            probe=subprocess.run(['wsl','-d','Ubuntu-24.04','-u','root','--','pgrep','-f','baseline_isolated.py worker|tempo_isolated.py (worker|evaluate)|tempo_evaluate_with_provenance.py|stage_tempo_data.py'],capture_output=True)
             if probe.returncode==1:
                 break
             if probe.returncode!=0:

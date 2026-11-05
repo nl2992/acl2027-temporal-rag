@@ -1,0 +1,65 @@
+{
+  "utc": "2026-11-05T18:29:52.068047+00:00",
+  "wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "deployed_byte_identity": true,
+  "describe_only": true,
+  "evaluation_or_model_run": false,
+  "current_imports": {
+    "module_files": {
+      "pytrec_eval_ext": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+        "sha256": "35dc7177a5d39931b4f5ebda334624325923f3719c062f63f7fbe7906aa108f9"
+      },
+      "pytrec_eval": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval/__init__.py",
+        "sha256": "29abd1d7a7e8c94eb6df0c6aef589e92dd9763eabaa84109dbb1f458ce6bc436"
+      }
+    },
+    "installed_distribution_metadata": {
+      "pytrec-eval": {
+        "distribution_version": "0.5",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Qido9a2fYTi26KFs0UlqsUqMQPJRnlQFFfaNKPdTcDA",
+            "matches_imported_bytes": false
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "6pUZGWcwb-jyJQHGOrdP7f00x_b7SZUyZcAsOmnsHQs",
+            "matches_imported_bytes": false
+          }
+        ]
+      },
+      "pytrec-eval-terrier": {
+        "distribution_version": "0.5.11",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "KavR16foyU623wxq71iekt2XY-q6qEEJ27H0WM5rxDY",
+            "matches_imported_bytes": true
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Ndxxd6XTmTG09evaM0YkMlkj83GcBi9j9_vnkGqhCPk",
+            "matches_imported_bytes": true
+          }
+        ]
+      }
+    },
+    "evaluator_class_mro": [
+      "pytrec_eval.RelevanceEvaluator",
+      "pytrec_eval.RelevanceEvaluator",
+      "builtins.object"
+    ],
+    "interpretation": "Module bytes observed in this evaluation process; distribution version alone does not identify an overwritten import."
+  }
+}

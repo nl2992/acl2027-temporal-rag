@@ -1,5 +1,23 @@
 * text=auto
 *.sh text eol=lf
+scripts/*.py text eol=lf
 docs/guides/* -text
 configs/factorial_144.jsonl -text
 reports/source_snapshots/* -text
+reports/tempo/**/manifest.json -text
+reports/tempo/**/summary.json -text
+reports/tempo/**/evaluator_runtime.json -text
+reports/tempo/**/launch.json -text
+reports/tempo/**/source_changes.patch -text
+reports/tempo_preflight_recoveries.json -text
+reports/baselines/**/manifest.json -text
+reports/baselines/**/summary.json -text
+reports/artifact_export_repairs/** -text
+reports/review_tools/** -text
+reports/TEMPO_EXPERIMENT_AUDIT.* -text
+reports/tempo_parity.json -text
+reports/tempo_retriever_coverage.json -text
+configs/published_tempo_*.json -text
+manifests/tempo_environment.txt -text
+manifests/tempo_models.json -text
+.aris/traces/** -text

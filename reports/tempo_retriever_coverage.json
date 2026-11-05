@@ -116,10 +116,10 @@
       }
     },
     "BGE": {
-      "completed_domains": 1,
+      "completed_domains": 2,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 1,
+      "matching_domain_rounding": 2,
       "runs": {
         "iota": {
           "run_id": "tempo-iota-bge-20261105T122024Z",
@@ -127,6 +127,14 @@
           "documents": 10372,
           "ndcg10": 0.36062,
           "author_target_percentage": 36.1,
+          "within_one_decimal_rounding_interval": true
+        },
+        "quant": {
+          "run_id": "tempo-quant-bge-20261105T163915Z",
+          "queries": 34,
+          "documents": 28785,
+          "ndcg10": 0.11737,
+          "author_target_percentage": 11.7,
           "within_one_decimal_rounding_interval": true
         }
       }

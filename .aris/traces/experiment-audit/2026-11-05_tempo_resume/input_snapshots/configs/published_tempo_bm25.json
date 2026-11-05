@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/tempo-bench/Tempo/tree/8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "paper": "https://arxiv.org/abs/2601.09523",
+  "metric": "NDCG@10",
+  "scale": "percentage",
+  "status": "published_rounded_targets_not_reproduced_scores",
+  "domains": {"cardano":13.4,"iota":9.7,"monero":2.8,"bitcoin":6.2,"economics":5.8,"law":12.7,"politics":32.7,"history":9.2,"quant":2.5,"travel":4.6,"workplace":6.2,"genealogy":13.3,"hsm":21.2},
+  "macro_average":10.8
+}

@@ -15,6 +15,30 @@ DOMAINS=['law','workplace','economics','cardano','monero','travel','bitcoin',
          'genealogy','politics','hsm','history']
 HANDOFF={'iota':'tempo-iota-bge-20261105T122024Z','quant':'tempo-quant-bge-20261105T163915Z'}
 MODEL=json.loads((ROOT/'manifests/tempo_models.json').read_text(encoding='utf-8-sig'))['bge']
+RECOVERY_PATH=ROOT/'reports/tempo_preflight_recoveries.json'
+RECOVERIES=json.loads(RECOVERY_PATH.read_bytes())['preflight_failures'] if RECOVERY_PATH.exists() else {}
+
+def resolved_without_computation(directory):
+    entry=RECOVERIES.get(directory.name)
+    if entry is None:
+        return False
+    assert entry['run_id']==directory.name
+    assert entry['preparation_started'] is entry['inference_started'] is entry['evaluation_started'] is False
+    assert set(p.name for p in directory.iterdir())=={'launch.json','source_changes.patch'}
+    for filename,key in [('launch.json','launch_sha256'),('source_changes.patch','source_patch_sha256')]:
+        assert hashlib.sha256((directory/filename).read_bytes()).hexdigest()==entry[key]
+    launch=json.loads((directory/'launch.json').read_bytes())
+    assert launch['status']=='failed' and 'resources_before_stage' not in launch
+    assert 'tempo_evaluate_with_provenance.py' in launch['error']
+    assert hashlib.sha256((ROOT/'scripts/run_tempo_wsl.py').read_bytes()).hexdigest()==entry['reviewed_runner_sha256']
+    deployed=subprocess.check_output(WSL+['cat','/home/nigel/acl2027/scripts/tempo_evaluate_with_provenance.py'])
+    assert hashlib.sha256(deployed).hexdigest()==entry['repaired_wrapper_sha256']
+    expected=[f'/home/acl-infer/inputs/{directory.name}',f'/home/acl-infer/runs/{directory.name}',
+              f'/home/nigel/acl2027/eval-private/{directory.name}',f'/home/nigel/acl2027/results/{directory.name}']
+    assert entry['absence_checked_paths']==expected
+    for path in expected:
+        assert subprocess.run(WSL+['test','-e',path]).returncode==1, 'Failed attempt may contain computation'
+    return True
 
 def reference(domain):
     records=[]
@@ -33,6 +57,8 @@ def completed(domain):
         path=directory/'manifest.json'
         m=json.loads(path.read_text(encoding='utf-8-sig')) if path.exists() else {}
         if m.get('smoke'):
+            continue
+        if not path.exists() and resolved_without_computation(directory):
             continue
         assert path.exists(), f'Unresolved attempt (missing manifest): {directory.name}'
         launch=json.loads((path.parent/'launch.json').read_text(encoding='utf-8-sig'))
@@ -66,7 +92,7 @@ def completed(domain):
 
 def preflight():
     probe=subprocess.run(WSL+['pgrep','-f',
-        'baseline_isolated.py (prepare|worker|evaluate)|tempo_isolated.py (worker|evaluate)|stage_tempo_data.py'],capture_output=True)
+        'baseline_isolated.py (prepare|worker|evaluate)|tempo_isolated.py (worker|evaluate)|tempo_evaluate_with_provenance.py|stage_tempo_data.py'],capture_output=True)
     assert probe.returncode==1, 'Research process active or process state unavailable; queue stops'
     values=subprocess.check_output(WSL+['nvidia-smi','--query-gpu=memory.used',
         '--format=csv,noheader,nounits'],text=True).split()

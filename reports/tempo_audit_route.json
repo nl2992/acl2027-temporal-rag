@@ -7,12 +7,17 @@
   "effort": "ultra",
   "transport": "native",
   "fresh_tool": "collaboration.spawn_agent",
-  "task_name": "/root/tempo_integrity_audit",
+  "task_name": "/root/tempo_audit_resume",
   "working_directory": "C:/Users/nigel/OneDrive/\u6587\u4ef6/ChatGPT/ACL 2027",
   "review_independence": "same-family",
   "acceptance_status": "provisional",
-  "status": "resumed_after_usage_limit_no_verdict",
+  "status": "completed_warn",
   "identity_evidence": "Host accepted requested model and effort and returned canonical task name; no opaque session ID or independently observed runtime model identity returned.",
   "interruption": "Reviewer turn returned account usage-limit error before a completed verdict; a bounded verifier draft persists.",
-  "resume_requested": true
+  "resume_requested": true,
+  "prior_task_name": "/root/tempo_integrity_audit",
+  "replacement_reason": "Earlier canonical reviewer absent from live agent inventory after usage-limit interruption; no completed verdict.",
+  "review_completed": true,
+  "verdict": "WARN",
+  "trace_path": ".aris/traces/experiment-audit/2026-11-05_tempo_resume/"
 }

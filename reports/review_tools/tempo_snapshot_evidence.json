@@ -1,0 +1,37 @@
+{
+  "pinned_author_readme_sha256": "2a70007c222ed6f38fa7c8a5f840ad27ad18525dbdfce69f0852fac279a59131",
+  "verified_target_cells": 156,
+  "verified_target_macros": 12,
+  "hf_lfs_oids_verified": 26,
+  "verified_full_rounded_cells": 14,
+  "verified_full_macro_count": 1,
+  "verified_bge_snapshot_files": 10,
+  "current_metric_provider": {
+    "pytrec_eval": {
+      "sha256": "29abd1d7a7e8c94eb6df0c6aef589e92dd9763eabaa84109dbb1f458ce6bc436",
+      "matching_records": [
+        "pytrec-eval-terrier==0.5.11"
+      ]
+    },
+    "pytrec_eval_ext": {
+      "sha256": "35dc7177a5d39931b4f5ebda334624325923f3719c062f63f7fbe7906aa108f9",
+      "matching_records": [
+        "pytrec-eval-terrier==0.5.11"
+      ]
+    }
+  },
+  "full_bm25_total_queries": 1730,
+  "full_bm25_domain_document_entries": 1654055,
+  "total_ranking_entries_all_checked_runs": 1744000,
+  "full_runs_without_runtime_worker_sha256": 7,
+  "checked_run_count": 16,
+  "sum_ordinary_keys": 400,
+  "sum_oracle_keys": 96,
+  "hashes": {
+    "reports/tempo_parity.json": "23c5439a9b9f4a55a245adb605ccebf2d6a9700e41c6853c0fdcb65709ea4017",
+    "reports/tempo_retriever_coverage.json": "81e94307c86f7fd0d32d33612435f52520b47df19040d42fbf2b98e21ddee634",
+    "reports/review_tools/tempo_evidence.jsonl": "b2ff93c56a652e1a4d7e1c847821ea383adeeac190a70913976947860f2e6347",
+    "reports/review_tools/verify_tempo_results.py": "9a209249568db8dbd09b0679170a0d4216700cc65414742a34f78082a0e540f2",
+    "reports/review_tools/verify_tempo_snapshot.py": "cddac0124cb46508594fe86978eed69c6cae4e66af077d39df65ba8ecc20fce1"
+  }
+}

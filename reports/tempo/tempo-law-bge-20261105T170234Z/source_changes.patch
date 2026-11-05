@@ -1,0 +1,40 @@
+diff --git a/scripts/run_tempo_wsl.py b/scripts/run_tempo_wsl.py
+index a97a193..1379cf2 100644
+--- a/scripts/run_tempo_wsl.py
++++ b/scripts/run_tempo_wsl.py
+@@ -22,6 +22,7 @@ state={'run_id':run,'status':'running','utc_start':datetime.datetime.now(datetim
+ state['project_dirty']=subprocess.check_output(['git','status','--porcelain'],cwd=root,text=True)
+ state['worker_script_sha256']=hashlib.sha256((root/'scripts/tempo_isolated.py').read_bytes()).hexdigest()
+ state['launcher_sha256']=hashlib.sha256((root/'scripts/isolated_tempo_worker.sh').read_bytes()).hexdigest()
++state['evaluator_wrapper_sha256']=hashlib.sha256((root/'scripts/tempo_evaluate_with_provenance.py').read_bytes()).hexdigest()
+ (out/'source_changes.patch').write_bytes(subprocess.check_output(['git','diff','--','scripts','configs'],cwd=root))
+ def save():
+     (out/'launch.json').write_text(json.dumps(state,indent=2)+'\n')
+@@ -32,9 +33,17 @@ scripts='/home/nigel/acl2027/scripts/'
+ commands=[
+  ['wsl','-d','Ubuntu-24.04','-u','nigel','--',py,scripts+'stage_tempo_data.py','--domain',a.domain,'--run-id',run,'--model',a.model]+(['--smoke'] if a.smoke else []),
+  ['wsl','-d','Ubuntu-24.04','-u','root','--','unshare','--mount','--fork','bash',scripts+'isolated_tempo_worker.sh','--run-id',run,'--model',a.model],
+- ['wsl','-d','Ubuntu-24.04','-u','nigel','--',py,scripts+'tempo_isolated.py','evaluate','--run-id',run]
++ ['wsl','-d','Ubuntu-24.04','-u','nigel','--',py,scripts+'tempo_evaluate_with_provenance.py','--run-id',run]
+ ]
+ try:
++    for filename,key in [('tempo_isolated.py','worker_script_sha256'),
++                         ('isolated_tempo_worker.sh','launcher_sha256'),
++                         ('tempo_evaluate_with_provenance.py','evaluator_wrapper_sha256')]:
++        actual=subprocess.check_output(['wsl','-d','Ubuntu-24.04','-u','nigel','--','cat',scripts+filename])
++        actual_sha=hashlib.sha256(actual).hexdigest()
++        state.setdefault('deployed_script_sha256',{})[filename]=actual_sha
++        assert actual_sha==state[key],f'Deployed script differs: {filename}'
++    save()
+     for name,cmd in zip(['prepare','inference','evaluation'],commands):
+         state.setdefault('resources_before_stage',{})[name]={
+             'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+@@ -44,7 +53,7 @@ try:
+         with (out/f'{name}.log').open('wb') as log:
+             subprocess.run(cmd,stdout=log,stderr=subprocess.STDOUT,check=True)
+         print(name,'complete',flush=True)
+-    for name in ['manifest.json','summary.json']:
++    for name in ['manifest.json','summary.json','evaluator_runtime.json']:
+         raw=subprocess.check_output(['wsl','-d','Ubuntu-24.04','-u','nigel','--','cat',f'/home/nigel/acl2027/results/{run}/{name}'])
+         (out/name).write_bytes(raw)
+     state['status']='complete'

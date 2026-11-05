@@ -9,6 +9,13 @@ for path in sorted((root/'reports/tempo').glob('*/manifest.json')):
     m=json.loads(path.read_text())
     if m.get('status')!='complete' or m.get('smoke'):
         continue
+    launch_path=path.parent/'launch.json'
+    if not launch_path.exists():
+        continue
+    launch=json.loads(launch_path.read_text(encoding='utf-8-sig'))
+    if launch.get('status')!='complete':
+        continue
+    assert launch['run_id']==m['run_id']==path.parent.name
     if m.get('model',m['worker']['model'])!='bm25':
         continue
     result=json.loads((path.parent/'summary.json').read_text())

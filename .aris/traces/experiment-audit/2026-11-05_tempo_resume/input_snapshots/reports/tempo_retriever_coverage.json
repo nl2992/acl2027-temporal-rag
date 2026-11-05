@@ -1,0 +1,205 @@
+{
+  "source": "https://github.com/tempo-bench/Tempo/blob/8731487254e0988eaf2ca4ae3e93ff587fec64d0/README.md",
+  "metric": "ordinary NDCG@10, percentage rounded to one decimal",
+  "scope": "Ordinary retrieval metrics only; temporal LLM-judge metrics unmeasured. Smoke and oracle excluded.",
+  "models": {
+    "BM25": {
+      "completed_domains": 13,
+      "expected_domains": 13,
+      "full_macro_ndcg10": 0.1078776923076923,
+      "matching_domain_rounding": 13,
+      "runs": {
+        "bitcoin": {
+          "run_id": "tempo-bitcoin-bm25-20261105T073857Z",
+          "queries": 100,
+          "documents": 153291,
+          "ndcg10": 0.06157,
+          "author_target_percentage": 6.2,
+          "within_one_decimal_rounding_interval": true
+        },
+        "cardano": {
+          "run_id": "tempo-cardano-bm25-20261105T023720Z",
+          "queries": 51,
+          "documents": 87201,
+          "ndcg10": 0.13377,
+          "author_target_percentage": 13.4,
+          "within_one_decimal_rounding_interval": true
+        },
+        "economics": {
+          "run_id": "tempo-economics-bm25-20261105T023515Z",
+          "queries": 83,
+          "documents": 93756,
+          "ndcg10": 0.05805,
+          "author_target_percentage": 5.8,
+          "within_one_decimal_rounding_interval": true
+        },
+        "genealogy": {
+          "run_id": "tempo-genealogy-bm25-20261105T074201Z",
+          "queries": 115,
+          "documents": 156228,
+          "ndcg10": 0.13273,
+          "author_target_percentage": 13.3,
+          "within_one_decimal_rounding_interval": true
+        },
+        "history": {
+          "run_id": "tempo-history-bm25-20261105T081124Z",
+          "queries": 801,
+          "documents": 356493,
+          "ndcg10": 0.09247,
+          "author_target_percentage": 9.2,
+          "within_one_decimal_rounding_interval": true
+        },
+        "hsm": {
+          "run_id": "tempo-hsm-bm25-20261105T075235Z",
+          "queries": 150,
+          "documents": 213818,
+          "ndcg10": 0.21165,
+          "author_target_percentage": 21.2,
+          "within_one_decimal_rounding_interval": true
+        },
+        "iota": {
+          "run_id": "tempo-iota-bm25-20261105T022745Z",
+          "queries": 10,
+          "documents": 10372,
+          "ndcg10": 0.09736,
+          "author_target_percentage": 9.7,
+          "within_one_decimal_rounding_interval": true
+        },
+        "law": {
+          "run_id": "tempo-law-bm25-20261105T023225Z",
+          "queries": 35,
+          "documents": 43288,
+          "ndcg10": 0.12692,
+          "author_target_percentage": 12.7,
+          "within_one_decimal_rounding_interval": true
+        },
+        "monero": {
+          "run_id": "tempo-monero-bm25-20261105T024051Z",
+          "queries": 65,
+          "documents": 85093,
+          "ndcg10": 0.02755,
+          "author_target_percentage": 2.8,
+          "within_one_decimal_rounding_interval": true
+        },
+        "politics": {
+          "run_id": "tempo-politics-bm25-20261105T074747Z",
+          "queries": 150,
+          "documents": 183394,
+          "ndcg10": 0.32694,
+          "author_target_percentage": 32.7,
+          "within_one_decimal_rounding_interval": true
+        },
+        "quant": {
+          "run_id": "tempo-quant-bm25-20261105T023047Z",
+          "queries": 34,
+          "documents": 28785,
+          "ndcg10": 0.02501,
+          "author_target_percentage": 2.5,
+          "within_one_decimal_rounding_interval": true
+        },
+        "travel": {
+          "run_id": "tempo-travel-bm25-20261105T024423Z",
+          "queries": 100,
+          "documents": 177677,
+          "ndcg10": 0.0461,
+          "author_target_percentage": 4.6,
+          "within_one_decimal_rounding_interval": true
+        },
+        "workplace": {
+          "run_id": "tempo-workplace-bm25-20261105T023345Z",
+          "queries": 36,
+          "documents": 64659,
+          "ndcg10": 0.06229,
+          "author_target_percentage": 6.2,
+          "within_one_decimal_rounding_interval": true
+        }
+      }
+    },
+    "BGE": {
+      "completed_domains": 1,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 1,
+      "runs": {
+        "iota": {
+          "run_id": "tempo-iota-bge-20261105T122024Z",
+          "queries": 10,
+          "documents": 10372,
+          "ndcg10": 0.36062,
+          "author_target_percentage": 36.1,
+          "within_one_decimal_rounding_interval": true
+        }
+      }
+    },
+    "Contriever": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "DiVeR": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "E5": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "GritLM": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "Inst-L": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "Qwen": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "Rader": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "ReasonIR": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "SBERT": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    },
+    "SFR": {
+      "completed_domains": 0,
+      "expected_domains": 13,
+      "full_macro_ndcg10": null,
+      "matching_domain_rounding": 0,
+      "runs": {}
+    }
+  }
+}

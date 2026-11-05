@@ -1,0 +1,70 @@
+{
+  "reports/review_tools/tempo_evidence.jsonl": {
+    "snapshot": "input_snapshots/reports/review_tools/tempo_evidence.jsonl",
+    "sha256": "b2ff93c56a652e1a4d7e1c847821ea383adeeac190a70913976947860f2e6347"
+  },
+  "reports/review_tools/tempo_snapshot_evidence.json": {
+    "snapshot": "input_snapshots/reports/review_tools/tempo_snapshot_evidence.json",
+    "sha256": "f6057fc67d4d2296cfc9b48700b7df18be3176d5a3266c33a992364f6c27cf47"
+  },
+  "reports/review_tools/verify_tempo_results.py": {
+    "snapshot": "input_snapshots/reports/review_tools/verify_tempo_results.py",
+    "sha256": "9a209249568db8dbd09b0679170a0d4216700cc65414742a34f78082a0e540f2"
+  },
+  "reports/review_tools/verify_tempo_snapshot.py": {
+    "snapshot": "input_snapshots/reports/review_tools/verify_tempo_snapshot.py",
+    "sha256": "cddac0124cb46508594fe86978eed69c6cae4e66af077d39df65ba8ecc20fce1"
+  },
+  "configs/published_tempo_bm25.json": {
+    "snapshot": "input_snapshots/configs/published_tempo_bm25.json",
+    "sha256": "5e0537d9f7120783b152696a63920b9605fc4241b10c05e20c6c77774fd0251b"
+  },
+  "configs/published_tempo_retrievers.json": {
+    "snapshot": "input_snapshots/configs/published_tempo_retrievers.json",
+    "sha256": "1aa83e4efe1a2bb9deb767320e5a7b212ae790ce7205e856b748ca8a91406a6d"
+  },
+  "manifests/tempo_environment.txt": {
+    "snapshot": "input_snapshots/manifests/tempo_environment.txt",
+    "sha256": "1c8dd2c701f29e3683b746e21103d01ea1d58203c48468d994ac770557202ba3"
+  },
+  "manifests/tempo_models.json": {
+    "snapshot": "input_snapshots/manifests/tempo_models.json",
+    "sha256": "c06df5e5900dcf8f6efec6823ca70a705d5ee7d9cb735de74b40ffd73e1d8410"
+  },
+  "scripts/tempo_isolated.py": {
+    "snapshot": "input_snapshots/scripts/tempo_isolated.py",
+    "sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee"
+  },
+  "scripts/stage_tempo_data.py": {
+    "snapshot": "input_snapshots/scripts/stage_tempo_data.py",
+    "sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d"
+  },
+  "scripts/isolated_tempo_worker.sh": {
+    "snapshot": "input_snapshots/scripts/isolated_tempo_worker.sh",
+    "sha256": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a"
+  },
+  "reports/source_snapshots/tempo_isolated_f098.py": {
+    "snapshot": "input_snapshots/reports/source_snapshots/tempo_isolated_f098.py",
+    "sha256": "f098fb069b2fe18c270ea5554be5ccaf8cd9e720fbc20ec860cdb75318214705"
+  },
+  "reports/tempo_parity.json": {
+    "snapshot": "input_snapshots/reports/tempo_parity.json",
+    "sha256": "23c5439a9b9f4a55a245adb605ccebf2d6a9700e41c6853c0fdcb65709ea4017"
+  },
+  "reports/tempo_retriever_coverage.json": {
+    "snapshot": "input_snapshots/reports/tempo_retriever_coverage.json",
+    "sha256": "81e94307c86f7fd0d32d33612435f52520b47df19040d42fbf2b98e21ddee634"
+  },
+  "reports/artifact_export_repairs/tempo-iota-bge-smoke-001/repair.json": {
+    "snapshot": "input_snapshots/reports/artifact_export_repairs/tempo-iota-bge-smoke-001/repair.json",
+    "sha256": "edcd37375c2bc09cfe5d2f70ace4397ecf4225c55797c67c547d74ce26a17238"
+  },
+  "reports/TEMPO_EXPERIMENT_AUDIT.md": {
+    "snapshot": "input_snapshots/reports/TEMPO_EXPERIMENT_AUDIT.md",
+    "sha256": "5a8032b6daabadb56013269e71eba5ad76199dbc38891ec6563a89204029a50c"
+  },
+  "git:13a200d8a937834e6372133a3aed7f93004b0a72:scripts/run_tempo_wsl.py": {
+    "snapshot": "git_snapshots/13a200d8a937834e6372133a3aed7f93004b0a72/scripts/run_tempo_wsl.py",
+    "sha256": "4bd85e893eb631de0c9c50ae7195253c9e63c5de54d05c9aba8681d5c9566c94"
+  }
+}

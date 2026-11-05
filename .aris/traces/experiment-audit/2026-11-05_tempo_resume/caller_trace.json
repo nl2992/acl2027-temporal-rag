@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-11-05T18:26:38.579095+00:00",
+  "tool": "collaboration.spawn_agent",
+  "request_fields": {
+    "task_name": "tempo_audit_resume",
+    "fork_turns": "none",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra"
+  },
+  "returned_tool_metadata": {
+    "task_name": "/root/tempo_audit_resume"
+  },
+  "route": {
+    "skill": "experiment-audit",
+    "backend": "codex",
+    "host": "codex",
+    "source": "host-default",
+    "model": "gpt-6-astra",
+    "effort": "ultra",
+    "transport": "native",
+    "fresh_tool": "collaboration.spawn_agent",
+    "task_name": "/root/tempo_audit_resume",
+    "working_directory": "C:/Users/nigel/OneDrive/\u6587\u4ef6/ChatGPT/ACL 2027",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional",
+    "status": "completed_warn",
+    "identity_evidence": "Host accepted requested model and effort and returned canonical task name; no opaque session ID or independently observed runtime model identity returned.",
+    "interruption": "Reviewer turn returned account usage-limit error before a completed verdict; a bounded verifier draft persists.",
+    "resume_requested": true,
+    "prior_task_name": "/root/tempo_integrity_audit",
+    "replacement_reason": "Earlier canonical reviewer absent from live agent inventory after usage-limit interruption; no completed verdict.",
+    "review_completed": true,
+    "verdict": "WARN",
+    "trace_path": ".aris/traces/experiment-audit/2026-11-05_tempo_resume/"
+  },
+  "caller_visible_final_status": "completed",
+  "returned_verdict": "WARN",
+  "reported_runtime_model_id": null,
+  "identity_limitation": "Requested model/effort were accepted by host; no independent runtime model ID or opaque session ID was returned.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "trace_scope": "Caller-visible dispatch fields, returned canonical task and saved final artifacts; not a provider-side transcript.",
+  "artifact_hashes": {
+    "reports/TEMPO_EXPERIMENT_AUDIT.md": "5a8032b6daabadb56013269e71eba5ad76199dbc38891ec6563a89204029a50c",
+    "reports/TEMPO_EXPERIMENT_AUDIT.json": "c1e5d1ad3d4e42beb816f5adbb7b7a9fe852d7bcbf9c09f8785912345c434230",
+    "reports/review_tools/tempo_evidence.jsonl": "b2ff93c56a652e1a4d7e1c847821ea383adeeac190a70913976947860f2e6347",
+    "reports/review_tools/tempo_snapshot_evidence.json": "f6057fc67d4d2296cfc9b48700b7df18be3176d5a3266c33a992364f6c27cf47"
+  }
+}

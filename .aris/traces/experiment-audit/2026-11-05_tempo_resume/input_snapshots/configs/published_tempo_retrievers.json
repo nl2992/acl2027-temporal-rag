@@ -1,0 +1,228 @@
+{
+  "source": "https://github.com/tempo-bench/Tempo/blob/8731487254e0988eaf2ca4ae3e93ff587fec64d0/README.md",
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "readme_blob_sha256": "2a70007c222ed6f38fa7c8a5f840ad27ad18525dbdfce69f0852fac279a59131",
+  "metric": "ordinary NDCG@10, percentage rounded to one decimal",
+  "verification": "Extracted from pinned author README; not a new independent PDF cross-check. These are targets, not measured results.",
+  "domain_aliases": {
+    "Political": "politics"
+  },
+  "models": {
+    "BM25": {
+      "domains": {
+        "cardano": 13.4,
+        "iota": 9.7,
+        "monero": 2.8,
+        "bitcoin": 6.2,
+        "economics": 5.8,
+        "law": 12.7,
+        "politics": 32.7,
+        "history": 9.2,
+        "quant": 2.5,
+        "travel": 4.6,
+        "workplace": 6.2,
+        "genealogy": 13.3,
+        "hsm": 21.2
+      },
+      "macro_average_percentage": 10.8
+    },
+    "BGE": {
+      "domains": {
+        "cardano": 13.1,
+        "iota": 36.1,
+        "monero": 14.5,
+        "bitcoin": 14.4,
+        "economics": 12.6,
+        "law": 31.9,
+        "politics": 28.2,
+        "history": 27.4,
+        "quant": 11.7,
+        "travel": 23.8,
+        "workplace": 27.2,
+        "genealogy": 22.0,
+        "hsm": 23.2
+      },
+      "macro_average_percentage": 22.0
+    },
+    "Contriever": {
+      "domains": {
+        "cardano": 12.1,
+        "iota": 38.3,
+        "monero": 9.9,
+        "bitcoin": 13.3,
+        "economics": 16.3,
+        "law": 28.1,
+        "politics": 31.6,
+        "history": 26.5,
+        "quant": 11.1,
+        "travel": 23.7,
+        "workplace": 23.9,
+        "genealogy": 24.9,
+        "hsm": 18.9
+      },
+      "macro_average_percentage": 21.4
+    },
+    "DiVeR": {
+      "domains": {
+        "cardano": 29.3,
+        "iota": 38.2,
+        "monero": 20.3,
+        "bitcoin": 17.4,
+        "economics": 27.8,
+        "law": 40.4,
+        "politics": 45.5,
+        "history": 34.5,
+        "quant": 27.2,
+        "travel": 26.8,
+        "workplace": 42.6,
+        "genealogy": 35.6,
+        "hsm": 31.0
+      },
+      "macro_average_percentage": 32.0
+    },
+    "E5": {
+      "domains": {
+        "cardano": 35.7,
+        "iota": 41.7,
+        "monero": 20.0,
+        "bitcoin": 16.3,
+        "economics": 25.0,
+        "law": 34.0,
+        "politics": 47.9,
+        "history": 28.7,
+        "quant": 13.8,
+        "travel": 28.3,
+        "workplace": 32.9,
+        "genealogy": 33.5,
+        "hsm": 37.7
+      },
+      "macro_average_percentage": 30.4
+    },
+    "GritLM": {
+      "domains": {
+        "cardano": 21.7,
+        "iota": 36.6,
+        "monero": 14.7,
+        "bitcoin": 19.1,
+        "economics": 17.2,
+        "law": 38.3,
+        "politics": 41.4,
+        "history": 27.3,
+        "quant": 21.6,
+        "travel": 25.0,
+        "workplace": 30.8,
+        "genealogy": 26.9,
+        "hsm": 33.4
+      },
+      "macro_average_percentage": 27.2
+    },
+    "Inst-L": {
+      "domains": {
+        "cardano": 14.6,
+        "iota": 34.3,
+        "monero": 16.9,
+        "bitcoin": 15.7,
+        "economics": 17.5,
+        "law": 37.3,
+        "politics": 32.6,
+        "history": 28.5,
+        "quant": 14.6,
+        "travel": 25.0,
+        "workplace": 36.2,
+        "genealogy": 24.6,
+        "hsm": 24.4
+      },
+      "macro_average_percentage": 24.8
+    },
+    "Qwen": {
+      "domains": {
+        "cardano": 20.6,
+        "iota": 28.6,
+        "monero": 11.0,
+        "bitcoin": 11.4,
+        "economics": 17.1,
+        "law": 32.0,
+        "politics": 38.1,
+        "history": 25.6,
+        "quant": 12.7,
+        "travel": 22.0,
+        "workplace": 30.3,
+        "genealogy": 25.3,
+        "hsm": 21.3
+      },
+      "macro_average_percentage": 22.8
+    },
+    "Rader": {
+      "domains": {
+        "cardano": 18.6,
+        "iota": 19.2,
+        "monero": 21.0,
+        "bitcoin": 14.9,
+        "economics": 22.7,
+        "law": 33.5,
+        "politics": 32.4,
+        "history": 25.8,
+        "quant": 27.8,
+        "travel": 26.1,
+        "workplace": 36.6,
+        "genealogy": 18.7,
+        "hsm": 16.9
+      },
+      "macro_average_percentage": 24.2
+    },
+    "ReasonIR": {
+      "domains": {
+        "cardano": 22.9,
+        "iota": 41.7,
+        "monero": 19.6,
+        "bitcoin": 16.3,
+        "economics": 20.0,
+        "law": 37.9,
+        "politics": 35.4,
+        "history": 34.3,
+        "quant": 19.5,
+        "travel": 21.4,
+        "workplace": 30.0,
+        "genealogy": 30.3,
+        "hsm": 24.7
+      },
+      "macro_average_percentage": 27.2
+    },
+    "SBERT": {
+      "domains": {
+        "cardano": 21.4,
+        "iota": 33.2,
+        "monero": 15.1,
+        "bitcoin": 14.3,
+        "economics": 15.3,
+        "law": 33.8,
+        "politics": 34.6,
+        "history": 28.7,
+        "quant": 15.7,
+        "travel": 27.3,
+        "workplace": 34.6,
+        "genealogy": 23.5,
+        "hsm": 26.1
+      },
+      "macro_average_percentage": 24.9
+    },
+    "SFR": {
+      "domains": {
+        "cardano": 28.1,
+        "iota": 37.1,
+        "monero": 23.7,
+        "bitcoin": 17.6,
+        "economics": 21.9,
+        "law": 40.8,
+        "politics": 44.9,
+        "history": 32.4,
+        "quant": 16.8,
+        "travel": 29.7,
+        "workplace": 31.6,
+        "genealogy": 31.7,
+        "hsm": 33.5
+      },
+      "macro_average_percentage": 30.0
+    }
+  }
+}

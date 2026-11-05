@@ -27,7 +27,7 @@ for path in (root/'reports/tempo').glob('tempo-*-bm25-*/manifest.json'):
 assert completed==expected, f'CPU suite incomplete: {sorted(expected-completed)}'
 wsl=['wsl','-d','Ubuntu-24.04']
 probe=subprocess.run(wsl+['-u','root','--','pgrep','-f',
-    'baseline_isolated.py (prepare|worker|evaluate)|tempo_isolated.py (worker|evaluate)|stage_tempo_data.py'],capture_output=True)
+    'baseline_isolated.py (prepare|worker|evaluate)|tempo_isolated.py (worker|evaluate)|tempo_evaluate_with_provenance.py|stage_tempo_data.py'],capture_output=True)
 assert probe.returncode==1, 'A research process is active or its state could not be checked'
 gpu=subprocess.check_output(wsl+['-u','root','--','nvidia-smi',
     '--query-gpu=memory.used','--format=csv,noheader,nounits'],text=True)

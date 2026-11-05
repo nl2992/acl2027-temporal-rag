@@ -1,0 +1,23 @@
+{
+  "preflight_failures": {
+    "tempo-law-bge-20261105T170234Z": {
+      "run_id": "tempo-law-bge-20261105T170234Z",
+      "reason": "Missing evaluator witness before preparation began",
+      "preparation_started": false,
+      "inference_started": false,
+      "evaluation_started": false,
+      "launch_sha256": "de4175b261ca4b22f754993f4d54b349d294dc8fe73823db6e28dc8bbaed2b17",
+      "source_patch_sha256": "b8a53542afcd72d24e95275556eb46795f11dfc83760673b1a3f1005c4a7cc84",
+      "repaired_wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+      "reviewed_runner_sha256": "634604d86d4865495fa3ba9f3f145961801fcc841ee928e049d1525927eaa2b9",
+      "absence_checked_paths": [
+        "/home/acl-infer/inputs/tempo-law-bge-20261105T170234Z",
+        "/home/acl-infer/runs/tempo-law-bge-20261105T170234Z",
+        "/home/nigel/acl2027/eval-private/tempo-law-bge-20261105T170234Z",
+        "/home/nigel/acl2027/results/tempo-law-bge-20261105T170234Z"
+      ],
+      "review": "reports/tempo_evaluator_provenance_review.md",
+      "utc": "2026-11-05T18:30:43.780616+00:00"
+    }
+  }
+}
