@@ -1,9 +1,9 @@
 {
   "status": "partial",
   "metric": "ordinary NDCG@10, not Oracle NDCG",
-  "completed_domains": 9,
+  "completed_domains": 10,
   "expected_domains": 13,
-  "macro_of_available_domains": 0.07095777777777777,
+  "macro_of_available_domains": 0.077135,
   "full_macro_ndcg10": null,
   "published_macro_percentage": 10.8,
   "runs": [
@@ -43,6 +43,20 @@
       "ndcg10": 0.05805,
       "ndcg10_percentage": 5.805,
       "published_percentage": 5.8,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-genealogy-bm25-20261105T074201Z",
+      "domain": "genealogy",
+      "queries": 115,
+      "documents": 156228,
+      "ndcg10": 0.13273,
+      "ndcg10_percentage": 13.272999999999998,
+      "published_percentage": 13.3,
       "matches_published_rounding": true,
       "metric_roles": {
         "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",

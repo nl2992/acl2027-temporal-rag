@@ -29,3 +29,5 @@ TEMPO BGE smoke tempo-iota-bge-smoke-001 completed unchanged native FP32/batch12
 All listed SOTA methods remain in scope, with hardware/source/data limits documented separately. No paid resources, factorial runs, lockbox access or SOTA claim. CPU/GPU memory-heavy jobs must be serialized.
 
 2026-11-05 update: Bitcoin retry completed, 100 queries/153,291 documents, ordinary NDCG@10=0.06157 (published6.2% after rounding). TEMPO BM25 now9/13 domains complete. Genealogy has started; Politics/HSM/History remain queued. Resumed independent BGE smoke review passed saved ranking/cache and all31 metric checks; see tempo_dense_smoke_review.md. Full Iota BGE is cleared on the repaired track after the CPU queue; no cross-domain feasibility assumed.
+
+2026-11-05 update: Genealogy completed115queries/156,228docs, NDCG@10=.13273 (published13.3% rounded), retrieval284.767322seconds. TEMPOBM25 now10/13 domains completed with matching rounded author targets. Politics run tempo-politics-bm25-20261105T074747Z started; HSM/History queued. Host diskfree47,760,523,264bytes atboundary. No whole-benchmark macro claim before remaining domains finish.
