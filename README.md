@@ -8,6 +8,7 @@ Research workspace for baseline reproduction and a preregistered 144-cell rerank
 - [Original factorial registry](docs/guides/ACL2027_Temporal_RAG_Factorial_144.jsonl)
 - [Progress and next actions](reports/progress.md)
 - [Research tools](docs/research_tools.md)
+- [TEMPO retriever coverage](reports/tempo_retriever_coverage.md)
 
 The supplied documents are research guides, not proof that sources, deadlines, experiments, or results have been verified. Original files are preserved unchanged with SHA256 hashes in `manifests/input_documents.json`. The working experiment registry is `configs/factorial_144.jsonl`.
 
