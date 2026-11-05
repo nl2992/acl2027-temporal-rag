@@ -57,6 +57,60 @@
       "candidate_recall100": 0.37632499999999997
     },
     {
+      "run": "baseline-company-dense-20261105T013616Z",
+      "domain": "company",
+      "backbone": "dense",
+      "method": "baseline",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.197,
+        "map": 0.163,
+        "recall": 0.176,
+        "hit": 0.292
+      },
+      "measured": {
+        "ndcg": 0.19764852709816721,
+        "map": 0.16322830687830667,
+        "recall": 0.17574444444444434,
+        "hit": 0.292
+      },
+      "delta": {
+        "ndcg": 0.0006485270981672064,
+        "map": 0.00022830687830666108,
+        "recall": -0.0002555555555556477,
+        "hit": 0.0
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.34094722222222223
+    },
+    {
+      "run": "baseline-company-dense-20261105T013616Z",
+      "domain": "company",
+      "backbone": "dense",
+      "method": "auto",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.2,
+        "map": 0.166,
+        "recall": 0.177,
+        "hit": 0.294
+      },
+      "measured": {
+        "ndcg": 0.18152437100461233,
+        "map": 0.147346119929453,
+        "recall": 0.16338888888888872,
+        "hit": 0.27666666666666667
+      },
+      "delta": {
+        "ndcg": -0.018475628995387683,
+        "map": -0.018653880070546996,
+        "recall": -0.013611111111111268,
+        "hit": -0.01733333333333331
+      },
+      "ndcg_gate": "mismatch",
+      "candidate_recall100": 0.34094722222222223
+    },
+    {
       "run": "baseline-law-bm25-20261105T013718Z",
       "domain": "law",
       "backbone": "bm25",
@@ -111,6 +165,60 @@
       "candidate_recall100": 0.3694833333333333
     },
     {
+      "run": "baseline-law-dense-20261105T015352Z",
+      "domain": "law",
+      "backbone": "dense",
+      "method": "baseline",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.172,
+        "map": 0.136,
+        "recall": 0.229,
+        "hit": 0.28
+      },
+      "measured": {
+        "ndcg": 0.17032991308964907,
+        "map": 0.13431765873015858,
+        "recall": 0.22958333333333342,
+        "hit": 0.2793333333333333
+      },
+      "delta": {
+        "ndcg": -0.0016700869103509208,
+        "map": -0.0016823412698414308,
+        "recall": 0.0005833333333334079,
+        "hit": -0.0006666666666667043
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.40531666666666677
+    },
+    {
+      "run": "baseline-law-dense-20261105T015352Z",
+      "domain": "law",
+      "backbone": "dense",
+      "method": "auto",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.179,
+        "map": 0.145,
+        "recall": 0.231,
+        "hit": 0.283
+      },
+      "measured": {
+        "ndcg": 0.1778555388423272,
+        "map": 0.1434646164021163,
+        "recall": 0.23058333333333336,
+        "hit": 0.282
+      },
+      "delta": {
+        "ndcg": -0.0011444611576728048,
+        "map": -0.0015353835978836883,
+        "recall": -0.00041666666666664853,
+        "hit": -0.0010000000000000009
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.40531666666666677
+    },
+    {
       "run": "baseline-terms-bm25-20261105T013718Z",
       "domain": "terms",
       "backbone": "bm25",
@@ -163,6 +271,114 @@
       },
       "ndcg_gate": "mismatch",
       "candidate_recall100": 0.2206388888888889
+    },
+    {
+      "run": "baseline-terms-dense-20261105T021124Z",
+      "domain": "terms",
+      "backbone": "dense",
+      "method": "baseline",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.059,
+        "map": 0.049,
+        "recall": 0.056,
+        "hit": 0.09
+      },
+      "measured": {
+        "ndcg": 0.059338751513748594,
+        "map": 0.049303968253968246,
+        "recall": 0.0567777777777778,
+        "hit": 0.09066666666666667
+      },
+      "delta": {
+        "ndcg": 0.00033875151374859747,
+        "map": 0.00030396825396824395,
+        "recall": 0.0007777777777778008,
+        "hit": 0.0006666666666666765
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.1381111111111111
+    },
+    {
+      "run": "baseline-terms-dense-20261105T021124Z",
+      "domain": "terms",
+      "backbone": "dense",
+      "method": "auto",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.071,
+        "map": 0.06,
+        "recall": 0.064,
+        "hit": 0.105
+      },
+      "measured": {
+        "ndcg": 0.061172676335116125,
+        "map": 0.05021785714285713,
+        "recall": 0.05872222222222224,
+        "hit": 0.09566666666666666
+      },
+      "delta": {
+        "ndcg": -0.009827323664883869,
+        "map": -0.009782142857142871,
+        "recall": -0.005277777777777763,
+        "hit": -0.009333333333333332
+      },
+      "ndcg_gate": "mismatch",
+      "candidate_recall100": 0.1381111111111111
+    },
+    {
+      "run": "baseline-university-bm25-20261105T014225Z",
+      "domain": "university",
+      "backbone": "bm25",
+      "method": "baseline",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.197,
+        "map": 0.157,
+        "recall": 0.236,
+        "hit": 0.316
+      },
+      "measured": {
+        "ndcg": 0.19834896351812514,
+        "map": 0.15856137566137568,
+        "recall": 0.23659444444444447,
+        "hit": 0.316
+      },
+      "delta": {
+        "ndcg": 0.0013489635181251347,
+        "map": 0.0015613756613756802,
+        "recall": 0.0005944444444444807,
+        "hit": 0.0
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.41589999999999994
+    },
+    {
+      "run": "baseline-university-bm25-20261105T014225Z",
+      "domain": "university",
+      "backbone": "bm25",
+      "method": "auto",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.246,
+        "map": 0.213,
+        "recall": 0.25,
+        "hit": 0.34
+      },
+      "measured": {
+        "ndcg": 0.20542449162781934,
+        "map": 0.1668283730158728,
+        "recall": 0.2368444444444445,
+        "hit": 0.31833333333333336
+      },
+      "delta": {
+        "ndcg": -0.04057550837218066,
+        "map": -0.04617162698412719,
+        "recall": -0.013155555555555504,
+        "hit": -0.021666666666666667
+      },
+      "ndcg_gate": "mismatch",
+      "candidate_recall100": 0.41589999999999994
     }
   ]
 }

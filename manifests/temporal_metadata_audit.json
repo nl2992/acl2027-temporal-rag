@@ -1,0 +1,42 @@
+[
+  {
+    "run_id": "baseline-company-bm25-20261105T013508Z",
+    "domain": "company",
+    "queries": 3000,
+    "documents": 30000,
+    "parsed_document_insert_time": 29953,
+    "parsed_document_event_time": 0,
+    "parsed_query_insert_time": 3000,
+    "parsed_or_query_extracted_event_time": 2981
+  },
+  {
+    "run_id": "baseline-law-bm25-20261105T013718Z",
+    "domain": "law",
+    "queries": 3000,
+    "documents": 30000,
+    "parsed_document_insert_time": 29894,
+    "parsed_document_event_time": 0,
+    "parsed_query_insert_time": 2999,
+    "parsed_or_query_extracted_event_time": 3000
+  },
+  {
+    "run_id": "baseline-terms-bm25-20261105T013718Z",
+    "domain": "terms",
+    "queries": 3000,
+    "documents": 30000,
+    "parsed_document_insert_time": 29942,
+    "parsed_document_event_time": 0,
+    "parsed_query_insert_time": 2999,
+    "parsed_or_query_extracted_event_time": 3000
+  },
+  {
+    "run_id": "baseline-university-bm25-20261105T014225Z",
+    "domain": "university",
+    "queries": 3000,
+    "documents": 30000,
+    "parsed_document_insert_time": 29978,
+    "parsed_document_event_time": 0,
+    "parsed_query_insert_time": 3000,
+    "parsed_or_query_extracted_event_time": 2999
+  }
+]

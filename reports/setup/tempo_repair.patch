@@ -1,0 +1,30 @@
+diff --git a/retrievers.py b/retrievers.py
+index 07db1f0..5dbbdd9 100644
+--- a/retrievers.py
++++ b/retrievers.py
+@@ -17,7 +17,12 @@ from openai import OpenAI
+ from transformers import AutoTokenizer, AutoModel
+ from InstructorEmbedding import INSTRUCTOR
+ from pathlib import Path
+-from vllm import LLM, PoolingParams, SamplingParams
++try:
++    from vllm import LLM, PoolingParams, SamplingParams
++except ModuleNotFoundError:
++    def _missing_vllm(*args, **kwargs):
++        raise ImportError("This optional retriever requires vllm; BM25 does not use it")
++    LLM = PoolingParams = SamplingParams = _missing_vllm
+ from sentence_transformers import SentenceTransformer
+ from sklearn.metrics.pairwise import cosine_similarity
+ # from vertexai.language_models import TextEmbeddingInput, TextEmbeddingModel
+@@ -1174,7 +1179,10 @@ def calculate_retrieval_metrics(results, qrels, k_values=[1, 5, 10, 25, 50, 100]
+ 
+ 
+ 
+-from vllm.transformers_utils.tokenizer import get_tokenizer as get_vllm_tokenizer
++try:
++    from vllm.transformers_utils.tokenizer import get_tokenizer as get_vllm_tokenizer
++except ModuleNotFoundError:
++    get_vllm_tokenizer = _missing_vllm
+ class VQwen3EmbeddingModel:
+     def __init__(self, model_path, max_length=16384, device="auto"):
+         self.model = LLM(model=model_path, task="embed", gpu_memory_utilization=0.9, tensor_parallel_size=torch.cuda.device_count())

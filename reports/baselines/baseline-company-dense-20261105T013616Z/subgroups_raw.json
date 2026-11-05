@@ -1,0 +1,212 @@
+[
+  {
+    "method": "baseline",
+    "raw_category": "Policies with multiple versions",
+    "queries": 502,
+    "author_ndcg": 0.16985886650080062,
+    "standard_ndcg": 0.1138979085914291
+  },
+  {
+    "method": "auto",
+    "raw_category": "Policies with multiple versions",
+    "queries": 502,
+    "author_ndcg": 0.16242417426999062,
+    "standard_ndcg": 0.10823799706104172
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Policies with multiple versions",
+    "queries": 502,
+    "author_ndcg": 0.20315923445073306,
+    "standard_ndcg": 0.1313875222486739
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Exemptions",
+    "queries": 516,
+    "author_ndcg": 0.24164172271207135,
+    "standard_ndcg": 0.17848448782142376
+  },
+  {
+    "method": "auto",
+    "raw_category": "Exemptions",
+    "queries": 516,
+    "author_ndcg": 0.2163065165705656,
+    "standard_ndcg": 0.15540069160787293
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Exemptions",
+    "queries": 516,
+    "author_ndcg": 0.27709212487129303,
+    "standard_ndcg": 0.19413506041842815
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 553,
+    "author_ndcg": 0.1691717373937455,
+    "standard_ndcg": 0.11993456990185634
+  },
+  {
+    "method": "auto",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 553,
+    "author_ndcg": 0.17199706319177774,
+    "standard_ndcg": 0.11975352800457226
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 553,
+    "author_ndcg": 0.20618472966096973,
+    "standard_ndcg": 0.13808670863063885
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 478,
+    "author_ndcg": 0.2947415267333064,
+    "standard_ndcg": 0.21663589475731684
+  },
+  {
+    "method": "auto",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 478,
+    "author_ndcg": 0.27720277415037514,
+    "standard_ndcg": 0.20196054840953376
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 478,
+    "author_ndcg": 0.3342798179388901,
+    "standard_ndcg": 0.23848276096753296
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 320,
+    "author_ndcg": 0.17697290438183388,
+    "standard_ndcg": 0.12073674833442509
+  },
+  {
+    "method": "auto",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 320,
+    "author_ndcg": 0.14810464091480985,
+    "standard_ndcg": 0.09879185037511373
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 320,
+    "author_ndcg": 0.21261891708224692,
+    "standard_ndcg": 0.13559174319300535
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 469,
+    "author_ndcg": 0.13079875731183832,
+    "standard_ndcg": 0.08521011093413343
+  },
+  {
+    "method": "auto",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 469,
+    "author_ndcg": 0.10552414925512692,
+    "standard_ndcg": 0.06637479224090488
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 469,
+    "author_ndcg": 0.16278788846225598,
+    "standard_ndcg": 0.09704182192047014
+  },
+  {
+    "method": "baseline",
+    "raw_category": "contents changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "auto",
+    "raw_category": "contents changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "contents changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "baseline",
+    "raw_category": "content changes of policies",
+    "queries": 139,
+    "author_ndcg": 0.18148521004420307,
+    "standard_ndcg": 0.11971797179100815
+  },
+  {
+    "method": "auto",
+    "raw_category": "content changes of policies",
+    "queries": 139,
+    "author_ndcg": 0.16110368710856474,
+    "standard_ndcg": 0.10805566546971265
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "content changes of policies",
+    "queries": 139,
+    "author_ndcg": 0.21062467564586787,
+    "standard_ndcg": 0.1357820328227178
+  },
+  {
+    "method": "baseline",
+    "raw_category": "내용 변경",
+    "queries": 21,
+    "author_ndcg": 0.25469000270601266,
+    "standard_ndcg": 0.17163350928759477
+  },
+  {
+    "method": "auto",
+    "raw_category": "내용 변경",
+    "queries": 21,
+    "author_ndcg": 0.21557092330824584,
+    "standard_ndcg": 0.13676687198071974
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "내용 변경",
+    "queries": 21,
+    "author_ndcg": 0.30670199945703025,
+    "standard_ndcg": 0.18373104635078952
+  },
+  {
+    "method": "baseline",
+    "raw_category": "쿼리에서 암시적 시간 맥락이 필요한 경우",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "auto",
+    "raw_category": "쿼리에서 암시적 시간 맥락이 필요한 경우",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "쿼리에서 암시적 시간 맥락이 필요한 경우",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  }
+]

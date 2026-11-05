@@ -13,4 +13,6 @@ The supplied documents are research guides, not proof that sources, deadlines, e
 
 Run `python scripts/validate_project.py` to verify document integrity and the factorial registry. Native reproduction requires a separately audited Linux/CUDA environment; the Windows setup does not satisfy that gate.
 
-Do not commit raw datasets, model weights, credentials, caches, or lockbox labels. Audit source and data licenses before redistribution. No research results or SOTA claims exist yet.
+Measured repaired-baseline results are in [the parity audit](reports/baseline_parity.md) and [baseline registry](reports/baseline_registry.md). Several automatic TimelyRAG cells do not reproduce the published targets; no new-method or SOTA success is claimed.
+
+Do not commit raw datasets, model weights, credentials, caches, or lockbox labels. Audit source and data licenses before redistribution.
