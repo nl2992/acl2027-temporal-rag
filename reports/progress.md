@@ -1,5 +1,7 @@
 # Progress
 
+Current verified state (2026-11-05): all 13 TEMPO BM25 domains completed with ordinary nDCG@10 matching rounded author targets; macro 0.107878 (10.8% rounded). Full Iota BGE completed: 10 queries/10,372 docs, nDCG@10 0.36062 (36.1% rounded). Quant BGE `tempo-quant-bge-20261105T163915Z` is running. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the full stronger-baseline gate remain incomplete. The fresh TEMPO integrity audit was interrupted by an account usage limit and requested to resume; no completed verdict is claimed. Combinatorial search stays locked.
+
 Updated: 2026-11-05. Research status: P0 REPRO_PARTIAL; TEMPO reproduction in progress. Combinatorial search locked until the full baseline registry is resolved.
 
 | Phase | Status | Completion evidence / next gate |

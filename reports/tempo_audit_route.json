@@ -8,9 +8,11 @@
   "transport": "native",
   "fresh_tool": "collaboration.spawn_agent",
   "task_name": "/root/tempo_integrity_audit",
-  "working_directory": "C:/Users/nigel/OneDrive/文件/ChatGPT/ACL 2027",
+  "working_directory": "C:/Users/nigel/OneDrive/\u6587\u4ef6/ChatGPT/ACL 2027",
   "review_independence": "same-family",
   "acceptance_status": "provisional",
-  "status": "dispatched_not_completed",
-  "identity_evidence": "Host accepted requested model and effort and returned canonical task name; no opaque session ID or independently observed runtime model identity returned."
+  "status": "resumed_after_usage_limit_no_verdict",
+  "identity_evidence": "Host accepted requested model and effort and returned canonical task name; no opaque session ID or independently observed runtime model identity returned.",
+  "interruption": "Reviewer turn returned account usage-limit error before a completed verdict; a bounded verifier draft persists.",
+  "resume_requested": true
 }
