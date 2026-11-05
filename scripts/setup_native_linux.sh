@@ -15,6 +15,8 @@ eval "$(conda shell.bash hook)"
 conda create -n timelyrag-native python=3.11.5 -y
 conda activate timelyrag-native
 python --version
+# Observed pip availability failure: provide the identical author version via conda.
+conda install -n timelyrag-native mkl-service=2.4.0 -y
 python -m pip install -r "$PROJECT_ROOT/vendor/TimelyRAG/requirements.txt"
 python -m pip freeze > "$PROJECT_ROOT/manifests/native_environment.txt"
 python -c 'import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available()); assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))'

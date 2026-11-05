@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/nigel/acl2027/vendor/TimelyRAG/pipeline.py", line 223, in <module>
+    run_pipeline()
+  File "/home/nigel/acl2027/vendor/TimelyRAG/pipeline.py", line 41, in run_pipeline
+    items = load_jsonl(dataset_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nigel/acl2027/vendor/TimelyRAG/io_utils.py", line 48, in load_jsonl
+    with open(path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './datasets/timelyrag_company_policies_dataset_v2.jsonl'
+[INFO] TR_EXPERIMENT_DIR set to: ./test/results
+[INFO] CUDA_VISIBLE_DEVICES set to: 0
+Loading BGE-M3 model...
+
+================================================================================
+Dataset: ./datasets/timelyrag_company_policies_dataset_v2.jsonl

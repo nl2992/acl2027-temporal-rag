@@ -1,6 +1,6 @@
 # Reproduction audit
 
-Status: R0_PARTIAL; native execution NOT_STARTED (Linux provisioning blocked).
+Status: R0_PARTIAL; R1_NATIVE_DEPENDENCIES_FAILED; REPAIRED_ENVIRONMENT_VERIFIED. Linux provisioning complete. Unchanged runner attempted under repaired dependencies; failed on dataset path before retrieval. See reports/setup_status.md for exact evidence and track distinction.
 
 ## Completed source and data checks (2026-11-04)
 
