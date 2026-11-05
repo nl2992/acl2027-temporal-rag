@@ -1,0 +1,17 @@
+{
+  "run_id": "baseline-university-bm25-20261105T014225Z",
+  "status": "running",
+  "utc_start": "2026-11-05T01:42:25.042674+00:00",
+  "project_url": "https://github.com/nl2992/acl2027-temporal-rag",
+  "project_sha": "b1cafe1c7659c458301aed8ecac7424b04630b97",
+  "project_dirty": " M reports/baselines/baseline-company-bm25-20261105T013508Z/inference.log\n M reports/baselines/baseline-company-bm25-20261105T013508Z/launch.json\n M reports/baselines/baseline-law-bm25-20261105T013718Z/inference.log\n M reports/baselines/baseline-terms-bm25-20261105T013718Z/inference.log\n M reports/smoke_review.md\n M scripts/baseline_isolated.py\n M scripts/isolated_worker.sh\n?? configs/published_timelyrag_table4.json\n?? reports/baseline_parity.json\n?? reports/baseline_parity.md\n?? reports/baselines/baseline-company-bm25-20261105T013508Z/evaluation.log\n?? reports/baselines/baseline-company-bm25-20261105T013508Z/manifest.json\n?? reports/baselines/baseline-company-bm25-20261105T013508Z/subgroups_raw.json\n?? reports/baselines/baseline-company-bm25-20261105T013508Z/summary.json\n?? reports/review_tools/\n?? scripts/report_baseline_parity.py\n?? scripts/restrict_worker_feedback.py\n",
+  "invocation": [
+    "scripts/run_baseline_wsl.py",
+    "--domain",
+    "university",
+    "--backbone",
+    "bm25"
+  ],
+  "worker_script_sha256": "c53bb8d55cced29073036d09ae1d9df05262460a413af92ba8aa167bea419da3",
+  "launcher_sha256": "af72f0e3befe6e58f989fa4ad7e00c325ff1e2ff37ef19351139569b1ac954e9"
+}

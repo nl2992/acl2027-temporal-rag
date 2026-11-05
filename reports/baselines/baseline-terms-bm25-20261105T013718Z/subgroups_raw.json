@@ -1,0 +1,191 @@
+[
+  {
+    "method": "baseline",
+    "raw_category": "Exemptions",
+    "queries": 543,
+    "author_ndcg": 0.1101668811118308,
+    "standard_ndcg": 0.0842322638497127
+  },
+  {
+    "method": "auto",
+    "raw_category": "Exemptions",
+    "queries": 543,
+    "author_ndcg": 0.1147971042987246,
+    "standard_ndcg": 0.08731923797379403
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Exemptions",
+    "queries": 543,
+    "author_ndcg": 0.13340950659173598,
+    "standard_ndcg": 0.10057716660885826
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Policies with multiple versions",
+    "queries": 518,
+    "author_ndcg": 0.1030281726609227,
+    "standard_ndcg": 0.07511450220110892
+  },
+  {
+    "method": "auto",
+    "raw_category": "Policies with multiple versions",
+    "queries": 518,
+    "author_ndcg": 0.10599849092300992,
+    "standard_ndcg": 0.07660585272006891
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Policies with multiple versions",
+    "queries": 518,
+    "author_ndcg": 0.12659055138235406,
+    "standard_ndcg": 0.09120014139384085
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 526,
+    "author_ndcg": 0.1576645736549833,
+    "standard_ndcg": 0.12104770909884681
+  },
+  {
+    "method": "auto",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 526,
+    "author_ndcg": 0.16010252969834454,
+    "standard_ndcg": 0.12065805525924067
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Emergency or temporary policies",
+    "queries": 526,
+    "author_ndcg": 0.1751064177336252,
+    "standard_ndcg": 0.13262763846316727
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 483,
+    "author_ndcg": 0.08166188530219261,
+    "standard_ndcg": 0.05569548846763503
+  },
+  {
+    "method": "auto",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 483,
+    "author_ndcg": 0.08466744029955078,
+    "standard_ndcg": 0.05800963588247193
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Historical, retrospective fact",
+    "queries": 483,
+    "author_ndcg": 0.10472132353631124,
+    "standard_ndcg": 0.0698724303270246
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 506,
+    "author_ndcg": 0.13122133445900766,
+    "standard_ndcg": 0.09635411162226463
+  },
+  {
+    "method": "auto",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 506,
+    "author_ndcg": 0.13198591167325782,
+    "standard_ndcg": 0.09599561906193971
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Name/code/content changes of policies",
+    "queries": 506,
+    "author_ndcg": 0.14460490118991365,
+    "standard_ndcg": 0.10558216776300877
+  },
+  {
+    "method": "baseline",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 421,
+    "author_ndcg": 0.0855728820850935,
+    "standard_ndcg": 0.06507765060471865
+  },
+  {
+    "method": "auto",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 421,
+    "author_ndcg": 0.09305949541061627,
+    "standard_ndcg": 0.06871681130562846
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "Queries requiring implicit time context",
+    "queries": 421,
+    "author_ndcg": 0.1081975887152718,
+    "standard_ndcg": 0.07913954705451252
+  },
+  {
+    "method": "baseline",
+    "raw_category": "서비스 이용 제한에 대한 정책의 여러 버전",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "auto",
+    "raw_category": "서비스 이용 제한에 대한 정책의 여러 버전",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "서비스 이용 제한에 대한 정책의 여러 버전",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "baseline",
+    "raw_category": "歴史的, 回顧的事實",
+    "queries": 1,
+    "author_ndcg": 0.6309297535714575,
+    "standard_ndcg": 0.38685280723454163
+  },
+  {
+    "method": "auto",
+    "raw_category": "歴史的, 回顧的事實",
+    "queries": 1,
+    "author_ndcg": 1.0,
+    "standard_ndcg": 0.6131471927654584
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "歴史的, 回顧的事實",
+    "queries": 1,
+    "author_ndcg": 1.0,
+    "standard_ndcg": 0.6131471927654584
+  },
+  {
+    "method": "baseline",
+    "raw_category": "content changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "auto",
+    "raw_category": "content changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  },
+  {
+    "method": "oracle_best",
+    "raw_category": "content changes of policies",
+    "queries": 1,
+    "author_ndcg": 0.0,
+    "standard_ndcg": 0.0
+  }
+]

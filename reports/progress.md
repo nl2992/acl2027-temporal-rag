@@ -9,7 +9,7 @@ Updated: 2026-11-04. Research status: SMOKE_PASSED; repaired author-scoring base
 | Repository and skills | Complete | Private GitHub repository published; ARIS, 12 HKUSTDial skills, Graphify installed; dependency check passed |
 | R0 source, paper, license audit | Partial | Upstream frozen; dataset counts/IDs and metric discrepancy checked; licenses and remaining papers unresolved |
 | R1 native environment | Native pins conflict; repaired setup verified | Linux/Python 3.11.5/PyTorch 2.3.1 CUDA calculation and pip check pass; disclosed Notebook repair |
-| R2 numeric reproduction | Running | Component and real BM25/BGE smoke passed; full Company/Law/Terms BM25 and Company BGE launched |
+| R2 numeric reproduction | Partial results; remaining runs active | Full Company/Law/Terms BM25 completed; all three baseline nDCG cells match tolerance, auto matches Law but misses Company/Terms; University BM25 and Company dense active |
 | C fixed candidates | Not run | Candidate recall, ceiling, immutable cache |
 | F factorial development | Not run | Frozen group splits and dev-only selection |
 | Final lockbox/external evaluation | Locked / not created | Freeze winner before one-time evaluation |

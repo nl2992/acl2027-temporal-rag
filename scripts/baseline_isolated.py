@@ -147,6 +147,11 @@ def evaluate(args):
     assert worker_meta['status']=='complete'
     manifest=json.loads((private/'manifest.json').read_text())
     assert worker_meta['input_sha256']==manifest['input_sha256']
+    assert sha(output/'predictions.jsonl')==worker_meta['predictions_sha256']
+    assert sha(private/'labels.json')==manifest['gold_sha256']
+    assert worker_meta['queries']==manifest['queries'] and worker_meta['documents']==manifest['documents']
+    assert args.backbone==manifest['backbone']==worker_meta['backbone']
+    manifest['evaluator_script_sha256']=sha(Path(__file__))
     labels=json.loads((private/'labels.json').read_text())
     rows=[json.loads(line) for line in (output/'predictions.jsonl').read_text().splitlines()]
     assert len(rows)==len(labels)==len({r['query_id'] for r in rows})

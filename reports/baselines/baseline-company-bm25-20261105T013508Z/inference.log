@@ -9,3 +9,47 @@ baseline-company-bm25-20261105T013508Z: 701/3000 queries
 baseline-company-bm25-20261105T013508Z: 801/3000 queries
 baseline-company-bm25-20261105T013508Z: 901/3000 queries
 baseline-company-bm25-20261105T013508Z: 1001/3000 queries
+baseline-company-bm25-20261105T013508Z: 1101/3000 queries
+baseline-company-bm25-20261105T013508Z: 1201/3000 queries
+baseline-company-bm25-20261105T013508Z: 1301/3000 queries
+baseline-company-bm25-20261105T013508Z: 1401/3000 queries
+baseline-company-bm25-20261105T013508Z: 1501/3000 queries
+baseline-company-bm25-20261105T013508Z: 1601/3000 queries
+baseline-company-bm25-20261105T013508Z: 1701/3000 queries
+baseline-company-bm25-20261105T013508Z: 1801/3000 queries
+baseline-company-bm25-20261105T013508Z: 1901/3000 queries
+baseline-company-bm25-20261105T013508Z: 2001/3000 queries
+baseline-company-bm25-20261105T013508Z: 2101/3000 queries
+baseline-company-bm25-20261105T013508Z: 2201/3000 queries
+baseline-company-bm25-20261105T013508Z: 2301/3000 queries
+baseline-company-bm25-20261105T013508Z: 2401/3000 queries
+baseline-company-bm25-20261105T013508Z: 2501/3000 queries
+baseline-company-bm25-20261105T013508Z: 2601/3000 queries
+baseline-company-bm25-20261105T013508Z: 2701/3000 queries
+baseline-company-bm25-20261105T013508Z: 2801/3000 queries
+baseline-company-bm25-20261105T013508Z: 2901/3000 queries
+{
+  "status": "complete",
+  "utc_start": "2026-11-04T20:35:16.834077-05:00",
+  "input_sha256": "4202d1478e6752217804380b2360675461ee7ab1e3836cb9a9c2baf09097ee2d",
+  "label_access_probes": "passed",
+  "python": "3.11.5 | packaged by conda-forge | (main, Aug 27 2023, 03:34:09) [GCC 12.3.0]",
+  "uid": 1001,
+  "torch": "2.3.1+cu121",
+  "cuda": "12.1",
+  "numpy": "1.26.4",
+  "backbone": "bm25",
+  "scoring_source_sha256": {
+    "retrieval.py": "2bcee767056192bdb33b78dae7c29e748b70b9fb096e2e782f5d48aca5ae3f19",
+    "alpha.py": "2cea013505a21f7c8cd8ef474fdbaededb7cb6a6acacba2c5eca8b9a96a22358",
+    "time_scores.py": "e2b93ac4d17bb4d0c986402e86df2e9605482a370e0c6f5dcc44e06f2c8999b8",
+    "time_utils.py": "25207203792b034886d0c374e2c1a21bd468e135f57afdcadc389c080bcfab58",
+    "metrics.py": "71b15ee20a99c7b12a2e3e928c86143fc4a2696584ab8ee49799d5e93f853110"
+  },
+  "queries": 3000,
+  "documents": 30000,
+  "elapsed_seconds": 385.4069163799286,
+  "utc_finish": "2026-11-04T20:41:42.241163-05:00",
+  "peak_torch_vram_bytes": 0,
+  "predictions_sha256": "5ffab3bbfc6b3b2487f4e1f6ce0059a57d0359303b68a9b77cc29ed27c681a0d"
+}

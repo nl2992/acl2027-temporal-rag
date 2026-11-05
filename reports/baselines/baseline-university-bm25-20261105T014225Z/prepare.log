@@ -1,0 +1,19 @@
+{
+  "run_id": "baseline-university-bm25-20261105T014225Z",
+  "domain": "university",
+  "smoke": false,
+  "purpose": "author-scoring-replay-with-isolated-evaluation",
+  "source_sha256": "68e8d279c43e5c2348270693bc17c020b8f95be8e41f81dbd473614dc5f77751",
+  "input_sha256": "ff7271256442f5e6d6267abf65603c0f1f97c75aa682803daa35d03390117ff4",
+  "gold_sha256": "ee53f3ffe9a420fa7134491e638adf2fe131e43ee770e865aff6b1a3e412e846",
+  "upstream_sha": "5213a0c1743f23fd52a258005c3887aaf7e8cd0f",
+  "repaired_sha": "61059193d176190df4a530805ca5cb328e30cbb8",
+  "script_sha256": "c53bb8d55cced29073036d09ae1d9df05262460a413af92ba8aa167bea419da3",
+  "queries": 3000,
+  "documents": 30000,
+  "backbone": "bm25",
+  "metric_k": 10,
+  "candidate_pool": 100,
+  "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "gold_policy": "Gold-free input projection; separate unprivileged mount-isolated worker. Sentinel-positive evaluator calls capture author rankings; true labels opened only after worker exits. Oracle selected offline by author strict-first-max nDCG."
+}

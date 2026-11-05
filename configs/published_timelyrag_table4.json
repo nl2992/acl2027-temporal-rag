@@ -1,0 +1,25 @@
+{
+  "source": "https://aclanthology.org/2026.findings-emnlp.398.pdf",
+  "table": 4,
+  "k": 10,
+  "status": "published_rounded_targets_not_reproduced_scores",
+  "ndcg_absolute_tolerance": 0.005,
+  "domains": {
+    "company": {
+      "bm25": {"baseline": {"ndcg": 0.226, "map": 0.182, "recall": 0.218, "hit": 0.344}, "auto": {"ndcg": 0.227, "map": 0.183, "recall": 0.219, "hit": 0.345}},
+      "dense": {"baseline": {"ndcg": 0.197, "map": 0.163, "recall": 0.176, "hit": 0.292}, "auto": {"ndcg": 0.200, "map": 0.166, "recall": 0.177, "hit": 0.294}}
+    },
+    "law": {
+      "bm25": {"baseline": {"ndcg": 0.174, "map": 0.136, "recall": 0.234, "hit": 0.290}, "auto": {"ndcg": 0.189, "map": 0.152, "recall": 0.243, "hit": 0.300}},
+      "dense": {"baseline": {"ndcg": 0.172, "map": 0.136, "recall": 0.229, "hit": 0.280}, "auto": {"ndcg": 0.179, "map": 0.145, "recall": 0.231, "hit": 0.283}}
+    },
+    "terms": {
+      "bm25": {"baseline": {"ndcg": 0.113, "map": 0.094, "recall": 0.111, "hit": 0.170}, "auto": {"ndcg": 0.134, "map": 0.115, "recall": 0.123, "hit": 0.190}},
+      "dense": {"baseline": {"ndcg": 0.059, "map": 0.049, "recall": 0.056, "hit": 0.090}, "auto": {"ndcg": 0.071, "map": 0.060, "recall": 0.064, "hit": 0.105}}
+    },
+    "university": {
+      "bm25": {"baseline": {"ndcg": 0.197, "map": 0.157, "recall": 0.236, "hit": 0.316}, "auto": {"ndcg": 0.246, "map": 0.213, "recall": 0.250, "hit": 0.340}},
+      "dense": {"baseline": {"ndcg": 0.173, "map": 0.142, "recall": 0.196, "hit": 0.265}, "auto": {"ndcg": 0.213, "map": 0.187, "recall": 0.213, "hit": 0.290}}
+    }
+  }
+}

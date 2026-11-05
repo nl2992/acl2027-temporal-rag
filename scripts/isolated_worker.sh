@@ -8,6 +8,7 @@ mount -t tmpfs tmpfs /home/nigel/acl2027/vendor/TimelyRAG
 mount -t tmpfs tmpfs /home/nigel/acl2027/vendor/TimelyRAG-repaired/datasets
 mount --bind /dev/null /home/nigel/acl2027/vendor/TimelyRAG-repaired/.git
 mount --bind /dev/null /home/nigel/acl2027/vendor/TimelyRAG-repaired/datasets.zip
+mount -t tmpfs tmpfs /home/nigel/acl2027/results
 if [[ -d /home/nigel/acl2027/data ]]; then
   mount -t tmpfs tmpfs /home/nigel/acl2027/data
 fi

@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-05T01:42:17.338866+00:00",
+  "purpose": "Close observed read access to completed-smoke feedback; scoring worker does not read this directory. New launches mask it from start.",
+  "workers": [
+    {
+      "pid": "205",
+      "command": [
+        "nsenter",
+        "--target",
+        "205",
+        "--mount",
+        "--",
+        "mount",
+        "-t",
+        "tmpfs",
+        "tmpfs",
+        "/home/nigel/acl2027/results"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "pid": "277",
+      "command": [
+        "nsenter",
+        "--target",
+        "277",
+        "--mount",
+        "--",
+        "mount",
+        "-t",
+        "tmpfs",
+        "tmpfs",
+        "/home/nigel/acl2027/results"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "pid": "284",
+      "command": [
+        "nsenter",
+        "--target",
+        "284",
+        "--mount",
+        "--",
+        "mount",
+        "-t",
+        "tmpfs",
+        "tmpfs",
+        "/home/nigel/acl2027/results"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ]
+}
