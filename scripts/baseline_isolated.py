@@ -79,7 +79,7 @@ def worker(args):
     snapshot=None
     if args.backbone=='dense':
         from huggingface_hub import snapshot_download
-        snapshot=snapshot_download('BAAI/bge-m3',revision=REVISION,allow_patterns=['*.json','*.model','*.pt','pytorch_model.bin'],ignore_patterns=['onnx/*'],max_workers=2)
+        snapshot=snapshot_download('BAAI/bge-m3',revision=REVISION,cache_dir='/home/acl-infer/models',local_files_only=True)
         meta.update(model_revision=REVISION,model_file_sha256={str(p.relative_to(snapshot)):sha(p) for p in Path(snapshot).rglob('*') if p.is_file()},gpu=torch.cuda.get_device_name(),gpu_total_bytes=torch.cuda.get_device_properties(0).total_memory)
         original=retrieval.BGEM3FlagModel
         retrieval.BGEM3FlagModel=lambda name,*a,**kw:original(snapshot,*a,**kw)

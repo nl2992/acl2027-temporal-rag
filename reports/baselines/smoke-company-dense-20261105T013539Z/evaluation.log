@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "ndcg": 0.8868729617566373,
+    "map": 0.7767857142857142,
+    "standard_ndcg": 0.8868729617566372,
+    "standard_map": 0.7767857142857142
+  },
+  "auto": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "ndcg": 0.7118975882840008,
+    "map": 0.5436507936507937,
+    "standard_ndcg": 0.7118975882840008,
+    "standard_map": 0.5436507936507937
+  },
+  "oracle_best": {
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "ndcg": 0.9192732637447532,
+    "map": 0.8333333333333333,
+    "standard_ndcg": 0.9192732637447532,
+    "standard_map": 0.8333333333333333
+  },
+  "candidate_recall100": 1.0,
+  "oracle_recall10_ceiling": 1.0
+}

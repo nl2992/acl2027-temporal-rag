@@ -1,0 +1,17 @@
+{
+  "run_id": "baseline-terms-bm25-20261105T013718Z",
+  "status": "running",
+  "utc_start": "2026-11-05T01:37:18.685096+00:00",
+  "project_url": "https://github.com/nl2992/acl2027-temporal-rag",
+  "project_sha": "4cf61d3b6bc28eeeafe8f2901a37b0f0270c7b86",
+  "project_dirty": " M reports/smoke_review.md\n M scripts/baseline_isolated.py\n?? manifests/bge_checkpoint.json\n?? reports/baselines/\n?? scripts/stage_bge.py\n",
+  "invocation": [
+    "scripts/run_baseline_wsl.py",
+    "--domain",
+    "terms",
+    "--backbone",
+    "bm25"
+  ],
+  "worker_script_sha256": "3893dbaa1074083c5233820b907fba677c2d79f8670061a4fb2e97e380533a4b",
+  "launcher_sha256": "7d13a27547b54b73664f25f4beed9b54266f7af3219e1dcf8a013b45cb4212a7"
+}
