@@ -14,7 +14,7 @@ for path in (root/'reports/tempo').glob('tempo-*-bm25-*/manifest.json'):
     record=json.loads(path.read_text(encoding='utf-8-sig'))
     launch=json.loads((path.parent/'launch.json').read_text(encoding='utf-8-sig'))
     if record.get('status')=='complete' and launch.get('status')=='complete' and not record.get('smoke'):
-        assert record['benchmark']=='TEMPO' and record['model']=='bm25'
+        assert record['benchmark']=='TEMPO' and record.get('model',record['worker']['model'])=='bm25'
         assert record['run_id']==launch['run_id']==path.parent.name
         assert record['queries']==record['original_queries']>0
         assert record['documents']==record['original_documents']>0

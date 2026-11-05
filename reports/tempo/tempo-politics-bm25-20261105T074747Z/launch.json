@@ -1,0 +1,29 @@
+{
+  "run_id": "tempo-politics-bm25-20261105T074747Z",
+  "status": "complete",
+  "utc_start": "2026-11-05T07:47:47.563035+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
+    "--domain",
+    "politics"
+  ],
+  "project_sha": "8a7d660d59e124055beac24db1572fe8835fc5f1",
+  "project_dirty": "?? reports/tempo/tempo-genealogy-bm25-20261105T074201Z/\n",
+  "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+  "resources_before_stage": {
+    "prepare": {
+      "utc": "2026-11-05T07:47:47.728724+00:00",
+      "host_disk_free_bytes": 47995408384
+    },
+    "inference": {
+      "utc": "2026-11-05T07:48:06.303806+00:00",
+      "host_disk_free_bytes": 47693324288
+    },
+    "evaluation": {
+      "utc": "2026-11-05T07:52:21.975071+00:00",
+      "host_disk_free_bytes": 47058370560
+    }
+  },
+  "utc_finish": "2026-11-05T07:52:34.878812+00:00"
+}

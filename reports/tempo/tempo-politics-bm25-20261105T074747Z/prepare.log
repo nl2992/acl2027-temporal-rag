@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-politics-bm25-20261105T074747Z",
+  "benchmark": "TEMPO",
+  "domain": "politics",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "e7f503e393e6c87909fee27fa87a1737d2ee8d5c5f8eefbc8aacd749310f4b06",
+    "documents": "5662c668a05d88f00f09e4aec104989464f0cea4818c4cfcfafb6ccb9408bcc2"
+  },
+  "input_sha256": "108e2395940296a94a38fed07085f824e40e1245e9ed13a8890cb8f21baa721d",
+  "gold_sha256": "f0daf5292372f289bc33f070b5d8432c1c565034bbaa0ed10f8deccd30d4fb23",
+  "queries": 150,
+  "documents": 183394,
+  "original_queries": 150,
+  "original_documents": 183394,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bm25",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}

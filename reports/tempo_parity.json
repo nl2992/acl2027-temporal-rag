@@ -1,9 +1,9 @@
 {
   "status": "partial",
   "metric": "ordinary NDCG@10, not Oracle NDCG",
-  "completed_domains": 10,
+  "completed_domains": 11,
   "expected_domains": 13,
-  "macro_of_available_domains": 0.077135,
+  "macro_of_available_domains": 0.09984454545454545,
   "full_macro_ndcg10": null,
   "published_macro_percentage": 10.8,
   "runs": [
@@ -99,6 +99,20 @@
       "ndcg10": 0.02755,
       "ndcg10_percentage": 2.7550000000000003,
       "published_percentage": 2.8,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-politics-bm25-20261105T074747Z",
+      "domain": "politics",
+      "queries": 150,
+      "documents": 183394,
+      "ndcg10": 0.32694,
+      "ndcg10_percentage": 32.694,
+      "published_percentage": 32.7,
       "matches_published_rounding": true,
       "metric_roles": {
         "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
