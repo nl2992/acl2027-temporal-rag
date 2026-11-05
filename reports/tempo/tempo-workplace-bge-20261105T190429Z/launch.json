@@ -1,0 +1,32 @@
+{
+  "run_id": "tempo-workplace-bge-20261105T190429Z",
+  "status": "running",
+  "utc_start": "2026-11-05T19:04:29.160124+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
+    "--domain",
+    "workplace",
+    "--model",
+    "bge"
+  ],
+  "project_sha": "fbc0d367319cb4b3b9e33cc054c7fce0d6c2678f",
+  "project_dirty": " M reports/tempo/tempo-law-bge-20261105T183515Z/inference.log\n M reports/tempo/tempo-law-bge-20261105T183515Z/launch.json\n?? reports/tempo/tempo-law-bge-20261105T183515Z/evaluation.log\n?? reports/tempo/tempo-law-bge-20261105T183515Z/evaluator_runtime.json\n?? reports/tempo/tempo-law-bge-20261105T183515Z/manifest.json\n?? reports/tempo/tempo-law-bge-20261105T183515Z/summary.json\n",
+  "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+  "evaluator_wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "deployed_script_sha256": {
+    "tempo_isolated.py": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "isolated_tempo_worker.sh": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+    "tempo_evaluate_with_provenance.py": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "resources_before_stage": {
+    "prepare": {
+      "utc": "2026-11-05T19:04:29.815879+00:00",
+      "host_disk_free_bytes": 33666936832
+    },
+    "inference": {
+      "utc": "2026-11-05T19:04:33.673657+00:00",
+      "host_disk_free_bytes": 33666932736
+    }
+  }
+}
