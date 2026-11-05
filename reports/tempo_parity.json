@@ -1,12 +1,26 @@
 {
   "status": "partial",
   "metric": "ordinary NDCG@10, not Oracle NDCG",
-  "completed_domains": 8,
+  "completed_domains": 9,
   "expected_domains": 13,
-  "macro_of_available_domains": 0.07213125000000001,
+  "macro_of_available_domains": 0.07095777777777777,
   "full_macro_ndcg10": null,
   "published_macro_percentage": 10.8,
   "runs": [
+    {
+      "run_id": "tempo-bitcoin-bm25-20261105T073857Z",
+      "domain": "bitcoin",
+      "queries": 100,
+      "documents": 153291,
+      "ndcg10": 0.06157,
+      "ndcg10_percentage": 6.157,
+      "published_percentage": 6.2,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
     {
       "run_id": "tempo-cardano-bm25-20261105T023720Z",
       "domain": "cardano",

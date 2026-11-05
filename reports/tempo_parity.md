@@ -4,6 +4,7 @@ Repaired optional imports and isolated scoring/offline evaluation preserve the r
 
 | Domain | Queries | Documents | Published NDCG@10 (%) | Measured (%) | Same rounding |
 |---|---:|---:|---:|---:|---|
+| bitcoin | 100 | 153291 | 6.2 | 6.157 | True |
 | cardano | 51 | 87201 | 13.4 | 13.377 | True |
 | economics | 83 | 93756 | 5.8 | 5.805 | True |
 | iota | 10 | 10372 | 9.7 | 9.736 | True |
@@ -13,4 +14,4 @@ Repaired optional imports and isolated scoring/offline evaluation preserve the r
 | travel | 100 | 177677 | 4.6 | 4.610 | True |
 | workplace | 36 | 64659 | 6.2 | 6.229 | True |
 
-8/13 domains complete. A whole-benchmark macro result is reported only after all thirteen domains complete. Ordinary metrics are saved with each run. The released oracle has an independently observed tie/pool defect and is diagnostic only. Temporal Coverage/Precision require the separate author judge stage and have not been measured.
+9/13 domains complete. A whole-benchmark macro result is reported only after all thirteen domains complete. Ordinary metrics are saved with each run. The released oracle has an independently observed tie/pool defect and is diagnostic only. Temporal Coverage/Precision require the separate author judge stage and have not been measured.
