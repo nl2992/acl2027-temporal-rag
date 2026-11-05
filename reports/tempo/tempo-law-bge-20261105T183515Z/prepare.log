@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-law-bge-20261105T183515Z",
+  "benchmark": "TEMPO",
+  "domain": "law",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "d1d026a841c40feb8b9cb761b8af240264b9379f5f11e11385dfc03d174c1a70",
+    "documents": "c6a0b3dbf0d777f8ede11998c2947cca37cd86f436836f29ca05a8a723647d06"
+  },
+  "input_sha256": "057933d384938e6c1acd289ef080e1af43b56e2c97e1a3a107ada2f4e426187e",
+  "gold_sha256": "b2732dac57e23642f82cb0a32aa7a42b81e526d50321807102a68ec0c4d6e8f9",
+  "queries": 35,
+  "documents": 43288,
+  "original_queries": 35,
+  "original_documents": 43288,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bge",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}
