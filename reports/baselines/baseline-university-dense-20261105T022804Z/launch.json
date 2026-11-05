@@ -1,6 +1,6 @@
 {
   "run_id": "baseline-university-dense-20261105T022804Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-05T02:28:04.883306+00:00",
   "project_url": "https://github.com/nl2992/acl2027-temporal-rag",
   "project_sha": "05d48e3c48d639d99e7e44590b19d27bb04be739",
@@ -13,5 +13,6 @@
     "dense"
   ],
   "worker_script_sha256": "c53bb8d55cced29073036d09ae1d9df05262460a413af92ba8aa167bea419da3",
-  "launcher_sha256": "af72f0e3befe6e58f989fa4ad7e00c325ff1e2ff37ef19351139569b1ac954e9"
+  "launcher_sha256": "af72f0e3befe6e58f989fa4ad7e00c325ff1e2ff37ef19351139569b1ac954e9",
+  "utc_finish": "2026-11-05T02:44:50.798546+00:00"
 }

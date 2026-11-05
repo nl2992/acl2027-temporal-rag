@@ -14,7 +14,11 @@ VENDOR=ROOT/'vendor/Tempo-repaired'
 sys.dont_write_bytecode=True
 sys.path.insert(0,str(VENDOR))
 def sha(p):
-    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+    h=hashlib.sha256()
+    with Path(p).open('rb') as f:
+        for block in iter(lambda:f.read(8*1024*1024),b''):
+            h.update(block)
+    return h.hexdigest()
 def worker(a):
     assert os.getuid()!=0 and os.getcwd()=='/'
     for protected in [ROOT/'eval-private'/a.run_id/'labels.json',ROOT/'tempo-private/hf_cache',ROOT/'results']:
@@ -34,7 +38,45 @@ def worker(a):
     out=Path('/home/acl-infer/runs')/a.run_id
     out.mkdir(exist_ok=False)
     start=time.perf_counter()
-    scores=retrievers.retrieval_bm25(queries=[q['query'] for q in data['queries']],query_ids=[q['id'] for q in data['queries']],documents=[d['content'] for d in data['documents']],doc_ids=[d['id'] for d in data['documents']],excluded_ids={q['id']:q['excluded_ids'] for q in data['queries']},long_context=False)
+    instructions={'query':'Represent this query for retrieving relevant documents: ','document':''}
+    model_manifest=None
+    cache=Path('/home/acl-infer/model-cache')
+    profile={}
+    if a.model!='bm25':
+        import torch
+        staged=json.loads(Path('/home/acl-infer/models/tempo_models.json').read_text())
+        model_manifest=staged[a.model]
+        for name,item in model_manifest['files'].items():
+            assert sha(Path(model_manifest['snapshot'])/name)==item['sha256'],name
+        mapped={row['repo']:row['snapshot'] for row in staged.values()}
+        def local(name):
+            return mapped.get(str(name),name)
+        original_st=retrievers.SentenceTransformer
+        def sentence_transformer(name,*args,**kw):
+            model=original_st(local(name),*args,**kw)
+            profile.update(parameter_dtype=str(next(model.parameters()).dtype),max_seq_length=model.max_seq_length)
+            return model
+        retrievers.SentenceTransformer=sentence_transformer
+        original_tokenizer=retrievers.AutoTokenizer.from_pretrained
+        original_model=retrievers.AutoModel.from_pretrained
+        def tokenizer(name,*args,**kw):
+            tok=original_tokenizer(local(name),*args,**kw)
+            profile['tokenizer_max_length']=tok.model_max_length
+            return tok
+        retrievers.AutoTokenizer.from_pretrained=staticmethod(tokenizer)
+        def auto_model(name,*args,**kw):
+            model=original_model(local(name),*args,**kw)
+            profile['parameter_dtype']=str(next(model.parameters()).dtype)
+            return model
+        retrievers.AutoModel.from_pretrained=staticmethod(auto_model)
+        ordered_docs_sha256=hashlib.sha256(json.dumps(data['documents'],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+        descriptor={'ordered_documents_sha256':ordered_docs_sha256,'domain':data['domain'],'model_revision':model_manifest['revision'],'tokenizer_revision':model_manifest['revision'],'retrieval_source_sha256':sha(VENDOR/'retrievers.py'),'input_serialization':instructions,'embedding_dtype':'native FP32; actual parameter dtype recorded by hook','max_length':{'bge':512,'sbert':384,'contriever':512}[a.model],'batch_size':{'bge':128,'sbert':128,'contriever':1}[a.model],'encode_parameters':'unchanged author defaults','normalization':'unchanged author normalization','cutoff_policy':'TEMPO original exclusion metadata, no added known-at filter','versions':{p:importlib.metadata.version(p) for p in ['torch','transformers','sentence-transformers','numpy']}}
+        key=hashlib.sha256(json.dumps(descriptor,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        cache=cache/key
+        cache.mkdir(parents=True,exist_ok=True)
+        (cache/'descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\n')
+        torch.cuda.reset_peak_memory_stats()
+    scores=retrievers.RETRIEVAL_FUNCS[a.model](queries=[q['query'] for q in data['queries']],query_ids=[q['id'] for q in data['queries']],documents=[d['content'] for d in data['documents']],doc_ids=[d['id'] for d in data['documents']],excluded_ids={q['id']:q['excluded_ids'] for q in data['queries']},long_context=False,task=data['domain'],model_id=a.model,instructions=instructions,cache_dir=str(cache))
     elapsed=time.perf_counter()-start
     assert set(scores)=={str(q['id']) for q in data['queries']}
     valid={d['id'] for d in data['documents']}
@@ -43,7 +85,13 @@ def worker(a):
         assert len(result)==min(1000,len(valid-set(q['excluded_ids'])))
         assert set(result).issubset(valid-set(q['excluded_ids']))
     (out/'scores.json').write_text(json.dumps(scores))
-    meta={'status':'complete','benchmark':'TEMPO','model':'bm25','queries':len(data['queries']),'documents':len(data['documents']),'input_sha256':sha(path),'scores_sha256':sha(out/'scores.json'),'elapsed_retrieval_seconds':elapsed,'utc_finish':datetime.datetime.now(datetime.timezone.utc).isoformat(),'uid':os.getuid(),'source_sha256':sha(VENDOR/'retrievers.py'),'versions':{p:importlib.metadata.version(p) for p in ['pyserini','gensim','pytrec-eval','torch','transformers','numpy','scipy']},'algorithm':'Unchanged released retrieval_bm25: Lucene analyzer + gensim LuceneBM25Model k1=0.9,b=0.4, top1000, author exclusions'}
+    meta={'status':'complete','benchmark':'TEMPO','model':a.model,'queries':len(data['queries']),'documents':len(data['documents']),'input_sha256':sha(path),'scores_sha256':sha(out/'scores.json'),'elapsed_retrieval_seconds':elapsed,'utc_finish':datetime.datetime.now(datetime.timezone.utc).isoformat(),'uid':os.getuid(),'source_sha256':sha(VENDOR/'retrievers.py'),'worker_script_sha256':sha(Path(__file__)),'python':sys.version,'versions':{p:importlib.metadata.version(p) for p in ['pyserini','gensim','pytrec-eval','torch','transformers','numpy','scipy']},'algorithm':'Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions','instructions':instructions,'model_snapshot':model_manifest,'observed_profile':profile}
+    if a.model!='bm25':
+        assert profile['parameter_dtype']=='torch.float32',profile
+        assert profile.get('max_seq_length',profile.get('tokenizer_max_length'))==descriptor['max_length'],profile
+        meta['cache_descriptor']=descriptor
+        meta['peak_torch_allocated_bytes']=torch.cuda.max_memory_allocated()
+        meta['gpu']=torch.cuda.get_device_name()
     (out/'worker.json').write_text(json.dumps(meta,indent=2)+'\n')
     print(json.dumps(meta,indent=2),flush=True)
 def evaluate(a):
@@ -53,6 +101,7 @@ def evaluate(a):
     m=json.loads((private/'manifest.json').read_text())
     w=json.loads((out/'worker.json').read_text())
     assert w['status']=='complete' and w['input_sha256']==m['input_sha256']
+    assert w['model']==m.get('model','bm25')
     assert sha(out/'scores.json')==w['scores_sha256'] and sha(private/'labels.json')==m['gold_sha256']
     labels=json.loads((private/'labels.json').read_text())
     scores=json.loads((out/'scores.json').read_text())
@@ -69,5 +118,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser()
     p.add_argument('mode',choices=['worker','evaluate'])
     p.add_argument('--run-id',required=True)
+    p.add_argument('--model',choices=['bm25','bge','sbert','contriever'],default='bm25')
     a=p.parse_args()
     globals()[a.mode](a)

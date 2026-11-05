@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-bitcoin-bm25-20261105T024849Z",
+  "benchmark": "TEMPO",
+  "domain": "bitcoin",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "59d6ba938caf477dc3ec483e1f56e5ed00bce5b47230f1a2f45c233fac1ea295",
+    "documents": "248106172d2cb391bf29e776163daa2e224d73afe57ab38ccff8d5ab27558fe1"
+  },
+  "input_sha256": "e56af49164f3afb8e6a898703c18cc9b21a2eac4dad82060f2c04bdc656bc9d3",
+  "gold_sha256": "813e09448dc64759144d705c3c3ff76d49bd6cb387a2f91166c74856fb1f5dd9",
+  "queries": 100,
+  "documents": 153291,
+  "original_queries": 100,
+  "original_documents": 153291,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bm25",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}

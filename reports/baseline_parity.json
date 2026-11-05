@@ -1,6 +1,6 @@
 {
   "targets": "https://aclanthology.org/2026.findings-emnlp.398.pdf",
-  "status": "partial",
+  "status": "REPRO_PARTIAL",
   "cells": [
     {
       "run": "baseline-company-bm25-20261105T013508Z",
@@ -379,6 +379,60 @@
       },
       "ndcg_gate": "mismatch",
       "candidate_recall100": 0.41589999999999994
+    },
+    {
+      "run": "baseline-university-dense-20261105T022804Z",
+      "domain": "university",
+      "backbone": "dense",
+      "method": "baseline",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.173,
+        "map": 0.142,
+        "recall": 0.196,
+        "hit": 0.265
+      },
+      "measured": {
+        "ndcg": 0.17316981727453215,
+        "map": 0.1423455687830687,
+        "recall": 0.19613888888888886,
+        "hit": 0.26466666666666666
+      },
+      "delta": {
+        "ndcg": 0.00016981727453216355,
+        "map": 0.0003455687830687115,
+        "recall": 0.0001388888888888551,
+        "hit": -0.00033333333333335213
+      },
+      "ndcg_gate": "within_tolerance",
+      "candidate_recall100": 0.3421388888888888
+    },
+    {
+      "run": "baseline-university-dense-20261105T022804Z",
+      "domain": "university",
+      "backbone": "dense",
+      "method": "auto",
+      "queries": 3000,
+      "published": {
+        "ndcg": 0.213,
+        "map": 0.187,
+        "recall": 0.213,
+        "hit": 0.29
+      },
+      "measured": {
+        "ndcg": 0.1724624594114451,
+        "map": 0.1413224206349206,
+        "recall": 0.19602777777777775,
+        "hit": 0.2653333333333333
+      },
+      "delta": {
+        "ndcg": -0.04053754058855488,
+        "map": -0.04567757936507941,
+        "recall": -0.01697222222222225,
+        "hit": -0.02466666666666667
+      },
+      "ndcg_gate": "mismatch",
+      "candidate_recall100": 0.3421388888888888
     }
   ]
 }

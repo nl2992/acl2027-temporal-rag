@@ -1,0 +1,22 @@
+{
+  "run_id": "tempo-workplace-bm25-20261105T023345Z",
+  "benchmark": "TEMPO",
+  "domain": "workplace",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "e5f17c03c249af6319993d9bc820fcd97ac96b3c9e32fd48ad2c3b56a05bdba2",
+    "documents": "7fd6e93fb2b83e25eb9a00709a2bb72886d0281baa438508954ac0b1393d994a"
+  },
+  "input_sha256": "bc9ad9b59f1c35f9bd5ada8df18abea0ae186b0bed3089dc3b75ef667f4bae48",
+  "gold_sha256": "7e8cbae999a092a2ee81935cba85618c02d9a345ebf49512527a83e62168bd26",
+  "queries": 36,
+  "documents": 64659,
+  "original_queries": 36,
+  "original_documents": 64659,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}

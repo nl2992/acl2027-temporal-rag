@@ -18,5 +18,7 @@ Rounded published targets are reference values. All measured runs below use repa
 | terms | dense | auto | 3000 | 0.071 | 0.061173 | -0.009827 | mismatch |
 | university | bm25 | baseline | 3000 | 0.197 | 0.198349 | +0.001349 | within_tolerance |
 | university | bm25 | auto | 3000 | 0.246 | 0.205424 | -0.040576 | mismatch |
+| university | dense | baseline | 3000 | 0.173 | 0.173170 | +0.000170 | within_tolerance |
+| university | dense | auto | 3000 | 0.213 | 0.172462 | -0.040538 | mismatch |
 
 Only completed full-domain runs are included. Missing domains remain pending. Any mismatch requires discrepancy analysis rather than baseline tuning. Full four-metric differences: baseline_parity.json. Raw-category subgroup summaries are saved beside each run summary.

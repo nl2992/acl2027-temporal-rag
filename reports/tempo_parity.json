@@ -1,0 +1,123 @@
+{
+  "status": "partial",
+  "metric": "ordinary NDCG@10, not Oracle NDCG",
+  "completed_domains": 8,
+  "expected_domains": 13,
+  "macro_of_available_domains": 0.07213125000000001,
+  "full_macro_ndcg10": null,
+  "published_macro_percentage": 10.8,
+  "runs": [
+    {
+      "run_id": "tempo-cardano-bm25-20261105T023720Z",
+      "domain": "cardano",
+      "queries": 51,
+      "documents": 87201,
+      "ndcg10": 0.13377,
+      "ndcg10_percentage": 13.377,
+      "published_percentage": 13.4,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-economics-bm25-20261105T023515Z",
+      "domain": "economics",
+      "queries": 83,
+      "documents": 93756,
+      "ndcg10": 0.05805,
+      "ndcg10_percentage": 5.805,
+      "published_percentage": 5.8,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-iota-bm25-20261105T022745Z",
+      "domain": "iota",
+      "queries": 10,
+      "documents": 10372,
+      "ndcg10": 0.09736,
+      "ndcg10_percentage": 9.736,
+      "published_percentage": 9.7,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-law-bm25-20261105T023225Z",
+      "domain": "law",
+      "queries": 35,
+      "documents": 43288,
+      "ndcg10": 0.12692,
+      "ndcg10_percentage": 12.692,
+      "published_percentage": 12.7,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-monero-bm25-20261105T024051Z",
+      "domain": "monero",
+      "queries": 65,
+      "documents": 85093,
+      "ndcg10": 0.02755,
+      "ndcg10_percentage": 2.7550000000000003,
+      "published_percentage": 2.8,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-quant-bm25-20261105T023047Z",
+      "domain": "quant",
+      "queries": 34,
+      "documents": 28785,
+      "ndcg10": 0.02501,
+      "ndcg10_percentage": 2.501,
+      "published_percentage": 2.5,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-travel-bm25-20261105T024423Z",
+      "domain": "travel",
+      "queries": 100,
+      "documents": 177677,
+      "ndcg10": 0.0461,
+      "ndcg10_percentage": 4.61,
+      "published_percentage": 4.6,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    },
+    {
+      "run_id": "tempo-workplace-bm25-20261105T023345Z",
+      "domain": "workplace",
+      "queries": 36,
+      "documents": 64659,
+      "ndcg10": 0.06229,
+      "ndcg10_percentage": 6.229,
+      "published_percentage": 6.2,
+      "matches_published_rounding": true,
+      "metric_roles": {
+        "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+        "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "run_id": "baseline-company-bm25-20261105T013508Z",
+    "domain": "company",
+    "backbone": "bm25",
+    "base_scoring": {
+      "mean_seconds": 0.12000976537566703,
+      "median_seconds": 0.11657628200001113,
+      "p95_seconds": 0.18691948000000025,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.005803475626001093,
+      "median_seconds": 0.005768527499981246,
+      "p95_seconds": 0.0070215729999745236,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 385.4069163799286,
+    "peak_torch_allocated_bytes": 0,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-company-dense-20261105T013616Z",
+    "domain": "company",
+    "backbone": "dense",
+    "base_scoring": {
+      "mean_seconds": 0.306727376552001,
+      "median_seconds": 0.277202960000011,
+      "p95_seconds": 0.4340246509999588,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.006348995402000242,
+      "median_seconds": 0.006182955500094067,
+      "p95_seconds": 0.0074835409998286195,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 1032.19207406044,
+    "peak_torch_allocated_bytes": 4235892224,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-law-bm25-20261105T013718Z",
+    "domain": "law",
+    "backbone": "bm25",
+    "base_scoring": {
+      "mean_seconds": 0.13488819141533237,
+      "median_seconds": 0.1297858794999911,
+      "p95_seconds": 0.202926476000016,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.0052837668526661335,
+      "median_seconds": 0.005203201499966781,
+      "p95_seconds": 0.006433191000041916,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 427.55460596084595,
+    "peak_torch_allocated_bytes": 0,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-law-dense-20261105T015352Z",
+    "domain": "law",
+    "backbone": "dense",
+    "base_scoring": {
+      "mean_seconds": 0.3115794207119988,
+      "median_seconds": 0.2941397984998275,
+      "p95_seconds": 0.38987499400013803,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.006044872857664662,
+      "median_seconds": 0.005979628999966735,
+      "p95_seconds": 0.00652158299999428,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 1031.4205453395844,
+    "peak_torch_allocated_bytes": 3065894912,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-terms-bm25-20261105T013718Z",
+    "domain": "terms",
+    "backbone": "bm25",
+    "base_scoring": {
+      "mean_seconds": 0.11396611030800086,
+      "median_seconds": 0.11028484550001849,
+      "p95_seconds": 0.18451321399993503,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.005809084922000996,
+      "median_seconds": 0.005723038999974506,
+      "p95_seconds": 0.007056143999989217,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 367.51282954216003,
+    "peak_torch_allocated_bytes": 0,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-terms-dense-20261105T021124Z",
+    "domain": "terms",
+    "backbone": "dense",
+    "base_scoring": {
+      "mean_seconds": 0.27901581388033236,
+      "median_seconds": 0.25833917699992526,
+      "p95_seconds": 0.3685396750001928,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.0061162033746632,
+      "median_seconds": 0.006031189999930575,
+      "p95_seconds": 0.006649096999808535,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 979.4765739440918,
+    "peak_torch_allocated_bytes": 4235892224,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-university-bm25-20261105T014225Z",
+    "domain": "university",
+    "backbone": "bm25",
+    "base_scoring": {
+      "mean_seconds": 0.12917404562266752,
+      "median_seconds": 0.12537307999997438,
+      "p95_seconds": 0.19321758500007036,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.005467160466000185,
+      "median_seconds": 0.00543740699998807,
+      "p95_seconds": 0.006628068999930292,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 411.13623809814453,
+    "peak_torch_allocated_bytes": 0,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  },
+  {
+    "run_id": "baseline-university-dense-20261105T022804Z",
+    "domain": "university",
+    "backbone": "dense",
+    "base_scoring": {
+      "mean_seconds": 0.2924204066426678,
+      "median_seconds": 0.2661739549998856,
+      "p95_seconds": 0.39894559100048355,
+      "queries": 3000
+    },
+    "native_rerank_plus_all_11_grid_trials": {
+      "mean_seconds": 0.006315912270328075,
+      "median_seconds": 0.006179207500281336,
+      "p95_seconds": 0.007173804000558448,
+      "queries": 3000
+    },
+    "worker_elapsed_seconds": 976.1888341903687,
+    "peak_torch_allocated_bytes": 4235892224,
+    "interpretation": "Grid timing includes oracle-ranking enumeration with sentinel labels and in-memory metric/capture instrumentation; excludes prediction write/flush; not automatic-only latency and not matched to paper Table9 @5/N50."
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "run_id": "tempo-quant-bm25-20261105T023047Z",
+  "benchmark": "TEMPO",
+  "domain": "quant",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "f548346df75f99df12d7ebcd617d44e3b0421225dd3d99da7262e66061bf42a0",
+    "documents": "30283086d66d6b5a2d55b21e7b53403c69e38adcf1eb2699daa91e83bd3e9b05"
+  },
+  "input_sha256": "50991ef7b5e44b55c8bd620dae7f712fe579f7e056590953880b88c98d4c1945",
+  "gold_sha256": "0c04cca9df2f7b9425127b662d1a1b7640e83dfa04e783ccb0ffe8c039383fa8",
+  "queries": 34,
+  "documents": 28785,
+  "original_queries": 34,
+  "original_documents": 28785,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0,
+  "status": "complete",
+  "worker": {
+    "status": "complete",
+    "benchmark": "TEMPO",
+    "model": "bm25",
+    "queries": 34,
+    "documents": 28785,
+    "input_sha256": "50991ef7b5e44b55c8bd620dae7f712fe579f7e056590953880b88c98d4c1945",
+    "scores_sha256": "0ab25272c48a952ba42c4b224f2b5213a0437a62b8530adb4da95414b7c90abc",
+    "elapsed_retrieval_seconds": 22.70348648299978,
+    "utc_finish": "2026-11-05T02:32:12.055383+00:00",
+    "uid": 1001,
+    "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "versions": {
+      "pyserini": "1.2.0",
+      "gensim": "4.4.0",
+      "pytrec-eval": "0.5",
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1"
+    },
+    "algorithm": "Unchanged released retrieval_bm25: Lucene analyzer + gensim LuceneBM25Model k1=0.9,b=0.4, top1000, author exclusions"
+  },
+  "summary_sha256": "545785d1575a2bab1bfd4b462ff6785781360b175de2c315ee142e48a2105f69",
+  "metric_roles": {
+    "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+    "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+  },
+  "deviations": [
+    "Missing InstructorEmbedding added to independent environment",
+    "Optional unused vLLM imports deferred; BM25/metric functions unchanged",
+    "True relevance/answer fields projected out; isolated inference and offline evaluation",
+    "Dataset/model inputs pinned; current unpinned package resolution differs from unspecified author environment"
+  ]
+}

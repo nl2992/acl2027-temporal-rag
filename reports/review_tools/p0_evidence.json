@@ -1,0 +1,151 @@
+{
+  "status": "pass",
+  "checkpoint_files": 12,
+  "runs": [
+    {
+      "run": "baseline-company-bm25-20261105T013508Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+        "input": "4202d1478e6752217804380b2360675461ee7ab1e3836cb9a9c2baf09097ee2d",
+        "gold": "4702a1d2caff7646178887a37aa0f32b9fdffcaadf9f0049afaa594e5ca844be",
+        "predictions": "5ffab3bbfc6b3b2487f4e1f6ce0059a57d0359303b68a9b77cc29ed27c681a0d",
+        "per_query": "51d9fd6ae5bb857c46b03b8a8eef2adaf9575c390f29006a0f84211e096caef6",
+        "summary": "ebdc20d09de98b74b3dc2a5ce52abd76e3d57ef1bd236bcf4e200f27c016fc6c",
+        "manifest": "831ff84ac505c164ce3827c7f970cd6bcee916c66ef294b8ac82837b24ff8fc1"
+      }
+    },
+    {
+      "run": "baseline-company-dense-20261105T013616Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+        "input": "4202d1478e6752217804380b2360675461ee7ab1e3836cb9a9c2baf09097ee2d",
+        "gold": "4702a1d2caff7646178887a37aa0f32b9fdffcaadf9f0049afaa594e5ca844be",
+        "predictions": "3a93ca2d4d93f077b639cc01640bc52061680aaac0a1ff53f0826b3730815df5",
+        "per_query": "606c0eb245762d0a55800ed19688b3c2c9e6f996c243558dbdea4061e72ee9d9",
+        "summary": "318009151bcee8f9101c6f54cb6ba3094d13caf73c7cac7abc1c2f44cef07035",
+        "manifest": "954830ceaa1fbaf3171a95c0fe5bedf50241d9384c5fae4cf975028cfde86244",
+        "embedding_observed_at_review": "d25352e10121465b53b194b49845cf5c37251416dbb865cedbe744ce3fd07aa6"
+      }
+    },
+    {
+      "run": "baseline-law-bm25-20261105T013718Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "2dcc641c7183ee0efb2c620561c463405c969ea35b6d65c217ca95bd28769d01",
+        "input": "5f54d6c9e850680f8763f394c5fc7a0e612bbe58e59d12c56a1f50624756cc0a",
+        "gold": "165dcd5ef4203747604b099f2d686dccd73d895805bc98ad94fd12ae073a29c0",
+        "predictions": "9c4ec4651feebc84393943d2395e07b44d8f42f21d9dd365e7b09a2aec6299c0",
+        "per_query": "b2d40614d91b8011971a1991acebb2497ae5e009c31a79fa60f78f0d48103b6a",
+        "summary": "f37a57c6ee35575fa423ed4da9c7da8d4783624e63dff59fd8618ac179b55a9a",
+        "manifest": "ca58514246165bc77e3e2d30054158d8acb7ce59e5a47147dc0488d6897e8a39"
+      }
+    },
+    {
+      "run": "baseline-law-dense-20261105T015352Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "2dcc641c7183ee0efb2c620561c463405c969ea35b6d65c217ca95bd28769d01",
+        "input": "5f54d6c9e850680f8763f394c5fc7a0e612bbe58e59d12c56a1f50624756cc0a",
+        "gold": "165dcd5ef4203747604b099f2d686dccd73d895805bc98ad94fd12ae073a29c0",
+        "predictions": "3eeb28e00f0e01093768f12ca97aae11879db3f82f79d93b8b1cd903076c5048",
+        "per_query": "9651630724db767eaef07fcff1d08981f4b9cc83a5b3bcbe832431303994e960",
+        "summary": "38b2d622e1392518675750b705937ab8fe027f51f6d8f10cc2869c9d4573f583",
+        "manifest": "95aae1bc54ab9f6de2753e268a8c3515ebf096afe4ed1003400359a2b84355c5",
+        "embedding_observed_at_review": "16a424df2999e0413556678cab3f41555c6c31c6d19ce9578b00720877c06748"
+      }
+    },
+    {
+      "run": "baseline-terms-bm25-20261105T013718Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "61104881b49b9e2f6fe97b64966c571deeafe65ad0a3057bbb42bf65ccf6ed92",
+        "input": "a7197cdf5a5cfbbf2334da85be340183717dab7d50f64aa13ed79ef59583a90b",
+        "gold": "ad3f3e459da1e548344f4121722d66f81ab4a925672b0f9d52b516100eff2ddd",
+        "predictions": "4e40d56e1d1fc38c13d1ee2092b7ebe7c026f656a592d0e2aabe3a0872ab0a64",
+        "per_query": "5150fffd70530c70c269ccfa19b347bc564a5e08e17e0e294f5bfb484e31eb09",
+        "summary": "88ea0c9c03f7523cb99083b891b006fcb1a004a0559ee3953f8f0fd65dde22fe",
+        "manifest": "d96580e1add875f29f74876d547557235826d8703e4200b85b643be21060107a"
+      }
+    },
+    {
+      "run": "baseline-terms-dense-20261105T021124Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "61104881b49b9e2f6fe97b64966c571deeafe65ad0a3057bbb42bf65ccf6ed92",
+        "input": "a7197cdf5a5cfbbf2334da85be340183717dab7d50f64aa13ed79ef59583a90b",
+        "gold": "ad3f3e459da1e548344f4121722d66f81ab4a925672b0f9d52b516100eff2ddd",
+        "predictions": "f7919ef0c87c60f16ff5c9d730276d96f9ae9f5001ed15e29dfb398ca2f6189a",
+        "per_query": "488bd8fe198da23ac230e8db7b51a301a504599ff31983b96810992ca27b3043",
+        "summary": "2d8bea3f9bbbbce9c691f71438fd816830eff341bb0243a24a9e47696a0e6862",
+        "manifest": "82895a34bf24489c901a25ca7a1acfb0124866d7dd34af842b8901ed4c81d3f4",
+        "embedding_observed_at_review": "c5067ccd37a10c5e641f6e8be5dd11749800b11f5ade1ba0d39b5fa4bb5e1a51"
+      }
+    },
+    {
+      "run": "baseline-university-bm25-20261105T014225Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "68e8d279c43e5c2348270693bc17c020b8f95be8e41f81dbd473614dc5f77751",
+        "input": "ff7271256442f5e6d6267abf65603c0f1f97c75aa682803daa35d03390117ff4",
+        "gold": "ee53f3ffe9a420fa7134491e638adf2fe131e43ee770e865aff6b1a3e412e846",
+        "predictions": "3359c1b11670e6156360751b40edb49868105a11ee7bc8e4a210f6b5ccf6d2b1",
+        "per_query": "66ac716070fcbcb51a7faa76cf90148d4fc3cd144cc80856436fee87e9533630",
+        "summary": "89f0ffa73ca4cfb073ca029b489ad622a1ad729226ab70a08e31c63058d49f79",
+        "manifest": "fa299b2e95069342f11e3c90521688246ce865a5c9bb95206833640712356f17"
+      }
+    },
+    {
+      "run": "baseline-university-dense-20261105T022804Z",
+      "queries": 3000,
+      "metric_rows": 9000,
+      "hashes": {
+        "source": "68e8d279c43e5c2348270693bc17c020b8f95be8e41f81dbd473614dc5f77751",
+        "input": "ff7271256442f5e6d6267abf65603c0f1f97c75aa682803daa35d03390117ff4",
+        "gold": "ee53f3ffe9a420fa7134491e638adf2fe131e43ee770e865aff6b1a3e412e846",
+        "predictions": "272677c2254c47d41bccd23b420d50561099b65948940805d123e1fb8aedfc30",
+        "per_query": "8f4c9896882fc9122c1d44e2a4c46f87f2944752ceb28cd3d825ed55316a176e",
+        "summary": "ceda43c88ba157e9dd0f3a1bc800ff2eedc5a312e80f6c0d871abf14191b5970",
+        "manifest": "d22ee0a94a9b4196e82a92fe2df68c014cf46f7b7d5c25f0445b953650b18f03",
+        "embedding_observed_at_review": "0918529e9b1b700a579411e370a3b95567212d8f4f3a0404c1f2cbcc023a7304"
+      }
+    },
+    {
+      "run": "smoke-company-bm25-002",
+      "queries": 2,
+      "metric_rows": 6,
+      "hashes": {
+        "source": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+        "input": "2d0d5924f60e310b7fca9c92b143d5c23e296b929be1a337dd6d46c79533f3ca",
+        "gold": "f6d6b2b7a3c61c99ac0bb2a0e6475b17a13008fc296da7732aae3c8ad5c00d92",
+        "predictions": "21585f20559df9222dba38e52db8269821e607f713a03a5e37763243c8380216",
+        "per_query": "80b91f64afec42e0a4c8169456d3349298d606856dfa490754da9bc4017d5968",
+        "summary": "4248f7e0459cd2b0a114518c4a15f4c2c7ff50043230a35771939a1c40ae7266",
+        "manifest": "85c04006c6b343d9821e78f2d346b3aac8a9cc7f3288f17b293e87379613c4c7"
+      }
+    },
+    {
+      "run": "smoke-company-dense-20261105T013539Z",
+      "queries": 2,
+      "metric_rows": 6,
+      "hashes": {
+        "source": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+        "input": "2d0d5924f60e310b7fca9c92b143d5c23e296b929be1a337dd6d46c79533f3ca",
+        "gold": "f6d6b2b7a3c61c99ac0bb2a0e6475b17a13008fc296da7732aae3c8ad5c00d92",
+        "predictions": "05109517898fbcc366d00cc461537d0c8a1a5935e2a2d435646c64a4dfd2128d",
+        "per_query": "babf276d615ac01040c8faed0a78b2f6fea4a5da4505230d4b2c1d5bd0f43ba2",
+        "summary": "b73ab04118dbba4c3e5558a38988190a51118a8d48693be5dc07e981d05152ff",
+        "manifest": "c851c7aa58ff2d5783c4a0abef86f22bc9a1674648ebf2a5d53ab9a68b886a2f",
+        "embedding_observed_at_review": "d83708728d3f2932a061a85f9a914b6652f2ef15b83af72cf9cf9f2e67c14274"
+      }
+    }
+  ]
+}

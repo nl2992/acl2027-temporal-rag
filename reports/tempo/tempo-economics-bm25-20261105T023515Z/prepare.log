@@ -1,0 +1,22 @@
+{
+  "run_id": "tempo-economics-bm25-20261105T023515Z",
+  "benchmark": "TEMPO",
+  "domain": "economics",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "764ce276971c83a0f05a2b3192d7ec606dc9f026cdfb9ad8758f33abf51dc36e",
+    "documents": "77ea08e8f190205976b2a8ded38d0a33b660b8a7bc71de9b34c03a9138787859"
+  },
+  "input_sha256": "83618c2f93fce53e7b2445c960babbd72bc65c605c3fd301d801c7c35658b325",
+  "gold_sha256": "3dbb27e6669a3c7ff065938a2295eb400ebb614ef2126afce37cff2faac8f53a",
+  "queries": 83,
+  "documents": 93756,
+  "original_queries": 83,
+  "original_documents": 93756,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}

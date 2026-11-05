@@ -1,0 +1,12 @@
+{
+  "run_id": "tempo-law-bm25-20261105T023225Z",
+  "status": "complete",
+  "utc_start": "2026-11-05T02:32:25.825583+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
+    "--domain",
+    "law"
+  ],
+  "project_sha": "27760f4d395f45bd8625101153c56d90bd9ac428",
+  "utc_finish": "2026-11-05T02:33:45.105883+00:00"
+}

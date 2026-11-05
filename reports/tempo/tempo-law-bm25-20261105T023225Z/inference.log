@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "benchmark": "TEMPO",
+  "model": "bm25",
+  "queries": 35,
+  "documents": 43288,
+  "input_sha256": "057933d384938e6c1acd289ef080e1af43b56e2c97e1a3a107ada2f4e426187e",
+  "scores_sha256": "356babeb57526e7d450e10395a7a34d2f33ae23fe14238d6c1ac9502fdd659d5",
+  "elapsed_retrieval_seconds": 33.01953186899982,
+  "utc_finish": "2026-11-05T02:33:36.940978+00:00",
+  "uid": 1001,
+  "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+  "versions": {
+    "pyserini": "1.2.0",
+    "gensim": "4.4.0",
+    "pytrec-eval": "0.5",
+    "torch": "2.14.1",
+    "transformers": "4.40.0",
+    "numpy": "1.26.4",
+    "scipy": "1.10.1"
+  },
+  "algorithm": "Unchanged released retrieval_bm25: Lucene analyzer + gensim LuceneBM25Model k1=0.9,b=0.4, top1000, author exclusions"
+}
+cloud.resourcemanager_v3.
+  warnings.warn(message, FutureWarning)
+WARNING: Using incubator modules: jdk.incubator.vector
+BM25 retrieval:   0%|          | 0/35 [00:00<?, ?it/s]BM25 retrieval:  11%|█▏        | 4/35 [00:00<00:00, 34.11it/s]BM25 retrieval:  23%|██▎       | 8/35 [00:00<00:00, 27.45it/s]BM25 retrieval:  31%|███▏      | 11/35 [00:00<00:00, 24.76it/s]BM25 retrieval:  40%|████      | 14/35 [00:00<00:00, 26.39it/s]BM25 retrieval:  51%|█████▏    | 18/35 [00:00<00:00, 26.77it/s]BM25 retrieval:  60%|██████    | 21/35 [00:00<00:00, 27.38it/s]BM25 retrieval:  69%|██████▊   | 24/35 [00:00<00:00, 27.31it/s]BM25 retrieval:  80%|████████  | 28/35 [00:01<00:00, 28.41it/s]BM25 retrieval:  89%|████████▊ | 31/35 [00:01<00:00, 27.31it/s]BM25 retrieval:  97%|█████████▋| 34/35 [00:01<00:00, 27.03it/s]BM25 retrieval: 100%|██████████| 35/35 [00:01<00:00, 20.62it/s]

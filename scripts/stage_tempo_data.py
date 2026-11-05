@@ -11,6 +11,7 @@ p=argparse.ArgumentParser()
 p.add_argument('--domain',required=True)
 p.add_argument('--run-id',required=True)
 p.add_argument('--smoke',action='store_true')
+p.add_argument('--model',default='bm25')
 a=p.parse_args()
 root=Path('/home/nigel/acl2027')
 private=root/'tempo-private'
@@ -36,6 +37,10 @@ evaluation.mkdir(exist_ok=False)
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 manifest={'run_id':a.run_id,'benchmark':'TEMPO','domain':a.domain,'smoke':a.smoke,'dataset_revision':revision,'raw_file_sha256':{k:sha(v) for k,v in paths.items()},'input_sha256':sha(out/'input.json'),'gold_sha256':sha(evaluation/'labels.json'),'queries':len(examples),'documents':len(docs),'original_queries':original_queries,'original_documents':original_docs,'source_sha':'8731487254e0988eaf2ca4ae3e93ff587fec64d0','excluded_id_policy':'Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.'}
+import subprocess
+manifest['model']=a.model
+manifest['repaired_sha']=subprocess.check_output(['git','-C',str(root/'vendor/Tempo-repaired'),'rev-parse','HEAD'],text=True).strip()
+manifest['preparation_script_sha256']=sha(Path(__file__))
 docids={d['id'] for d in docs}
 manifest['duplicate_document_ids']=len(docs)-len(docids)
 manifest['missing_gold_references']=sum(g not in docids for e in examples for g in e['gold_ids'])

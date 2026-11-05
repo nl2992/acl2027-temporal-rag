@@ -1,0 +1,143 @@
+{
+  "run_id": "tempo-iota-bge-smoke-001",
+  "benchmark": "TEMPO",
+  "domain": "iota",
+  "smoke": true,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "79eb29454ed69c746eceb508d6f00a0b07fd89d1dce12ee13ade7d86ab26705c",
+    "documents": "ca69f1f551ecf7262ee5bf164504a8fef97b52c96499ba6480bc7a461f8db9c3"
+  },
+  "input_sha256": "031fcf928c428a01343e0f064e050838848c5cdffac21b111c78557e9c42e5aa",
+  "gold_sha256": "1a5a6f9f5d8b0aae4a2d725694f4a631ed14c85d2bf775140d875affeef55689",
+  "queries": 2,
+  "documents": 10372,
+  "original_queries": 10,
+  "original_documents": 10372,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bge",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0,
+  "status": "complete",
+  "worker": {
+    "status": "complete",
+    "benchmark": "TEMPO",
+    "model": "bge",
+    "queries": 2,
+    "documents": 10372,
+    "input_sha256": "031fcf928c428a01343e0f064e050838848c5cdffac21b111c78557e9c42e5aa",
+    "scores_sha256": "42d2ced1c9237baef2d40dc4734c7b9bfba54e3fa08d7d66a81568b83bb08868",
+    "elapsed_retrieval_seconds": 677.1369637369999,
+    "utc_finish": "2026-11-05T02:59:16.918870+00:00",
+    "uid": 1001,
+    "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "worker_script_sha256": "f098fb069b2fe18c270ea5554be5ccaf8cd9e720fbc20ec860cdb75318214705",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "versions": {
+      "pyserini": "1.2.0",
+      "gensim": "4.4.0",
+      "pytrec-eval": "0.5",
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1"
+    },
+    "algorithm": "Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions",
+    "instructions": {
+      "query": "Represent this query for retrieving relevant documents: ",
+      "document": ""
+    },
+    "model_snapshot": {
+      "repo": "BAAI/bge-large-en-v1.5",
+      "revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "snapshot": "/home/acl-infer/models/models--BAAI--bge-large-en-v1.5/snapshots/d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "license": "mit",
+      "files": {
+        "config.json": {
+          "sha256": "446712fac367857b4b1302762fe1cd7bfa8b3c4b77b4dc5d77c4025407660896",
+          "bytes": 779
+        },
+        "sentence_bert_config.json": {
+          "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+          "bytes": 52
+        },
+        "special_tokens_map.json": {
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+          "bytes": 125
+        },
+        "modules.json": {
+          "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+          "bytes": 349
+        },
+        "tokenizer_config.json": {
+          "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+          "bytes": 366
+        },
+        "model.safetensors": {
+          "sha256": "45e1954914e29bd74080e6c1510165274ff5279421c89f76c418878732f64ae7",
+          "bytes": 1340616616
+        },
+        "vocab.txt": {
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+          "bytes": 231508
+        },
+        "tokenizer.json": {
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+          "bytes": 711396
+        },
+        "config_sentence_transformers.json": {
+          "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+          "bytes": 124
+        },
+        "1_Pooling/config.json": {
+          "sha256": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+          "bytes": 191
+        }
+      }
+    },
+    "observed_profile": {
+      "parameter_dtype": "torch.float32",
+      "tokenizer_max_length": 512,
+      "max_seq_length": 512
+    },
+    "cache_descriptor": {
+      "dataset_projection_sha256": "031fcf928c428a01343e0f064e050838848c5cdffac21b111c78557e9c42e5aa",
+      "model_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "tokenizer_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "retrieval_source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+      "input_serialization": {
+        "query": "Represent this query for retrieving relevant documents: ",
+        "document": ""
+      },
+      "embedding_dtype": "native FP32; actual parameter dtype recorded by hook",
+      "max_length": 512,
+      "batch_size": 128,
+      "encode_parameters": "unchanged author defaults",
+      "normalization": "unchanged author normalization",
+      "cutoff_policy": "TEMPO original exclusion metadata, no added known-at filter",
+      "versions": {
+        "torch": "2.14.1",
+        "transformers": "4.40.0",
+        "sentence-transformers": "3.1.1",
+        "numpy": "1.26.4"
+      }
+    },
+    "peak_torch_allocated_bytes": 7796289536,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  },
+  "summary_sha256": "ef7daa832c10ac362df4564ec73ad4af153c8c57531ed176fe81ad74a6b8ceac",
+  "metric_roles": {
+    "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+    "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+  },
+  "deviations": [
+    "Missing InstructorEmbedding added to independent environment",
+    "Optional unused vLLM imports deferred; BM25/metric functions unchanged",
+    "True relevance/answer fields projected out; isolated inference and offline evaluation",
+    "Dataset/model inputs pinned; current unpinned package resolution differs from unspecified author environment"
+  ]
+}

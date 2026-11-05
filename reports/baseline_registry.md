@@ -1,6 +1,6 @@
 # Baseline reproduction registry
 
-Scope: reproduce or document evidence-backed reproducibility barriers for every system in the supplied registry before any 144-cell search. No new-method search is authorized to bypass unresolved baselines.
+Scope: replicate every system in the supplied registry before any 144-cell search. Evidence-backed access and hardware barriers must be documented as incomplete work; they are not substitutes for replication or grounds to declare the full goal achieved. No new-method search is authorized to bypass unresolved baselines.
 
 | System | Status | Evidence / next step |
 |---|---|---|
