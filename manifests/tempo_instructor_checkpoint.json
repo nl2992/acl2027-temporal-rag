@@ -1,0 +1,75 @@
+{
+  "utc": "2026-11-05T18:42:27.644692+00:00",
+  "model": "inst-l",
+  "repo": "hkunlp/instructor-large",
+  "revision": "54e5ffb8d484de506e59443b07dc819fb15c7233",
+  "snapshot": "/home/acl-infer/models/instructor-only/models--hkunlp--instructor-large/snapshots/54e5ffb8d484de506e59443b07dc819fb15c7233",
+  "license": "apache-2.0",
+  "files": {
+    "1_Pooling/config.json": {
+      "sha256": "f2fa6333d3899e2f9368e2e2741ece8e74160337b3698f475f6e0f7f28e396fe",
+      "bytes": 270,
+      "advertised_lfs_sha256": null
+    },
+    "2_Dense/config.json": {
+      "sha256": "d8dfe28f975c278029485521b90a9b2ad7f11f551a862fb772e38973050a22a9",
+      "bytes": 116,
+      "advertised_lfs_sha256": null
+    },
+    "2_Dense/pytorch_model.bin": {
+      "sha256": "a6e82cba0876dacbadccdea565c9e19e29848d994d23968bd1343b8f0f762bdc",
+      "bytes": 3146603,
+      "advertised_lfs_sha256": "a6e82cba0876dacbadccdea565c9e19e29848d994d23968bd1343b8f0f762bdc"
+    },
+    "config.json": {
+      "sha256": "288bd87665d009d9746c8bd93d150aafa13cf5c5a8da199c2f046bae0fcddcb1",
+      "bytes": 1529,
+      "advertised_lfs_sha256": null
+    },
+    "config_sentence_transformers.json": {
+      "sha256": "f631e4bd49910419948c5e9134ab07e0d63b22b8cebbe6875f99a0712bcadd4d",
+      "bytes": 122,
+      "advertised_lfs_sha256": null
+    },
+    "modules.json": {
+      "sha256": "41251094dfd3e7ff81a85ba97b3f4788df47e4039f1bc5037575b43c028beb40",
+      "bytes": 461,
+      "advertised_lfs_sha256": null
+    },
+    "pytorch_model.bin": {
+      "sha256": "fb7f63752cf10103be938bc50dfad0b6fa1e63bc67b963471fc827838d9bbb41",
+      "bytes": 1339823867,
+      "advertised_lfs_sha256": "fb7f63752cf10103be938bc50dfad0b6fa1e63bc67b963471fc827838d9bbb41"
+    },
+    "sentence_bert_config.json": {
+      "sha256": "ec8e29d6dcb61b611b7d3fdd2982c4524e6ad985959fa7194eacfb655a8d0d51",
+      "bytes": 53,
+      "advertised_lfs_sha256": null
+    },
+    "special_tokens_map.json": {
+      "sha256": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+      "bytes": 2201,
+      "advertised_lfs_sha256": null
+    },
+    "spiece.model": {
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+      "bytes": 791656,
+      "advertised_lfs_sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    "tokenizer.json": {
+      "sha256": "72fb264ef4324ec23bc4e8b94167134eaf031b2048fd51a2c2f5a329c7695847",
+      "bytes": 2422360,
+      "advertised_lfs_sha256": null
+    },
+    "tokenizer_config.json": {
+      "sha256": "c31a902ec8f6335e196f500d15c9f974e5c69715b7d375642555c32113b3fdf3",
+      "bytes": 2407,
+      "advertised_lfs_sha256": null
+    }
+  },
+  "weights_downloaded": true,
+  "model_instantiated": false,
+  "gpu_used": false,
+  "active_tempo_registry_changed": false,
+  "status": "Checkpoint staged and hashed; loader compatibility and native smoke still pending."
+}

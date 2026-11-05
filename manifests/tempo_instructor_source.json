@@ -1,0 +1,159 @@
+{
+  "utc": "2026-11-05T18:40:07.520636+00:00",
+  "repo": "hkunlp/instructor-large",
+  "revision": "54e5ffb8d484de506e59443b07dc819fb15c7233",
+  "source": "https://huggingface.co/hkunlp/instructor-large/tree/54e5ffb8d484de506e59443b07dc819fb15c7233",
+  "license": "apache-2.0",
+  "configs": {
+    "modules.json": {
+      "sha256": "41251094dfd3e7ff81a85ba97b3f4788df47e4039f1bc5037575b43c028beb40",
+      "bytes": 461,
+      "json": [
+        {
+          "idx": 0,
+          "name": "0",
+          "path": "",
+          "type": "sentence_transformers.models.Transformer"
+        },
+        {
+          "idx": 1,
+          "name": "1",
+          "path": "1_Pooling",
+          "type": "sentence_transformers.models.Pooling"
+        },
+        {
+          "idx": 2,
+          "name": "2",
+          "path": "2_Dense",
+          "type": "sentence_transformers.models.Dense"
+        },
+        {
+          "idx": 3,
+          "name": "3",
+          "path": "3_Normalize",
+          "type": "sentence_transformers.models.Normalize"
+        }
+      ]
+    },
+    "config.json": {
+      "sha256": "288bd87665d009d9746c8bd93d150aafa13cf5c5a8da199c2f046bae0fcddcb1",
+      "bytes": 1529,
+      "json": {
+        "_name_or_path": "/scratch/acd13578qu/metatrain_models/enhanced_large/checkpoint-300/",
+        "architectures": [
+          "T5EncoderModel"
+        ],
+        "d_ff": 4096,
+        "d_kv": 64,
+        "d_model": 1024,
+        "decoder_start_token_id": 0,
+        "dense_act_fn": "relu",
+        "dropout_rate": 0.1,
+        "eos_token_id": 1,
+        "feed_forward_proj": "relu",
+        "initializer_factor": 1.0,
+        "is_encoder_decoder": true,
+        "is_gated_act": false,
+        "layer_norm_epsilon": 1e-06,
+        "model_type": "t5",
+        "n_positions": 512,
+        "num_decoder_layers": 24,
+        "num_heads": 16,
+        "num_layers": 24,
+        "output_past": true,
+        "pad_token_id": 0,
+        "relative_attention_max_distance": 128,
+        "relative_attention_num_buckets": 32,
+        "task_specific_params": {
+          "summarization": {
+            "early_stopping": true,
+            "length_penalty": 2.0,
+            "max_length": 200,
+            "min_length": 30,
+            "no_repeat_ngram_size": 3,
+            "num_beams": 4,
+            "prefix": "summarize: "
+          },
+          "translation_en_to_de": {
+            "early_stopping": true,
+            "max_length": 300,
+            "num_beams": 4,
+            "prefix": "translate English to German: "
+          },
+          "translation_en_to_fr": {
+            "early_stopping": true,
+            "max_length": 300,
+            "num_beams": 4,
+            "prefix": "translate English to French: "
+          },
+          "translation_en_to_ro": {
+            "early_stopping": true,
+            "max_length": 300,
+            "num_beams": 4,
+            "prefix": "translate English to Romanian: "
+          }
+        },
+        "torch_dtype": "float32",
+        "transformers_version": "4.20.0.dev0",
+        "use_cache": true,
+        "vocab_size": 32128
+      }
+    },
+    "sentence_bert_config.json": {
+      "sha256": "ec8e29d6dcb61b611b7d3fdd2982c4524e6ad985959fa7194eacfb655a8d0d51",
+      "bytes": 53,
+      "json": {
+        "max_seq_length": 512,
+        "do_lower_case": false
+      }
+    },
+    "config_sentence_transformers.json": {
+      "sha256": "f631e4bd49910419948c5e9134ab07e0d63b22b8cebbe6875f99a0712bcadd4d",
+      "bytes": 122,
+      "json": {
+        "__version__": {
+          "sentence_transformers": "2.2.0",
+          "transformers": "4.7.0",
+          "pytorch": "1.9.0+cu102"
+        }
+      }
+    },
+    "1_Pooling/config.json": {
+      "sha256": "f2fa6333d3899e2f9368e2e2741ece8e74160337b3698f475f6e0f7f28e396fe",
+      "bytes": 270,
+      "json": {
+        "word_embedding_dimension": 768,
+        "pooling_mode_cls_token": false,
+        "pooling_mode_mean_tokens": true,
+        "pooling_mode_max_tokens": false,
+        "pooling_mode_mean_sqrt_len_tokens": false,
+        "pooling_mode_weightedmean_tokens": false,
+        "pooling_mode_lasttoken": false
+      }
+    },
+    "2_Dense/config.json": {
+      "sha256": "d8dfe28f975c278029485521b90a9b2ad7f11f551a862fb772e38973050a22a9",
+      "bytes": 116,
+      "json": {
+        "in_features": 1024,
+        "out_features": 768,
+        "bias": false,
+        "activation_function": "torch.nn.modules.linear.Identity"
+      }
+    }
+  },
+  "weight_inventory": {
+    "2_Dense/pytorch_model.bin": {
+      "bytes": 3146603,
+      "advertised_lfs_sha256": "a6e82cba0876dacbadccdea565c9e19e29848d994d23968bd1343b8f0f762bdc"
+    },
+    "pytorch_model.bin": {
+      "bytes": 1339823867,
+      "advertised_lfs_sha256": "fb7f63752cf10103be938bc50dfad0b6fa1e63bc67b963471fc827838d9bbb41"
+    }
+  },
+  "weights_downloaded": false,
+  "model_instantiated": false,
+  "gpu_used": false,
+  "status": "Source-only candidate preflight; loader compatibility and native smoke remain unverified."
+}

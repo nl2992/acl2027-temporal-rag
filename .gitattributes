@@ -20,4 +20,5 @@ reports/tempo_retriever_coverage.json -text
 configs/published_tempo_*.json -text
 manifests/tempo_environment.txt -text
 manifests/tempo_models.json -text
+manifests/tempo_instructor_*.json -text
 .aris/traces/** -text
