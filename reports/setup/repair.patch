@@ -1,3 +1,47 @@
+diff --git a/config.py b/config.py
+index 195a31f..be1a519 100644
+--- a/config.py
++++ b/config.py
+@@ -31,7 +31,7 @@ DATASET_PATHS = [
+     "./datasets/timelyrag_company_policies_dataset_v2.jsonl",
+     "./datasets/timelyrag_law_dataset_v2.jsonl",
+     "./datasets/timelyrag_terms_of_service_dataset_v2.jsonl",
+-    "./datasets/timelyrag_yonsei_dataset_v2.jsonl",
++    "./datasets/timelyrag_university_dataset_v2.jsonl",
+ ]
+ 
+ # Logging helper
+diff --git a/pipeline.py b/pipeline.py
+index fbe1bf9..47a0f53 100644
+--- a/pipeline.py
++++ b/pipeline.py
+@@ -81,7 +81,7 @@ def run_pipeline(dataset_paths = None):
+             topk_idx = np.argsort(scores)[::-1][:K]
+             topk_ids = [all_gids[i] for i in topk_idx]
+             if pos_ids:
+-                from .metrics import evaluate_ranking_ids, add_metrics
++                from metrics import evaluate_ranking_ids, add_metrics
+                 add_metrics(m_bm25, evaluate_ranking_ids(topk_ids, pos_ids, K))
+         summary_bm25 = summarize_metrics(m_bm25)
+         print_summary(K, "BM25 (baseline)", summary_bm25)
+@@ -95,7 +95,7 @@ def run_pipeline(dataset_paths = None):
+             topk_idx = np.argsort(sim)[::-1][:K]
+             topk_ids = [all_gids[i] for i in topk_idx]
+             if pos_ids:
+-                from .metrics import evaluate_ranking_ids, add_metrics
++                from metrics import evaluate_ranking_ids, add_metrics
+                 add_metrics(m_bge, evaluate_ranking_ids(topk_ids, pos_ids, K))
+         summary_bge = summarize_metrics(m_bge)
+         print_summary(K, "BGE-M3 Dense (baseline)", summary_bge)
+@@ -195,7 +195,7 @@ def run_pipeline(dataset_paths = None):
+     print("Macro averages across datasets:")
+     for method_label, metric_lists in macro_accumulator.items():
+         macro = {m: float(np.mean(vals)) if len(vals) else 0.0 for m, vals in metric_lists.items()}
+-        from .metrics import print_summary as _ps
++        from metrics import print_summary as _ps
+         _ps(K, f"Macro Avg - {method_label}", macro)
+ 
+     print(f"\n✅ Log saved at {LOG_PATH}")
 diff --git a/requirements.txt b/requirements.txt
 index 8c5ae9f..b8a7736 100644
 --- a/requirements.txt

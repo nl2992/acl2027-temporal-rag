@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "seed": 0,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.3.1+cu121",
+  "cuda": "12.1",
+  "numpy": "1.26.4",
+  "datasets": [
+    {
+      "file": "timelyrag_company_policies_dataset_v2.jsonl",
+      "queries": 3000,
+      "docs": 30000,
+      "sha256": "fe76970ecb895debe3e4713de67c7f5a265a63be5209bb478850c59234aad6f5",
+      "auto_gold_independent": true,
+      "candidate_membership_preserved": true
+    },
+    {
+      "file": "timelyrag_law_dataset_v2.jsonl",
+      "queries": 3000,
+      "docs": 30000,
+      "sha256": "2dcc641c7183ee0efb2c620561c463405c969ea35b6d65c217ca95bd28769d01",
+      "auto_gold_independent": true,
+      "candidate_membership_preserved": true
+    },
+    {
+      "file": "timelyrag_terms_of_service_dataset_v2.jsonl",
+      "queries": 3000,
+      "docs": 30000,
+      "sha256": "61104881b49b9e2f6fe97b64966c571deeafe65ad0a3057bbb42bf65ccf6ed92",
+      "auto_gold_independent": true,
+      "candidate_membership_preserved": true
+    },
+    {
+      "file": "timelyrag_university_dataset_v2.jsonl",
+      "queries": 3000,
+      "docs": 30000,
+      "sha256": "68e8d279c43e5c2348270693bc17c020b8f95be8e41f81dbd473614dc5f77751",
+      "auto_gold_independent": true,
+      "candidate_membership_preserved": true
+    }
+  ],
+  "known_native_limitations": [
+    "Post-cutoff candidates receive neutral affinity rather than hard exclusion.",
+    "Native tie behavior is NumPy argsort reversal; proposed stable ties not applied to parity track.",
+    "Author metrics use retrieved-positive ideal/denominator; audited standard metrics remain separate."
+  ]
+}

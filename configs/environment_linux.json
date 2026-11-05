@@ -1,0 +1,11 @@
+{
+  "base": "Ubuntu 24.04.5 WSL2 + conda Python 3.11.5",
+  "environment": "/home/nigel/miniforge3/envs/timelyrag-repaired",
+  "upstream_sha": "5213a0c1743f23fd52a258005c3887aaf7e8cd0f",
+  "pip_requirements": "author requirements with notebook==7.3.1 replacing 7.2.1",
+  "conda_prerequisites": ["mkl-service==2.4.0"],
+  "key_versions": {"torch": "2.3.1", "transformers": "4.46.3", "FlagEmbedding": "1.3.5", "rank-bm25": "0.2.2", "numpy": "1.26.4"},
+  "gpu": {"name": "NVIDIA GeForce RTX 4060 Laptop GPU", "memory_mib": 8188, "count": 1},
+  "smoke_command": "wsl -d Ubuntu-24.04 -u nigel -- /home/nigel/miniforge3/envs/timelyrag-repaired/bin/python /home/nigel/acl2027/scripts/smoke_timelyrag.py",
+  "factorial_search": "disabled until baseline reproduction registry is resolved"
+}
