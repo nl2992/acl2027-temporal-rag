@@ -1,0 +1,240 @@
+{
+  "utc": "2026-11-05T19:05:44.022003+00:00",
+  "models": {
+    "e5": {
+      "author_repo_name": "intfloat/e5-mistral-7b-instruct",
+      "returned_repo_id": "intfloat/e5-mistral-7b-instruct",
+      "revision": "d62cc4417be0e3289c03dd459d1ef2d137e2554e",
+      "gated": false,
+      "license": "mit",
+      "configs": {
+        "config.json": {
+          "sha256": "bfa2364116ee2abb1a9706e8702f09a48d013eed3c321ec4a905497a50dcee00",
+          "json": {
+            "_name_or_path": "mistralai/Mistral-7B-v0.1",
+            "architectures": [
+              "MistralModel"
+            ],
+            "bos_token_id": 1,
+            "eos_token_id": 2,
+            "hidden_act": "silu",
+            "hidden_size": 4096,
+            "initializer_range": 0.02,
+            "intermediate_size": 14336,
+            "max_position_embeddings": 32768,
+            "model_type": "mistral",
+            "num_attention_heads": 32,
+            "num_hidden_layers": 32,
+            "num_key_value_heads": 8,
+            "pad_token_id": 2,
+            "rms_norm_eps": 1e-05,
+            "rope_theta": 10000.0,
+            "sliding_window": 4096,
+            "tie_word_embeddings": false,
+            "torch_dtype": "float16",
+            "transformers_version": "4.34.0",
+            "use_cache": false,
+            "vocab_size": 32000
+          }
+        }
+      },
+      "root_weight_inventory_only": {
+        "model-00001-of-00002.safetensors": {
+          "bytes": 9942980280,
+          "advertised_lfs_sha256": "e64034d49db4a20999bf89f01d0532e30a1f91455632c942f6a70633b1003319"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 4278371624,
+          "advertised_lfs_sha256": "eb61a47325ced7639d02d8ab1b8ca94e6e5efc83c87ba90888ac01801757cbf0"
+        },
+        "pytorch_model-00001-of-00002.bin": {
+          "bytes": 9943026828,
+          "advertised_lfs_sha256": "db75942d7777c9bbae5eb1bc7f712d099875e6d6bbccb8522b91b2782977ce52"
+        },
+        "pytorch_model-00002-of-00002.bin": {
+          "bytes": 4278390829,
+          "advertised_lfs_sha256": "143df9048bac75b444ff6faba463220a7d109630ffdffd8bc90ac6f3ba5ddc0a"
+        }
+      },
+      "repository_python_files": []
+    },
+    "sf": {
+      "author_repo_name": "salesforce/sfr-embedding-mistral",
+      "returned_repo_id": "Salesforce/SFR-Embedding-Mistral",
+      "revision": "33a60fe7b5e00b9414981280c571e8a4f9f42f1b",
+      "gated": false,
+      "license": "cc-by-nc-4.0",
+      "configs": {
+        "config.json": {
+          "sha256": "6a9fc3fa5c0a0d741bbab96346355de703891821b82a27d238d05b0ac867126f",
+          "json": {
+            "_name_or_path": "intfloat/e5-mistral-7b-instruct",
+            "architectures": [
+              "MistralModel"
+            ],
+            "attention_dropout": 0.0,
+            "bos_token_id": 1,
+            "eos_token_id": 2,
+            "hidden_act": "silu",
+            "hidden_size": 4096,
+            "initializer_range": 0.02,
+            "intermediate_size": 14336,
+            "max_position_embeddings": 32768,
+            "model_type": "mistral",
+            "num_attention_heads": 32,
+            "num_hidden_layers": 32,
+            "num_key_value_heads": 8,
+            "pad_token_id": 2,
+            "rms_norm_eps": 1e-05,
+            "rope_theta": 10000.0,
+            "sliding_window": 4096,
+            "tie_word_embeddings": false,
+            "torch_dtype": "float16",
+            "transformers_version": "4.37.0",
+            "use_cache": false,
+            "vocab_size": 32000
+          }
+        }
+      },
+      "root_weight_inventory_only": {
+        "model-00001-of-00003.safetensors": {
+          "bytes": 4943161664,
+          "advertised_lfs_sha256": "afbfcebcf9df8c0af538cd5b6f616bd1d7a9739eba4b81d871545b1b562d6b0a"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 4999818600,
+          "advertised_lfs_sha256": "841e0ce0c37d7e05c7cdce5ab9b614ee2b38a5f4f860c245e614970aff627d40"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 4278371624,
+          "advertised_lfs_sha256": "f5d5a7317a86d186c4febf39d7734736c14b4fface62bfc1d905678b197cfb3a"
+        }
+      },
+      "repository_python_files": []
+    },
+    "qwen": {
+      "author_repo_name": "alibaba-nlp/gte-qwen1.5-7b-instruct",
+      "returned_repo_id": "Alibaba-NLP/gte-Qwen1.5-7B-instruct",
+      "revision": "e2f771ba1aba0666210c7fa446fdcf467fb49108",
+      "gated": "auto",
+      "license": "apache-2.0",
+      "configs": {
+        "config.json": {
+          "fetch_error_type": "GatedRepoError",
+          "http_status": 401
+        }
+      },
+      "root_weight_inventory_only": {
+        "model-00001-of-00008.safetensors": {
+          "bytes": 3928099288,
+          "advertised_lfs_sha256": "903a5a602445fbddc0b3382f123fa8d80769557604f36ccceec4809f9404ab02"
+        },
+        "model-00002-of-00008.safetensors": {
+          "bytes": 4047919752,
+          "advertised_lfs_sha256": "d9c3abed04eed6797991fcf856d224a1722b13401c17d140ade5bc743195abaf"
+        },
+        "model-00003-of-00008.safetensors": {
+          "bytes": 4047919784,
+          "advertised_lfs_sha256": "55f36a965b91a37302f44986370add46853268764b45e532d3ea802bfb228f48"
+        },
+        "model-00004-of-00008.safetensors": {
+          "bytes": 4047919816,
+          "advertised_lfs_sha256": "38119fbef1e6d105ef5cd103789ff57c33b96c92e3e34bbd58912563c5112a69"
+        },
+        "model-00005-of-00008.safetensors": {
+          "bytes": 4047919816,
+          "advertised_lfs_sha256": "2f782f06703a3f14d2a5c9e34fcdca08838422ff733037e9424cae54fca1676d"
+        },
+        "model-00006-of-00008.safetensors": {
+          "bytes": 4047919816,
+          "advertised_lfs_sha256": "58513c631af0f333c9afae1cf4808e59524008e5e30919b8416118ce430eeb16"
+        },
+        "model-00007-of-00008.safetensors": {
+          "bytes": 4047919816,
+          "advertised_lfs_sha256": "2270d493435b495f2b32d988de366bae5b69914206f8ef348140305bfb89f3e0"
+        },
+        "model-00008-of-00008.safetensors": {
+          "bytes": 2669724216,
+          "advertised_lfs_sha256": "752355e36d4ebd7420aeb5de44aabe75d5659c8275878053074de796a1f9108c"
+        }
+      },
+      "repository_python_files": [
+        "modeling_qwen.py",
+        "scripts/eval_mteb.py",
+        "tokenization_qwen.py"
+      ]
+    },
+    "rader": {
+      "author_repo_name": "Raderspace/RaDeR_Qwen_25_7B_instruct_MATH_LLMq_CoT_lexical",
+      "returned_repo_id": "Raderspace/RaDeR_Qwen_25_7B_instruct_MATH_LLMq_CoT_lexical",
+      "revision": "f3f15af7632da5d5e52f6089debf12c54160b147",
+      "gated": false,
+      "license": "mit",
+      "configs": {
+        "config.json": {
+          "sha256": "c25cb08bcff57db6fe7efffe9b4adccb060255f5c2ab391281d28c993af6cb8b",
+          "json": {
+            "_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+            "architectures": [
+              "Qwen2Model"
+            ],
+            "attention_dropout": 0.0,
+            "bos_token_id": 151643,
+            "eos_token_id": 151645,
+            "hidden_act": "silu",
+            "hidden_size": 3584,
+            "initializer_range": 0.02,
+            "intermediate_size": 18944,
+            "max_position_embeddings": 32768,
+            "max_window_layers": 28,
+            "model_type": "qwen2",
+            "num_attention_heads": 28,
+            "num_hidden_layers": 28,
+            "num_key_value_heads": 4,
+            "rms_norm_eps": 1e-06,
+            "rope_scaling": null,
+            "rope_theta": 1000000.0,
+            "sliding_window": 131072,
+            "tie_word_embeddings": false,
+            "torch_dtype": "float32",
+            "transformers_version": "4.49.0",
+            "use_cache": true,
+            "use_sliding_window": false,
+            "vocab_size": 152064
+          }
+        }
+      },
+      "root_weight_inventory_only": {
+        "model-00001-of-00006.safetensors": {
+          "bytes": 4976686992,
+          "advertised_lfs_sha256": "6ee2f3bab2edf82769657ad96ff4f4206af3967cb7be12f7f50ed438ea4caed5"
+        },
+        "model-00002-of-00006.safetensors": {
+          "bytes": 4778621952,
+          "advertised_lfs_sha256": "679692aa468cfa32afad2d54fba042445f43567103b706c84e50f11d978488e0"
+        },
+        "model-00003-of-00006.safetensors": {
+          "bytes": 4932743600,
+          "advertised_lfs_sha256": "fec8f4b4d0b0821f05bfe24f42aa1d073a9cf1fc8cb3b4df54a8ba56d3634d72"
+        },
+        "model-00004-of-00006.safetensors": {
+          "bytes": 4932743624,
+          "advertised_lfs_sha256": "162db116f9effe1937881eb67aaf4cd2fb012e4ad3e1a88934d7d77ca370f928"
+        },
+        "model-00005-of-00006.safetensors": {
+          "bytes": 4998851880,
+          "advertised_lfs_sha256": "247168b3b0ca2ee9f22fb5c1312ce5572da672c29407537c221c3c4ee3af1a45"
+        },
+        "model-00006-of-00006.safetensors": {
+          "bytes": 3662864928,
+          "advertised_lfs_sha256": "3411b95671c289cdd8d4ecffe15cd829dc097bec5e812388137a2349d0bb97d1"
+        }
+      },
+      "repository_python_files": []
+    }
+  },
+  "weights_downloaded": false,
+  "model_instantiated": false,
+  "gpu_used": false,
+  "status": "Official metadata only; native auto-placement, remote-code safety, memory and parity remain unverified."
+}

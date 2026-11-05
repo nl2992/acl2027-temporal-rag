@@ -21,4 +21,6 @@ configs/published_tempo_*.json -text
 manifests/tempo_environment.txt -text
 manifests/tempo_models.json -text
 manifests/tempo_instructor_*.json -text
+manifests/tempo_auto_model_candidates.json -text
+manifests/tempo_placement_source_audit.json -text
 .aris/traces/** -text

@@ -1,6 +1,6 @@
 {
   "run_id": "tempo-law-bge-20261105T183515Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-05T18:35:15.487697+00:00",
   "command": [
     "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
@@ -27,6 +27,15 @@
     "inference": {
       "utc": "2026-11-05T18:35:19.396458+00:00",
       "host_disk_free_bytes": 35275198464
+    },
+    "evaluation": {
+      "utc": "2026-11-05T19:04:11.049927+00:00",
+      "host_disk_free_bytes": 33667395584
     }
-  }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-05T19:04:26.399289+00:00"
 }
