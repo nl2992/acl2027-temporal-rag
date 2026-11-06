@@ -1,0 +1,44 @@
+{
+  "run_id": "tempo-quant-inst-l-20261106T203814Z",
+  "status": "complete",
+  "utc_start": "2026-11-06T20:38:14.297420+00:00",
+  "command": [
+    "scripts/drafts/run_tempo_instructor_enabled.py",
+    "--domain",
+    "quant"
+  ],
+  "project_sha": "ca467f3a6febf5c5ff60a1e5f4313a93945f31ff",
+  "project_dirty": " M reports/tempo_retriever_coverage.json\n M reports/tempo_retriever_coverage.md\n?? reports/tempo/tempo-iota-inst-l-20261106T082048Z/\n",
+  "inference_worker_sha256": "73eadaa698f545a642c51b72ad95a3c80a4848bbc07698c96190194de1e412c7",
+  "evaluator_entry_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "ab0dd6897a113ea45d960034611daa44ffc5383173ccb6ea21280e6225c7f72b",
+  "evaluator_wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "stager_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "owner_lock_sha256": "55ac17741314a0b8740d217f6117a6143c65a983cb1fa1a2093aee0fd0bfcca1",
+  "deployed_script_sha256": {
+    "tempo_instructor_isolated.py": "73eadaa698f545a642c51b72ad95a3c80a4848bbc07698c96190194de1e412c7",
+    "tempo_isolated.py": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "isolated_tempo_instructor_worker.sh": "ab0dd6897a113ea45d960034611daa44ffc5383173ccb6ea21280e6225c7f72b",
+    "stage_tempo_data.py": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+    "tempo_evaluate_with_provenance.py": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "resources_before_stage": {
+    "prepare": {
+      "utc": "2026-11-06T20:38:18.336898+00:00",
+      "host_disk_free_bytes": 19175432192
+    },
+    "inference": {
+      "utc": "2026-11-06T20:38:21.931858+00:00",
+      "host_disk_free_bytes": 19175288832
+    },
+    "evaluation": {
+      "utc": "2026-11-06T21:08:38.468273+00:00",
+      "host_disk_free_bytes": 18800332800
+    }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-06T21:08:51.260268+00:00"
+}
