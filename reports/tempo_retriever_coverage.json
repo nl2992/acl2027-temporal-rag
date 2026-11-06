@@ -116,10 +116,10 @@
       }
     },
     "BGE": {
-      "completed_domains": 10,
+      "completed_domains": 11,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 10,
+      "matching_domain_rounding": 11,
       "runs": {
         "bitcoin": {
           "run_id": "tempo-bitcoin-bge-20261106T011741Z",
@@ -175,6 +175,14 @@
           "documents": 85093,
           "ndcg10": 0.14474,
           "author_target_percentage": 14.5,
+          "within_one_decimal_rounding_interval": true
+        },
+        "politics": {
+          "run_id": "tempo-politics-bge-20261106T053409Z",
+          "queries": 150,
+          "documents": 183394,
+          "ndcg10": 0.28249,
+          "author_target_percentage": 28.2,
           "within_one_decimal_rounding_interval": true
         },
         "quant": {
