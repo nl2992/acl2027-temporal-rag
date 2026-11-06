@@ -11,7 +11,7 @@ Targets come from the pinned author README; full-benchmark reproduction remains 
 | DiVeR | 0/13 | 0/0 | Pending |
 | E5 | 0/13 | 0/0 | Pending |
 | GritLM | 0/13 | 0/0 | Pending |
-| Inst-L | 0/13 | 0/0 | Pending |
+| Inst-L | 1/13 | 1/1 | Pending |
 | Qwen | 0/13 | 0/0 | Pending |
 | Rader | 0/13 | 0/0 | Pending |
 | ReasonIR | 0/13 | 0/0 | Pending |

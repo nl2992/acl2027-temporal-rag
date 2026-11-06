@@ -240,11 +240,20 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 0,
+      "completed_domains": 1,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 0,
-      "runs": {}
+      "matching_domain_rounding": 1,
+      "runs": {
+        "iota": {
+          "run_id": "tempo-iota-inst-l-20261106T082048Z",
+          "queries": 10,
+          "documents": 10372,
+          "ndcg10": 0.34296,
+          "author_target_percentage": 34.3,
+          "within_one_decimal_rounding_interval": true
+        }
+      }
     },
     "Qwen": {
       "completed_domains": 0,

@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-iota-inst-l-20261106T082048Z",
+  "benchmark": "TEMPO",
+  "domain": "iota",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "79eb29454ed69c746eceb508d6f00a0b07fd89d1dce12ee13ade7d86ab26705c",
+    "documents": "ca69f1f551ecf7262ee5bf164504a8fef97b52c96499ba6480bc7a461f8db9c3"
+  },
+  "input_sha256": "bdbb21fa0622ffd3c219fe5e560e75996f4ae43b10663518f22702098f317b99",
+  "gold_sha256": "735a0d8cf32ccdce5952a77ec5adbbb2e746dbe65118fb2c6155fbc735cdc356",
+  "queries": 10,
+  "documents": 10372,
+  "original_queries": 10,
+  "original_documents": 10372,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "inst-l",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}
