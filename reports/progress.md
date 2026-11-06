@@ -1,6 +1,6 @@
 # Progress
 
-Current verified state (2026-11-05): all 13 TEMPO BM25 domains completed with ordinary nDCG@10 matching rounded author targets; macro 0.107878 (10.8% rounded). BGE Iota, Quant and Law completed at 0.36062, 0.11737 and 0.31917, all matching rounded targets (3/13 domains). Workplace `tempo-workplace-bge-20261105T190429Z` is running, with remaining domains queued sequentially. Law's real evaluation passed the new same-process provider/source/export checks; its runtime bytes identify the imported evaluator. The completed historical audit remains WARN for earlier provenance gaps. INSTRUCTOR-L is staged but untested; E5/SFR/Qwen/RaDeR have source/metadata preflights only, with Qwen access pending. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the full stronger-baseline gate remain incomplete. Combinatorial search stays locked.
+Current verified state (2026-11-06): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 8/13 domains complete, all matching rounded targets; Bitcoin is running. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L is staged but not tested with a real model; Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
 
 Updated: 2026-11-05. Research status: P0 REPRO_PARTIAL; TEMPO reproduction in progress. Combinatorial search locked until the full baseline registry is resolved.
 
@@ -45,3 +45,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Bitcoin BGE is still running in the existing sequential queue. A separate INSTRUCTOR-L namespace launcher draft has been prepared; deployment and real smoke remain pending.
 
 2026-11-06 — INSTRUCTOR-L draft launcher syntax and synthetic CPU fixture passed. Real model loading and native smoke remain pending while Bitcoin BGE continues.
+
+2026-11-06 — Corrected the stale opening progress snapshot against tempo_retriever_coverage.md: eight of 13 BGE domains are complete and match author-rounded targets. Bitcoin remains in progress; no new result is claimed.
