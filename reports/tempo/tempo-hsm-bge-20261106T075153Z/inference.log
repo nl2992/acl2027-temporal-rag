@@ -1,0 +1,9 @@
+Documents in corpus: 213818
+Already cached: 0
+Need to encode: 213818
+Encoding new documents...
+ersion_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.cloud.resourcemanager_v3 supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.cloud.resourcemanager_v3.
+  warnings.warn(message, FutureWarning)
+Batches:   0%|          | 0/1671 [00:00<?, ?it/s]Killed
