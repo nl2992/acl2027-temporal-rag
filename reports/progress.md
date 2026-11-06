@@ -1,6 +1,6 @@
 # Progress
 
-Current verified state (2026-11-06): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 11/13 domains complete, all matching rounded targets; HSM failed twice with confirmed kernel out-of-memory kills, including a retry with extra swap. History remains pending. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L is staged but not tested with a real model; Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
+Current verified state (2026-11-06): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 11/13 domains complete, all matching rounded targets; HSM failed twice with confirmed kernel out-of-memory kills, including a retry with extra swap. History remains pending. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L's first real-model smoke has started; Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
 
 Updated: 2026-11-05. Research status: P0 REPRO_PARTIAL; TEMPO reproduction in progress. Combinatorial search locked until the full baseline registry is resolved.
 
