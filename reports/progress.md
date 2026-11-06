@@ -77,3 +77,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — A synthetic test of the draft runner's actual failure block confirmed lock release after admission failure and after a failure while saving status. Success-path integration, future BGE cooperation and re-review remain pending.
 
 2026-11-06 — Fresh same-family provisional re-review found prior source/scope/cache issues addressed, but the live BGE queue is not a lock participant and checkpoint inventory identity was mutable. Added a canonical inventory digest guard in a new disabled worker draft; synthetic altered-path and empty-inventory cases are rejected. The changed worker needs re-review; no deployment or INSTRUCTOR experiment occurred.
+
+2026-11-06 — Focused fresh same-family provisional review confirmed the checkpoint inventory guard under normal Python execution, including 10 negative in-memory mutations. It did not rehash weights or authorize deployment; queue ownership and real-model smoke remain pending.
