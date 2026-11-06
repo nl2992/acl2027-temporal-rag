@@ -9,6 +9,7 @@ import sys
 import hashlib
 import shutil
 import os
+from research_gpu_owner import exclusive_owner
 
 root=Path(__file__).resolve().parents[2]
 p=argparse.ArgumentParser()
@@ -40,6 +41,7 @@ state['evaluator_entry_sha256']=hashlib.sha256((root/'scripts/tempo_isolated.py'
 state['launcher_sha256']=hashlib.sha256((root/'scripts/drafts/isolated_tempo_instructor_worker.sh').read_bytes()).hexdigest()
 state['evaluator_wrapper_sha256']=hashlib.sha256((root/'scripts/tempo_evaluate_with_provenance.py').read_bytes()).hexdigest()
 state['stager_sha256']=hashlib.sha256((root/'scripts/stage_tempo_data.py').read_bytes()).hexdigest()
+state['owner_lock_sha256']=hashlib.sha256((root/'scripts/drafts/research_gpu_owner.py').read_bytes()).hexdigest()
 assert state['stager_sha256']=='bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d', 'Stager changed'
 (out/'source_changes.patch').write_bytes(subprocess.check_output(['git','diff','--','scripts','configs'],cwd=root))
 def save():
@@ -89,7 +91,11 @@ def check_private_evaluation_boundary():
         result=subprocess.run(wsl+['runuser','-u','acl-infer','--','test',flag,path],capture_output=True)
         assert result.returncode==1, 'Inference-user access check failed or was inconclusive'
 
+owner=exclusive_owner(root/'cache'/'research-gpu-owner.lock')
+acquired=False
 try:
+    owner.__enter__()
+    acquired=True
     check_resources()
     check_private_evaluation_boundary()
     for filename,key in [('tempo_instructor_isolated.py','inference_worker_sha256'),
@@ -162,4 +168,8 @@ except BaseException as e:
     raise
 finally:
     state['utc_finish']=datetime.datetime.now(datetime.timezone.utc).isoformat()
-    save()
+    try:
+        save()
+    finally:
+        if acquired:
+            owner.__exit__(None,None,None)
