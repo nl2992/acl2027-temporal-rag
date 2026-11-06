@@ -36,6 +36,12 @@ replace_once("            profile.update(parameter_dtype=str(next(model.paramete
     "            model.encode=encode")
 replace_once("{'bge':512,'sbert':384,'contriever':512}[a.model]", "{'inst-l':2048}[a.model]")
 replace_once("{'bge':128,'sbert':128,'contriever':1}[a.model]", "{'inst-l':4}[a.model]")
+replace_once("        cache=cache/key\n        cache.mkdir(parents=True,exist_ok=True)\n        (cache/'descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\\n')",
+    "        # Each run starts with an exclusively created cold cache; never trust a previous run.\n"
+    "        run_cache_key=hashlib.sha256(a.run_id.encode('utf-8')).hexdigest()\n"
+    "        cache=cache/'instructor-cold'/run_cache_key/key\n"
+    "        cache.mkdir(parents=True,exist_ok=False)\n"
+    "        (cache/'descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\\n')")
 replace_once("choices=['bm25','bge','sbert','contriever'],default='bm25'", "choices=['inst-l'],default='inst-l'")
 ast.parse(source)
 destination=ROOT/'scripts/drafts/tempo_instructor_isolated.py'

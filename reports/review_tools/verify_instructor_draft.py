@@ -200,7 +200,9 @@ def main():
                 assert (Path(tmp) / "plain" / artifact).read_bytes() == (Path(tmp) / "wrapped" / artifact).read_bytes()
         assert not rejected_dtype_published_cache(native, worker, Path(tmp) / "rejected", inputs)
         # Replay the exact previous candidate in memory to preserve the failure as a reproducible witness.
-        current = DRAFT.read_bytes()
+        import subprocess
+        current = subprocess.check_output(['git', 'show', '6d28b06:scripts/drafts/tempo_instructor_isolated.py'])
+        assert digest(current) == '88e1a336534abd8abdf91cf06eace91d4fc25661a9911d86de3c7fb1976b16cd'
         guard = b"            assert profile['parameter_dtype']=='torch.float32', profile\n"
         assert current.count(guard) == 1
         previous = current.replace(guard, b"")

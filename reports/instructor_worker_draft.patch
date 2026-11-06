@@ -34,16 +34,23 @@
              return model
          retrievers.SentenceTransformer=sentence_transformer
          original_tokenizer=retrievers.AutoTokenizer.from_pretrained
-@@ -70,7 +86,7 @@
+@@ -70,10 +86,12 @@
              return model
          retrievers.AutoModel.from_pretrained=staticmethod(auto_model)
          ordered_docs_sha256=hashlib.sha256(json.dumps(data['documents'],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
 -        descriptor={'ordered_documents_sha256':ordered_docs_sha256,'domain':data['domain'],'model_revision':model_manifest['revision'],'tokenizer_revision':model_manifest['revision'],'retrieval_source_sha256':sha(VENDOR/'retrievers.py'),'input_serialization':instructions,'embedding_dtype':'native FP32; actual parameter dtype recorded by hook','max_length':{'bge':512,'sbert':384,'contriever':512}[a.model],'batch_size':{'bge':128,'sbert':128,'contriever':1}[a.model],'encode_parameters':'unchanged author defaults','normalization':'unchanged author normalization','cutoff_policy':'TEMPO original exclusion metadata, no added known-at filter','versions':{p:importlib.metadata.version(p) for p in ['torch','transformers','sentence-transformers','numpy']}}
 +        descriptor={'ordered_documents_sha256':ordered_docs_sha256,'domain':data['domain'],'model_revision':model_manifest['revision'],'tokenizer_revision':model_manifest['revision'],'retrieval_source_sha256':sha(VENDOR/'retrievers.py'),'input_serialization':instructions,'embedding_dtype':'native FP32; actual parameter dtype recorded by hook','max_length':{'inst-l':2048}[a.model],'batch_size':{'inst-l':4}[a.model],'encode_parameters':'unchanged author defaults','normalization':'unchanged author normalization','cutoff_policy':'TEMPO original exclusion metadata, no added known-at filter','versions':{p:importlib.metadata.version(p) for p in ['torch','transformers','sentence-transformers','numpy']}}
          key=hashlib.sha256(json.dumps(descriptor,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-         cache=cache/key
-         cache.mkdir(parents=True,exist_ok=True)
-@@ -118,6 +134,6 @@
+-        cache=cache/key
+-        cache.mkdir(parents=True,exist_ok=True)
++        # Each run starts with an exclusively created cold cache; never trust a previous run.
++        run_cache_key=hashlib.sha256(a.run_id.encode('utf-8')).hexdigest()
++        cache=cache/'instructor-cold'/run_cache_key/key
++        cache.mkdir(parents=True,exist_ok=False)
+         (cache/'descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\n')
+         torch.cuda.reset_peak_memory_stats()
+     scores=retrievers.RETRIEVAL_FUNCS[a.model](queries=[q['query'] for q in data['queries']],query_ids=[q['id'] for q in data['queries']],documents=[d['content'] for d in data['documents']],doc_ids=[d['id'] for d in data['documents']],excluded_ids={q['id']:q['excluded_ids'] for q in data['queries']},long_context=False,task=data['domain'],model_id=a.model,instructions=instructions,cache_dir=str(cache))
+@@ -118,6 +136,6 @@
      p=argparse.ArgumentParser()
      p.add_argument('mode',choices=['worker','evaluate'])
      p.add_argument('--run-id',required=True)
