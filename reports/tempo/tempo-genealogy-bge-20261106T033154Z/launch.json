@@ -1,6 +1,6 @@
 {
   "run_id": "tempo-genealogy-bge-20261106T033154Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-06T03:31:54.590751+00:00",
   "command": [
     "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
@@ -27,6 +27,15 @@
     "inference": {
       "utc": "2026-11-06T03:32:15.899333+00:00",
       "host_disk_free_bytes": 26921132032
+    },
+    "evaluation": {
+      "utc": "2026-11-06T05:33:48.158708+00:00",
+      "host_disk_free_bytes": 25960812544
     }
-  }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-06T05:34:07.815244+00:00"
 }

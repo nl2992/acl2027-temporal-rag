@@ -1,6 +1,6 @@
 # Progress
 
-Current verified state (2026-11-06): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 9/13 domains complete, all matching rounded targets; Genealogy is running. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L is staged but not tested with a real model; Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
+Current verified state (2026-11-06): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 10/13 domains complete, all matching rounded targets; Politics is running. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L is staged but not tested with a real model; Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
 
 Updated: 2026-11-05. Research status: P0 REPRO_PARTIAL; TEMPO reproduction in progress. Combinatorial search locked until the full baseline registry is resolved.
 
@@ -81,3 +81,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Focused fresh same-family provisional review confirmed the checkpoint inventory guard under normal Python execution, including 10 negative in-memory mutations. It did not rehash weights or authorize deployment; queue ownership and real-model smoke remain pending.
 
 2026-11-06 — Bitcoin BGE completed: 100 queries and 153,291 documents, ordinary nDCG@10 0.14436, matching the author-rounded 14.4% target. Coverage is now 9/13, all nine matching rounded targets. The existing queue advanced to Genealogy; no temporal judge or full TEMPO reproduction is claimed.
+
+2026-11-06 — Genealogy BGE completed: 115 queries and 156,228 documents, ordinary nDCG@10 0.22041, matching the author-rounded 22.0% target. Coverage is 10/13, all ten matching rounded targets. Politics has started; temporal judge and full SOTA reproduction remain incomplete.

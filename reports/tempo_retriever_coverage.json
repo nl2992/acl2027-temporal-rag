@@ -116,10 +116,10 @@
       }
     },
     "BGE": {
-      "completed_domains": 9,
+      "completed_domains": 10,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 9,
+      "matching_domain_rounding": 10,
       "runs": {
         "bitcoin": {
           "run_id": "tempo-bitcoin-bge-20261106T011741Z",
@@ -143,6 +143,14 @@
           "documents": 93756,
           "ndcg10": 0.12604,
           "author_target_percentage": 12.6,
+          "within_one_decimal_rounding_interval": true
+        },
+        "genealogy": {
+          "run_id": "tempo-genealogy-bge-20261106T033154Z",
+          "queries": 115,
+          "documents": 156228,
+          "ndcg10": 0.22041,
+          "author_target_percentage": 22.0,
           "within_one_decimal_rounding_interval": true
         },
         "iota": {
