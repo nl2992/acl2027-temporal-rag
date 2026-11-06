@@ -42,6 +42,26 @@ replace_once("        cache=cache/key\n        cache.mkdir(parents=True,exist_ok
     "        cache=cache/'instructor-cold'/run_cache_key/key\n"
     "        cache.mkdir(parents=True,exist_ok=False)\n"
     "        (cache/'descriptor.json').write_text(json.dumps(descriptor,indent=2)+'\\n')")
+replace_once("def worker(a):", """def validate_instructor_cache(cache, domain, documents):
+    import numpy as np
+    directory=cache/'doc_emb'/'inst-l'/domain/'long_False'
+    vectors=directory/'embeddings.npy'
+    mapping_file=directory/'doc_id_mapping.json'
+    mapping=json.loads(mapping_file.read_text())
+    ids=[d['id'] for d in documents]
+    assert len(ids)==len(set(ids)) and set(mapping)==set(ids)
+    assert all(type(mapping[doc_id]) is int and mapping[doc_id]==i for i,doc_id in enumerate(ids))
+    array=np.load(vectors,mmap_mode='r',allow_pickle=False)
+    assert array.dtype==np.float32 and array.ndim==2 and array.shape[0]==len(ids) and array.shape[1]>0
+    for offset in range(0,len(ids),1024):
+        assert np.isfinite(array[offset:offset+1024]).all()
+    return {'embeddings_sha256':sha(vectors),'mapping_sha256':sha(mapping_file),
+            'descriptor_sha256':sha(cache/'descriptor.json'),
+            'shape':list(array.shape),'dtype':str(array.dtype),'mapping_order':'input document order',
+            'cache_policy':'exclusive per-run cold cache; reuse disabled'}
+
+def worker(a):""")
+replace_once("        meta['cache_descriptor']=descriptor", "        meta['cache_descriptor']=descriptor\n        meta['cache_receipt']=validate_instructor_cache(cache,data['domain'],data['documents'])")
 replace_once("choices=['bm25','bge','sbert','contriever'],default='bm25'", "choices=['inst-l'],default='inst-l'")
 ast.parse(source)
 destination=ROOT/'scripts/drafts/tempo_instructor_isolated.py'

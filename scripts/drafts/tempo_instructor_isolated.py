@@ -19,6 +19,24 @@ def sha(p):
         for block in iter(lambda:f.read(8*1024*1024),b''):
             h.update(block)
     return h.hexdigest()
+def validate_instructor_cache(cache, domain, documents):
+    import numpy as np
+    directory=cache/'doc_emb'/'inst-l'/domain/'long_False'
+    vectors=directory/'embeddings.npy'
+    mapping_file=directory/'doc_id_mapping.json'
+    mapping=json.loads(mapping_file.read_text())
+    ids=[d['id'] for d in documents]
+    assert len(ids)==len(set(ids)) and set(mapping)==set(ids)
+    assert all(type(mapping[doc_id]) is int and mapping[doc_id]==i for i,doc_id in enumerate(ids))
+    array=np.load(vectors,mmap_mode='r',allow_pickle=False)
+    assert array.dtype==np.float32 and array.ndim==2 and array.shape[0]==len(ids) and array.shape[1]>0
+    for offset in range(0,len(ids),1024):
+        assert np.isfinite(array[offset:offset+1024]).all()
+    return {'embeddings_sha256':sha(vectors),'mapping_sha256':sha(mapping_file),
+            'descriptor_sha256':sha(cache/'descriptor.json'),
+            'shape':list(array.shape),'dtype':str(array.dtype),'mapping_order':'input document order',
+            'cache_policy':'exclusive per-run cold cache; reuse disabled'}
+
 def worker(a):
     assert os.getuid()!=0 and os.getcwd()=='/'
     for protected in [ROOT/'eval-private'/a.run_id/'labels.json',ROOT/'tempo-private/hf_cache',ROOT/'results']:
@@ -108,6 +126,7 @@ def worker(a):
         assert profile['parameter_dtype']=='torch.float32',profile
         assert profile.get('max_seq_length',profile.get('tokenizer_max_length'))==descriptor['max_length'],profile
         meta['cache_descriptor']=descriptor
+        meta['cache_receipt']=validate_instructor_cache(cache,data['domain'],data['documents'])
         meta['peak_torch_allocated_bytes']=torch.cuda.max_memory_allocated()
         meta['gpu']=torch.cuda.get_device_name()
     (out/'worker.json').write_text(json.dumps(meta,indent=2)+'\n')

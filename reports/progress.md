@@ -59,3 +59,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Partially repaired the disabled INSTRUCTOR runner: added stager and retriever hash checks and run-scope checks against the corresponding completed BM25 reference. Synthetic export tests reject eleven identity, scope and digest mismatches. Concurrency, cache integrity, deployed namespace, real-model checks and re-review remain pending.
 
 2026-11-06 — The INSTRUCTOR worker draft now exclusively creates a run-specific cold cache rather than reusing previous embeddings; a synthetic filesystem fixture rejects reuse. Artifact validation, concurrency, namespace tests, real-model smoke and re-review remain pending. No INSTRUCTOR execution has occurred.
+
+2026-11-06 — The disabled INSTRUCTOR draft also validates cold-cache vector shape, FP32 dtype, finite values and document mapping, and records file hashes. Synthetic valid and malformed cache fixtures passed; real-model compatibility, concurrency, namespace tests and re-review remain pending.
