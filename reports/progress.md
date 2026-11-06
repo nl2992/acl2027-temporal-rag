@@ -69,3 +69,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Verified the current Linux evaluation directory is owner-only and inaccessible to the inference user, and added the same read-only check to the disabled runner. This does not substitute for an actual namespace isolation test; lock integration and re-review remain pending.
 
 2026-11-06 — Exercised the INSTRUCTOR draft launcher's mount setup in a separate Linux namespace with a harmless probe instead of its worker. The probe confirmed the inference UID, working directory, selected masked paths and denial of private evaluation access. The launcher has not been deployed or used for a model run; shared lock integration and re-review remain pending.
+
+2026-11-06 — Extended the namespace probe to verify read permission for all 12 pinned INSTRUCTOR checkpoint files as the inference user. This is an access check, not a model load or a fresh hash verification.
