@@ -116,11 +116,19 @@
       }
     },
     "BGE": {
-      "completed_domains": 8,
+      "completed_domains": 9,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 8,
+      "matching_domain_rounding": 9,
       "runs": {
+        "bitcoin": {
+          "run_id": "tempo-bitcoin-bge-20261106T011741Z",
+          "queries": 100,
+          "documents": 153291,
+          "ndcg10": 0.14436,
+          "author_target_percentage": 14.4,
+          "within_one_decimal_rounding_interval": true
+        },
         "cardano": {
           "run_id": "tempo-cardano-bge-20261105T210236Z",
           "queries": 51,

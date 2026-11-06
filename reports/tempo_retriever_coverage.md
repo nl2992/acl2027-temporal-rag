@@ -6,7 +6,7 @@ Targets come from the pinned author README; full-benchmark reproduction remains 
 | Retriever | Full domains | Matching target rounding | Full macro nDCG@10 |
 |---|---:|---:|---:|
 | BM25 | 13/13 | 13/13 | 0.107878 |
-| BGE | 8/13 | 8/8 | Pending |
+| BGE | 9/13 | 9/9 | Pending |
 | Contriever | 0/13 | 0/0 | Pending |
 | DiVeR | 0/13 | 0/0 | Pending |
 | E5 | 0/13 | 0/0 | Pending |
