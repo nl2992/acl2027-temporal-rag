@@ -17,6 +17,19 @@ p.add_argument('--run-id')
 p.add_argument('--smoke',action='store_true')
 p.add_argument('--model',choices=['inst-l'],default='inst-l')
 a=p.parse_args()
+references=[]
+for path in (root/'reports/tempo').glob(f'tempo-{a.domain}-bm25-*/manifest.json'):
+    candidate=json.loads(path.read_bytes())
+    if candidate.get('status')=='complete' and candidate.get('smoke') is False:
+        references.append(candidate)
+assert len(references)==1, 'Missing or ambiguous full-domain BM25 reference'
+reference=references[0]
+assert reference['benchmark']=='TEMPO' and reference['domain']==a.domain
+assert reference['worker']['model']=='bm25'
+assert reference['dataset_revision']=='1dba7027d0afa628993c6dd794e9b68c657a6fac'
+assert reference['source_sha']=='8731487254e0988eaf2ca4ae3e93ff587fec64d0'
+retriever_sha='b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4'
+assert reference['worker']['source_sha256']==retriever_sha
 run=a.run_id or f'tempo-{a.domain}-{a.model}-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 out=root/'reports/tempo'/run
 out.mkdir(parents=True,exist_ok=False)
@@ -26,6 +39,8 @@ state['inference_worker_sha256']=hashlib.sha256((root/'scripts/drafts/tempo_inst
 state['evaluator_entry_sha256']=hashlib.sha256((root/'scripts/tempo_isolated.py').read_bytes()).hexdigest()
 state['launcher_sha256']=hashlib.sha256((root/'scripts/drafts/isolated_tempo_instructor_worker.sh').read_bytes()).hexdigest()
 state['evaluator_wrapper_sha256']=hashlib.sha256((root/'scripts/tempo_evaluate_with_provenance.py').read_bytes()).hexdigest()
+state['stager_sha256']=hashlib.sha256((root/'scripts/stage_tempo_data.py').read_bytes()).hexdigest()
+assert state['stager_sha256']=='bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d', 'Stager changed'
 (out/'source_changes.patch').write_bytes(subprocess.check_output(['git','diff','--','scripts','configs'],cwd=root))
 def save():
     staged=out/'launch.json.tmp'
@@ -51,11 +66,15 @@ try:
     for filename,key in [('tempo_instructor_isolated.py','inference_worker_sha256'),
                          ('tempo_isolated.py','evaluator_entry_sha256'),
                          ('isolated_tempo_instructor_worker.sh','launcher_sha256'),
+                         ('stage_tempo_data.py','stager_sha256'),
                          ('tempo_evaluate_with_provenance.py','evaluator_wrapper_sha256')]:
         actual=subprocess.check_output(['wsl','-d','Ubuntu-24.04','-u','nigel','--','cat',scripts+filename])
         actual_sha=hashlib.sha256(actual).hexdigest()
         state.setdefault('deployed_script_sha256',{})[filename]=actual_sha
         assert actual_sha==state[key],f'Deployed script differs: {filename}'
+    retrieval=subprocess.check_output(['wsl','-d','Ubuntu-24.04','-u','nigel','--','cat',
+        '/home/nigel/acl2027/vendor/Tempo-repaired/retrievers.py'])
+    assert hashlib.sha256(retrieval).hexdigest()==retriever_sha, 'Retrieval source changed'
     save()
     for name,cmd in zip(['prepare','inference','evaluation'],commands):
         if name=='evaluation':
@@ -76,6 +95,24 @@ try:
     manifest=json.loads(exported['manifest.json'])
     runtime=json.loads(exported['evaluator_runtime.json'])
     assert manifest['run_id']==runtime['run_id']==run
+    assert manifest['status']=='complete' and manifest['benchmark']=='TEMPO'
+    assert manifest['domain']==a.domain and manifest['smoke'] is a.smoke
+    assert manifest['dataset_revision']==reference['dataset_revision']
+    assert manifest['source_sha']==reference['source_sha']
+    assert manifest['repaired_sha']=='4bd4324017810ebede72492a3ed869910d668fa7'
+    assert manifest['preparation_script_sha256']==state['stager_sha256']
+    assert manifest['raw_file_sha256']==reference['raw_file_sha256']
+    assert manifest['original_queries']==reference['queries']>0
+    assert manifest['documents']==manifest['original_documents']==reference['documents']>0
+    assert manifest['queries']==(min(2,reference['queries']) if a.smoke else reference['queries'])
+    assert manifest['worker']['status']=='complete'
+    assert manifest['worker']['queries']==manifest['queries']
+    assert manifest['worker']['documents']==manifest['documents']
+    assert manifest['worker']['input_sha256']==manifest['input_sha256']
+    assert manifest['worker']['source_sha256']==retriever_sha
+    if not a.smoke:
+        assert manifest['input_sha256']==reference['input_sha256']
+        assert manifest['gold_sha256']==reference['gold_sha256']
     assert manifest['model']==manifest['worker']['model']==a.model
     assert manifest['worker']['worker_script_sha256']==state['inference_worker_sha256']
     assert runtime==manifest['evaluator_runtime']

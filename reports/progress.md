@@ -55,3 +55,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Fresh reviewer identified missing source/stager pins and cross-run resource exclusion, incomplete scope checks and warm-cache validation gaps in the disabled INSTRUCTOR runner. Interim findings are recorded in instructor_runner_review_checkpoint.md; no deployment approval or completed independent review is claimed.
 
 2026-11-06 — The fresh reviewer completed its read-only assessment and confirmed the four findings; review is same-family provisional with backend identity not independently attested. The draft remains disabled pending repairs and re-review.
+
+2026-11-06 — Partially repaired the disabled INSTRUCTOR runner: added stager and retriever hash checks and run-scope checks against the corresponding completed BM25 reference. Synthetic export tests reject eleven identity, scope and digest mismatches. Concurrency, cache integrity, deployed namespace, real-model checks and re-review remain pending.
