@@ -51,3 +51,7 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Prepared a disabled INSTRUCTOR-L runner draft that separately records and checks the inference worker and trusted evaluator entry-point hashes. It is not reviewed or deployed; end-to-end integration, isolation, fixtures and real model smoke remain pending.
 
 2026-11-06 — A synthetic fixture executed the draft's actual export assertions and rejected six identity or digest mismatches. This is a narrow local check, not a review or end-to-end run; deployment remains blocked on the remaining checks.
+
+2026-11-06 — Fresh reviewer identified missing source/stager pins and cross-run resource exclusion, incomplete scope checks and warm-cache validation gaps in the disabled INSTRUCTOR runner. Interim findings are recorded in instructor_runner_review_checkpoint.md; no deployment approval or completed independent review is claimed.
+
+2026-11-06 — The fresh reviewer completed its read-only assessment and confirmed the four findings; review is same-family provisional with backend identity not independently attested. The draft remains disabled pending repairs and re-review.
