@@ -62,7 +62,25 @@ def verify_wrapper(phase):
     save()
     assert digest==state['evaluator_wrapper_sha256'], 'Evaluator wrapper changed after launch'
 
+def check_resources():
+    """Admission only; does not serialize non-cooperating launchers."""
+    wsl=['wsl','-d','Ubuntu-24.04','-u','root','--']
+    active=subprocess.run(wsl+['pgrep','-f',
+        'baseline_isolated.py (prepare|worker|evaluate)|tempo_isolated.py (worker|evaluate)|tempo_instructor_isolated.py (worker|evaluate)|tempo_evaluate_with_provenance.py|stage_tempo_data.py'],capture_output=True)
+    assert active.returncode==1, 'Research process active or process state unavailable'
+    values=subprocess.check_output(wsl+['nvidia-smi','--query-gpu=memory.used',
+        '--format=csv,noheader,nounits'],text=True).split()
+    assert len(values)==1 and values[0].isdigit() and int(values[0])<500, 'GPU unavailable'
+    meminfo=subprocess.check_output(wsl+['cat','/proc/meminfo'],text=True)
+    memory={line.split(':')[0]:int(line.split()[1]) for line in meminfo.splitlines()}
+    assert memory['SwapTotal']>=9*1024**2
+    assert memory['SwapFree']>=4*1024**2 and memory['MemAvailable']>=2*1024**2
+    filesystem=subprocess.check_output(wsl+['df','-PB1','/home/acl-infer'],text=True).splitlines()
+    assert len(filesystem)==2 and int(filesystem[1].split()[3])>=4*1024**3
+    assert shutil.disk_usage(root).free>=12*1024**3
+
 try:
+    check_resources()
     for filename,key in [('tempo_instructor_isolated.py','inference_worker_sha256'),
                          ('tempo_isolated.py','evaluator_entry_sha256'),
                          ('isolated_tempo_instructor_worker.sh','launcher_sha256'),
