@@ -61,3 +61,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — The INSTRUCTOR worker draft now exclusively creates a run-specific cold cache rather than reusing previous embeddings; a synthetic filesystem fixture rejects reuse. Artifact validation, concurrency, namespace tests, real-model smoke and re-review remain pending. No INSTRUCTOR execution has occurred.
 
 2026-11-06 — The disabled INSTRUCTOR draft also validates cold-cache vector shape, FP32 dtype, finite values and document mapping, and records file hashes. Synthetic valid and malformed cache fixtures passed; real-model compatibility, concurrency, namespace tests and re-review remain pending.
+
+2026-11-06 — Prototyped a cooperative Windows process lock for future launchers; subprocess tests cover exclusion and release, including abnormal exit. It is not integrated into either launcher and does not protect the running BGE queue. Resource admission and re-review remain pending.
