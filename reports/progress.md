@@ -49,3 +49,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Corrected the stale opening progress snapshot against tempo_retriever_coverage.md: eight of 13 BGE domains are complete and match author-rounded targets. Bitcoin remains in progress; no new result is claimed.
 
 2026-11-06 — Prepared a disabled INSTRUCTOR-L runner draft that separately records and checks the inference worker and trusted evaluator entry-point hashes. It is not reviewed or deployed; end-to-end integration, isolation, fixtures and real model smoke remain pending.
+
+2026-11-06 — A synthetic fixture executed the draft's actual export assertions and rejected six identity or digest mismatches. This is a narrow local check, not a review or end-to-end run; deployment remains blocked on the remaining checks.
