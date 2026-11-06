@@ -79,8 +79,19 @@ def check_resources():
     assert len(filesystem)==2 and int(filesystem[1].split()[3])>=4*1024**3
     assert shutil.disk_usage(root).free>=12*1024**3
 
+def check_private_evaluation_boundary():
+    """Check existing owner-only permissions; namespace masking is checked separately."""
+    wsl=['wsl','-d','Ubuntu-24.04','-u','root','--']
+    path='/home/nigel/acl2027/eval-private'
+    identity=subprocess.check_output(wsl+['stat','-c','%U %a %F',path],text=True).strip()
+    assert identity=='nigel 700 directory', 'Private evaluation directory is not owner-only'
+    for flag in ['-r','-x']:
+        result=subprocess.run(wsl+['runuser','-u','acl-infer','--','test',flag,path],capture_output=True)
+        assert result.returncode==1, 'Inference-user access check failed or was inconclusive'
+
 try:
     check_resources()
+    check_private_evaluation_boundary()
     for filename,key in [('tempo_instructor_isolated.py','inference_worker_sha256'),
                          ('tempo_isolated.py','evaluator_entry_sha256'),
                          ('isolated_tempo_instructor_worker.sh','launcher_sha256'),
@@ -95,6 +106,8 @@ try:
     assert hashlib.sha256(retrieval).hexdigest()==retriever_sha, 'Retrieval source changed'
     save()
     for name,cmd in zip(['prepare','inference','evaluation'],commands):
+        if name=='inference':
+            check_private_evaluation_boundary()
         if name=='evaluation':
             verify_wrapper('immediately_before_evaluation')
         state.setdefault('resources_before_stage',{})[name]={

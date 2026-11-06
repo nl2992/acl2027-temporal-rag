@@ -65,3 +65,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Prototyped a cooperative Windows process lock for future launchers; subprocess tests cover exclusion and release, including abnormal exit. It is not integrated into either launcher and does not protect the running BGE queue. Resource admission and re-review remain pending.
 
 2026-11-06 — Added resource admission checks to the disabled INSTRUCTOR runner and observed that it refuses to start during the live BGE job. This is a snapshot check, not an atomic lock; cooperative launcher integration, idle-path testing and re-review remain pending.
+
+2026-11-06 — Verified the current Linux evaluation directory is owner-only and inaccessible to the inference user, and added the same read-only check to the disabled runner. This does not substitute for an actual namespace isolation test; lock integration and re-review remain pending.
