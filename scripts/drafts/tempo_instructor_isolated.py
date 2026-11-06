@@ -63,6 +63,8 @@ def worker(a):
     if a.model!='bm25':
         import torch
         staged_record=json.loads((ROOT/'reports/instructor_source/staged_snapshot.json').read_text())
+        staged_digest=hashlib.sha256(json.dumps(staged_record,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        assert staged_digest=='622ff71f899545bb9178dc1f379775b1b0392d7b7412d9b09c237722807c4ed9', 'Checkpoint inventory changed'
         staged={'inst-l':{k:staged_record[k] for k in ['repo','revision','snapshot','license','files']}}
         assert staged['inst-l']['repo']=='hkunlp/instructor-large'
         assert staged['inst-l']['revision']=='54e5ffb8d484de506e59443b07dc819fb15c7233'

@@ -16,6 +16,8 @@ def replace_once(old,new):
 
 replace_once("        staged=json.loads(Path('/home/acl-infer/models/tempo_models.json').read_text())",
     "        staged_record=json.loads((ROOT/'reports/instructor_source/staged_snapshot.json').read_text())\n"
+    "        staged_digest=hashlib.sha256(json.dumps(staged_record,sort_keys=True,separators=(',',':')).encode()).hexdigest()\n"
+    "        assert staged_digest=='622ff71f899545bb9178dc1f379775b1b0392d7b7412d9b09c237722807c4ed9', 'Checkpoint inventory changed'\n"
     "        staged={'inst-l':{k:staged_record[k] for k in ['repo','revision','snapshot','license','files']}}\n"
     "        assert staged['inst-l']['repo']=='hkunlp/instructor-large'\n"
     "        assert staged['inst-l']['revision']=='54e5ffb8d484de506e59443b07dc819fb15c7233'")
