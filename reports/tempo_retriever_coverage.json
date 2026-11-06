@@ -240,10 +240,10 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 2,
+      "completed_domains": 3,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 2,
+      "matching_domain_rounding": 3,
       "runs": {
         "iota": {
           "run_id": "tempo-iota-inst-l-20261106T082048Z",
@@ -251,6 +251,14 @@
           "documents": 10372,
           "ndcg10": 0.34296,
           "author_target_percentage": 34.3,
+          "within_one_decimal_rounding_interval": true
+        },
+        "law": {
+          "run_id": "tempo-law-inst-l-20261106T210907Z",
+          "queries": 35,
+          "documents": 43288,
+          "ndcg10": 0.37309,
+          "author_target_percentage": 37.3,
           "within_one_decimal_rounding_interval": true
         },
         "quant": {
