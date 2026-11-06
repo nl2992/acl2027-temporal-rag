@@ -1,0 +1,32 @@
+{
+  "run_id": "tempo-bitcoin-bge-20261106T011741Z",
+  "status": "running",
+  "utc_start": "2026-11-06T01:17:41.469550+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
+    "--domain",
+    "bitcoin",
+    "--model",
+    "bge"
+  ],
+  "project_sha": "5bcbad685f7f398ecd16c907b108905cfedfc8d1",
+  "project_dirty": " M .gitattributes\n M reports/tempo/tempo-workplace-bge-20261105T190429Z/inference.log\n M reports/tempo/tempo-workplace-bge-20261105T190429Z/launch.json\n M reports/tempo_retriever_coverage.json\n M reports/tempo_retriever_coverage.md\n?? reports/instructor_worker_draft.patch\n?? reports/instructor_worker_draft_review.md\n?? reports/review_tools/tempo_workplace_evidence_20261105.json\n?? reports/review_tools/verify_instructor_draft.py\n?? reports/tempo/tempo-cardano-bge-20261105T210236Z/\n?? reports/tempo/tempo-economics-bge-20261105T194708Z/\n?? reports/tempo/tempo-monero-bge-20261105T220658Z/\n?? reports/tempo/tempo-travel-bge-20261105T231317Z/\n?? reports/tempo/tempo-workplace-bge-20261105T190429Z/evaluation.log\n?? reports/tempo/tempo-workplace-bge-20261105T190429Z/evaluator_runtime.json\n?? reports/tempo/tempo-workplace-bge-20261105T190429Z/manifest.json\n?? reports/tempo/tempo-workplace-bge-20261105T190429Z/summary.json\n?? scripts/build_instructor_worker_draft.py\n?? scripts/drafts/\n",
+  "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+  "evaluator_wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "deployed_script_sha256": {
+    "tempo_isolated.py": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "isolated_tempo_worker.sh": "aac2b9e76cfb6b925aa0be3fee4ab81d02a97144863a3c3baedf3f536d35187a",
+    "tempo_evaluate_with_provenance.py": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "resources_before_stage": {
+    "prepare": {
+      "utc": "2026-11-06T01:17:42.045744+00:00",
+      "host_disk_free_bytes": 29672472576
+    },
+    "inference": {
+      "utc": "2026-11-06T01:18:02.515938+00:00",
+      "host_disk_free_bytes": 29607313408
+    }
+  }
+}

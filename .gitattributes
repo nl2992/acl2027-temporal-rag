@@ -1,9 +1,11 @@
 * text=auto
 *.sh text eol=lf
 scripts/*.py text eol=lf
+scripts/drafts/*.py text eol=lf
 docs/guides/* -text
 configs/factorial_144.jsonl -text
 reports/source_snapshots/* -text
+reports/instructor_worker_draft.patch -text
 reports/tempo/**/manifest.json -text
 reports/tempo/**/summary.json -text
 reports/tempo/**/evaluator_runtime.json -text

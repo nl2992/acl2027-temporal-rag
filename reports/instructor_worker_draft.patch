@@ -1,0 +1,53 @@
+--- frozen-tempo-isolated-9f0e5555.py
++++ draft-tempo-instructor-isolated.py
+@@ -44,7 +44,10 @@
+     profile={}
+     if a.model!='bm25':
+         import torch
+-        staged=json.loads(Path('/home/acl-infer/models/tempo_models.json').read_text())
++        staged_record=json.loads((ROOT/'reports/instructor_source/staged_snapshot.json').read_text())
++        staged={'inst-l':{k:staged_record[k] for k in ['repo','revision','snapshot','license','files']}}
++        assert staged['inst-l']['repo']=='hkunlp/instructor-large'
++        assert staged['inst-l']['revision']=='54e5ffb8d484de506e59443b07dc819fb15c7233'
+         model_manifest=staged[a.model]
+         for name,item in model_manifest['files'].items():
+             assert sha(Path(model_manifest['snapshot'])/name)==item['sha256'],name
+@@ -54,7 +57,20 @@
+         original_st=retrievers.SentenceTransformer
+         def sentence_transformer(name,*args,**kw):
+             model=original_st(local(name),*args,**kw)
+-            profile.update(parameter_dtype=str(next(model.parameters()).dtype),max_seq_length=model.max_seq_length)
++            profile.update(parameter_dtype=str(next(model.parameters()).dtype),constructor_max_seq_length=model.max_seq_length)
++            assert profile['parameter_dtype']=='torch.float32', profile
++            original_encode=model.encode
++            def encode(*texts,**encode_kw):
++                profile['max_seq_length']=model.max_seq_length
++                flags=[layer.include_prompt for layer in model.modules() if hasattr(layer,'include_prompt')]
++                assert flags and all(flag is False for flag in flags), flags
++                assert model.max_seq_length==2048
++                assert encode_kw.get('batch_size')==4 and encode_kw.get('normalize_embeddings') is True
++                profile['pooling_include_prompt']=flags
++                profile.setdefault('encode_calls',[]).append({'texts':len(texts[0]),'batch_size':encode_kw['batch_size'],
++                    'normalize_embeddings':encode_kw['normalize_embeddings'],'prompt':encode_kw.get('prompt')})
++                return original_encode(*texts,**encode_kw)
++            model.encode=encode
+             return model
+         retrievers.SentenceTransformer=sentence_transformer
+         original_tokenizer=retrievers.AutoTokenizer.from_pretrained
+@@ -70,7 +86,7 @@
+             return model
+         retrievers.AutoModel.from_pretrained=staticmethod(auto_model)
+         ordered_docs_sha256=hashlib.sha256(json.dumps(data['documents'],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+-        descriptor={'ordered_documents_sha256':ordered_docs_sha256,'domain':data['domain'],'model_revision':model_manifest['revision'],'tokenizer_revision':model_manifest['revision'],'retrieval_source_sha256':sha(VENDOR/'retrievers.py'),'input_serialization':instructions,'embedding_dtype':'native FP32; actual parameter dtype recorded by hook','max_length':{'bge':512,'sbert':384,'contriever':512}[a.model],'batch_size':{'bge':128,'sbert':128,'contriever':1}[a.model],'encode_parameters':'unchanged author defaults','normalization':'unchanged author normalization','cutoff_policy':'TEMPO original exclusion metadata, no added known-at filter','versions':{p:importlib.metadata.version(p) for p in ['torch','transformers','sentence-transformers','numpy']}}
++        descriptor={'ordered_documents_sha256':ordered_docs_sha256,'domain':data['domain'],'model_revision':model_manifest['revision'],'tokenizer_revision':model_manifest['revision'],'retrieval_source_sha256':sha(VENDOR/'retrievers.py'),'input_serialization':instructions,'embedding_dtype':'native FP32; actual parameter dtype recorded by hook','max_length':{'inst-l':2048}[a.model],'batch_size':{'inst-l':4}[a.model],'encode_parameters':'unchanged author defaults','normalization':'unchanged author normalization','cutoff_policy':'TEMPO original exclusion metadata, no added known-at filter','versions':{p:importlib.metadata.version(p) for p in ['torch','transformers','sentence-transformers','numpy']}}
+         key=hashlib.sha256(json.dumps(descriptor,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+         cache=cache/key
+         cache.mkdir(parents=True,exist_ok=True)
+@@ -118,6 +134,6 @@
+     p=argparse.ArgumentParser()
+     p.add_argument('mode',choices=['worker','evaluate'])
+     p.add_argument('--run-id',required=True)
+-    p.add_argument('--model',choices=['bm25','bge','sbert','contriever'],default='bm25')
++    p.add_argument('--model',choices=['inst-l'],default='inst-l')
+     a=p.parse_args()
+     globals()[a.mode](a)

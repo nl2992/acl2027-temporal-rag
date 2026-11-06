@@ -116,11 +116,27 @@
       }
     },
     "BGE": {
-      "completed_domains": 3,
+      "completed_domains": 8,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 3,
+      "matching_domain_rounding": 8,
       "runs": {
+        "cardano": {
+          "run_id": "tempo-cardano-bge-20261105T210236Z",
+          "queries": 51,
+          "documents": 87201,
+          "ndcg10": 0.1311,
+          "author_target_percentage": 13.1,
+          "within_one_decimal_rounding_interval": true
+        },
+        "economics": {
+          "run_id": "tempo-economics-bge-20261105T194708Z",
+          "queries": 83,
+          "documents": 93756,
+          "ndcg10": 0.12604,
+          "author_target_percentage": 12.6,
+          "within_one_decimal_rounding_interval": true
+        },
         "iota": {
           "run_id": "tempo-iota-bge-20261105T122024Z",
           "queries": 10,
@@ -137,12 +153,36 @@
           "author_target_percentage": 31.9,
           "within_one_decimal_rounding_interval": true
         },
+        "monero": {
+          "run_id": "tempo-monero-bge-20261105T220658Z",
+          "queries": 65,
+          "documents": 85093,
+          "ndcg10": 0.14474,
+          "author_target_percentage": 14.5,
+          "within_one_decimal_rounding_interval": true
+        },
         "quant": {
           "run_id": "tempo-quant-bge-20261105T163915Z",
           "queries": 34,
           "documents": 28785,
           "ndcg10": 0.11737,
           "author_target_percentage": 11.7,
+          "within_one_decimal_rounding_interval": true
+        },
+        "travel": {
+          "run_id": "tempo-travel-bge-20261105T231317Z",
+          "queries": 100,
+          "documents": 177677,
+          "ndcg10": 0.23834,
+          "author_target_percentage": 23.8,
+          "within_one_decimal_rounding_interval": true
+        },
+        "workplace": {
+          "run_id": "tempo-workplace-bge-20261105T190429Z",
+          "queries": 36,
+          "documents": 64659,
+          "ndcg10": 0.27171,
+          "author_target_percentage": 27.2,
           "within_one_decimal_rounding_interval": true
         }
       }

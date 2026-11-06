@@ -1,0 +1,211 @@
+{
+  "run_id": "tempo-workplace-bge-20261105T190429Z",
+  "benchmark": "TEMPO",
+  "domain": "workplace",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "e5f17c03c249af6319993d9bc820fcd97ac96b3c9e32fd48ad2c3b56a05bdba2",
+    "documents": "7fd6e93fb2b83e25eb9a00709a2bb72886d0281baa438508954ac0b1393d994a"
+  },
+  "input_sha256": "bc9ad9b59f1c35f9bd5ada8df18abea0ae186b0bed3089dc3b75ef667f4bae48",
+  "gold_sha256": "7e8cbae999a092a2ee81935cba85618c02d9a345ebf49512527a83e62168bd26",
+  "queries": 36,
+  "documents": 64659,
+  "original_queries": 36,
+  "original_documents": 64659,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "bge",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0,
+  "status": "complete",
+  "worker": {
+    "status": "complete",
+    "benchmark": "TEMPO",
+    "model": "bge",
+    "queries": 36,
+    "documents": 64659,
+    "input_sha256": "bc9ad9b59f1c35f9bd5ada8df18abea0ae186b0bed3089dc3b75ef667f4bae48",
+    "scores_sha256": "db71abce2f10a93c951c9c96f46854e209a359580f2793aecc80e8cdfe60540a",
+    "elapsed_retrieval_seconds": 2527.5393918309996,
+    "utc_finish": "2026-11-05T19:46:49.361614+00:00",
+    "uid": 1001,
+    "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "worker_script_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "versions": {
+      "pyserini": "1.2.0",
+      "gensim": "4.4.0",
+      "pytrec-eval": "0.5",
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1"
+    },
+    "algorithm": "Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions",
+    "instructions": {
+      "query": "Represent this query for retrieving relevant documents: ",
+      "document": ""
+    },
+    "model_snapshot": {
+      "repo": "BAAI/bge-large-en-v1.5",
+      "revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "snapshot": "/home/acl-infer/models/models--BAAI--bge-large-en-v1.5/snapshots/d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "license": "mit",
+      "files": {
+        "config.json": {
+          "sha256": "446712fac367857b4b1302762fe1cd7bfa8b3c4b77b4dc5d77c4025407660896",
+          "bytes": 779
+        },
+        "sentence_bert_config.json": {
+          "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+          "bytes": 52
+        },
+        "special_tokens_map.json": {
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+          "bytes": 125
+        },
+        "modules.json": {
+          "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+          "bytes": 349
+        },
+        "tokenizer_config.json": {
+          "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+          "bytes": 366
+        },
+        "model.safetensors": {
+          "sha256": "45e1954914e29bd74080e6c1510165274ff5279421c89f76c418878732f64ae7",
+          "bytes": 1340616616
+        },
+        "vocab.txt": {
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+          "bytes": 231508
+        },
+        "tokenizer.json": {
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+          "bytes": 711396
+        },
+        "config_sentence_transformers.json": {
+          "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+          "bytes": 124
+        },
+        "1_Pooling/config.json": {
+          "sha256": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+          "bytes": 191
+        }
+      }
+    },
+    "observed_profile": {
+      "parameter_dtype": "torch.float32",
+      "tokenizer_max_length": 512,
+      "max_seq_length": 512
+    },
+    "cache_descriptor": {
+      "ordered_documents_sha256": "f7b0f3dcd25e55c477a91a7985523151522964a2a1604d18a86bc7a40cf61e54",
+      "domain": "workplace",
+      "model_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "tokenizer_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+      "retrieval_source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+      "input_serialization": {
+        "query": "Represent this query for retrieving relevant documents: ",
+        "document": ""
+      },
+      "embedding_dtype": "native FP32; actual parameter dtype recorded by hook",
+      "max_length": 512,
+      "batch_size": 128,
+      "encode_parameters": "unchanged author defaults",
+      "normalization": "unchanged author normalization",
+      "cutoff_policy": "TEMPO original exclusion metadata, no added known-at filter",
+      "versions": {
+        "torch": "2.14.1",
+        "transformers": "4.40.0",
+        "sentence-transformers": "3.1.1",
+        "numpy": "1.26.4"
+      }
+    },
+    "peak_torch_allocated_bytes": 7796289536,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  },
+  "summary_sha256": "63c47959e413a658158125f38518ee984baaa8341e062d5c33ebaa1285271ee5",
+  "metric_roles": {
+    "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+    "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+  },
+  "deviations": [
+    "Missing InstructorEmbedding added to independent environment",
+    "Optional unused vLLM imports deferred; BM25/metric functions unchanged",
+    "True relevance/answer fields projected out; isolated inference and offline evaluation",
+    "Dataset/model inputs pinned; current unpinned package resolution differs from unspecified author environment"
+  ],
+  "evaluator_runtime": {
+    "run_id": "tempo-workplace-bge-20261105T190429Z",
+    "utc_start": "2026-11-05T19:46:54.238271+00:00",
+    "utc_finish": "2026-11-05T19:47:04.767782+00:00",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "python_executable": "/home/nigel/miniforge3/envs/tempo-native/bin/python",
+    "evaluator_entry_point_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "same_process": true,
+    "summary_sha256": "63c47959e413a658158125f38518ee984baaa8341e062d5c33ebaa1285271ee5",
+    "module_files": {
+      "pytrec_eval_ext": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+        "sha256": "35dc7177a5d39931b4f5ebda334624325923f3719c062f63f7fbe7906aa108f9"
+      },
+      "pytrec_eval": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval/__init__.py",
+        "sha256": "29abd1d7a7e8c94eb6df0c6aef589e92dd9763eabaa84109dbb1f458ce6bc436"
+      }
+    },
+    "installed_distribution_metadata": {
+      "pytrec-eval": {
+        "distribution_version": "0.5",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Qido9a2fYTi26KFs0UlqsUqMQPJRnlQFFfaNKPdTcDA",
+            "matches_imported_bytes": false
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "6pUZGWcwb-jyJQHGOrdP7f00x_b7SZUyZcAsOmnsHQs",
+            "matches_imported_bytes": false
+          }
+        ]
+      },
+      "pytrec-eval-terrier": {
+        "distribution_version": "0.5.11",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "KavR16foyU623wxq71iekt2XY-q6qEEJ27H0WM5rxDY",
+            "matches_imported_bytes": true
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Ndxxd6XTmTG09evaM0YkMlkj83GcBi9j9_vnkGqhCPk",
+            "matches_imported_bytes": true
+          }
+        ]
+      }
+    },
+    "evaluator_class_mro": [
+      "pytrec_eval.RelevanceEvaluator",
+      "pytrec_eval.RelevanceEvaluator",
+      "builtins.object"
+    ],
+    "interpretation": "Module bytes observed in this evaluation process; distribution version alone does not identify an overwritten import."
+  }
+}

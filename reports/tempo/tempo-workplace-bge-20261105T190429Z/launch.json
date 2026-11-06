@@ -1,6 +1,6 @@
 {
   "run_id": "tempo-workplace-bge-20261105T190429Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-05T19:04:29.160124+00:00",
   "command": [
     "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\run_tempo_wsl.py",
@@ -27,6 +27,15 @@
     "inference": {
       "utc": "2026-11-05T19:04:33.673657+00:00",
       "host_disk_free_bytes": 33666932736
+    },
+    "evaluation": {
+      "utc": "2026-11-05T19:46:53.603356+00:00",
+      "host_disk_free_bytes": 33313165312
     }
-  }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-05T19:47:06.989879+00:00"
 }

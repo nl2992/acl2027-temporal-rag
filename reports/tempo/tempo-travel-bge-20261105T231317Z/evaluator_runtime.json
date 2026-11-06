@@ -1,0 +1,67 @@
+{
+  "run_id": "tempo-travel-bge-20261105T231317Z",
+  "utc_start": "2026-11-06T01:17:25.031881+00:00",
+  "utc_finish": "2026-11-06T01:17:37.496434+00:00",
+  "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+  "python_executable": "/home/nigel/miniforge3/envs/tempo-native/bin/python",
+  "evaluator_entry_point_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "same_process": true,
+  "summary_sha256": "f58044cb4bb55339ffd56443dab9272629f4d24cda25429df1a503113b0551a5",
+  "module_files": {
+    "pytrec_eval_ext": {
+      "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "35dc7177a5d39931b4f5ebda334624325923f3719c062f63f7fbe7906aa108f9"
+    },
+    "pytrec_eval": {
+      "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval/__init__.py",
+      "sha256": "29abd1d7a7e8c94eb6df0c6aef589e92dd9763eabaa84109dbb1f458ce6bc436"
+    }
+  },
+  "installed_distribution_metadata": {
+    "pytrec-eval": {
+      "distribution_version": "0.5",
+      "record_entries": [
+        {
+          "module": "pytrec_eval",
+          "record_path": "pytrec_eval/__init__.py",
+          "record_hash_algorithm": "sha256",
+          "record_hash_value": "Qido9a2fYTi26KFs0UlqsUqMQPJRnlQFFfaNKPdTcDA",
+          "matches_imported_bytes": false
+        },
+        {
+          "module": "pytrec_eval_ext",
+          "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+          "record_hash_algorithm": "sha256",
+          "record_hash_value": "6pUZGWcwb-jyJQHGOrdP7f00x_b7SZUyZcAsOmnsHQs",
+          "matches_imported_bytes": false
+        }
+      ]
+    },
+    "pytrec-eval-terrier": {
+      "distribution_version": "0.5.11",
+      "record_entries": [
+        {
+          "module": "pytrec_eval",
+          "record_path": "pytrec_eval/__init__.py",
+          "record_hash_algorithm": "sha256",
+          "record_hash_value": "KavR16foyU623wxq71iekt2XY-q6qEEJ27H0WM5rxDY",
+          "matches_imported_bytes": true
+        },
+        {
+          "module": "pytrec_eval_ext",
+          "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+          "record_hash_algorithm": "sha256",
+          "record_hash_value": "Ndxxd6XTmTG09evaM0YkMlkj83GcBi9j9_vnkGqhCPk",
+          "matches_imported_bytes": true
+        }
+      ]
+    }
+  },
+  "evaluator_class_mro": [
+    "pytrec_eval.RelevanceEvaluator",
+    "pytrec_eval.RelevanceEvaluator",
+    "builtins.object"
+  ],
+  "interpretation": "Module bytes observed in this evaluation process; distribution version alone does not identify an overwritten import."
+}
