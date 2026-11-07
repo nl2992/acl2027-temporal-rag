@@ -1,0 +1,261 @@
+{
+  "run_id": "tempo-cardano-inst-l-20261107T203540Z",
+  "benchmark": "TEMPO",
+  "domain": "cardano",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "097a4a801b63424f207b480747a1c7013b6d43368c5fdf6c1df36d7d8b49fe37",
+    "documents": "70ce3fa4cd5660156d3c51d24916d49521d59659a3a772ca06f6232c29ab6948"
+  },
+  "input_sha256": "9214972aa486000b5fc2b053e6a675acba7a36ca0b48d9d434b6f83205f9c569",
+  "gold_sha256": "60aff59e13580d8ede09bd7f2b7e8e5927e054039eaad69f121318f3faef7a51",
+  "queries": 51,
+  "documents": 87201,
+  "original_queries": 51,
+  "original_documents": 87201,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "inst-l",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0,
+  "status": "complete",
+  "worker": {
+    "status": "complete",
+    "benchmark": "TEMPO",
+    "model": "inst-l",
+    "queries": 51,
+    "documents": 87201,
+    "input_sha256": "9214972aa486000b5fc2b053e6a675acba7a36ca0b48d9d434b6f83205f9c569",
+    "scores_sha256": "ff05d82e244e761d3dcb73e2733384d6106c9d214a6d90da0e31b156ceb6cf1e",
+    "elapsed_retrieval_seconds": 7390.624732814,
+    "utc_finish": "2026-11-07T22:39:25.515874+00:00",
+    "uid": 1001,
+    "source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+    "worker_script_sha256": "73eadaa698f545a642c51b72ad95a3c80a4848bbc07698c96190194de1e412c7",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "versions": {
+      "pyserini": "1.2.0",
+      "gensim": "4.4.0",
+      "pytrec-eval": "0.5",
+      "torch": "2.14.1",
+      "transformers": "4.40.0",
+      "numpy": "1.26.4",
+      "scipy": "1.10.1"
+    },
+    "algorithm": "Unchanged released retrieval function, pooling/normalization/defaults, top1000 and author exclusions",
+    "instructions": {
+      "query": "Represent this query for retrieving relevant documents: ",
+      "document": ""
+    },
+    "model_snapshot": {
+      "repo": "hkunlp/instructor-large",
+      "revision": "54e5ffb8d484de506e59443b07dc819fb15c7233",
+      "snapshot": "/home/acl-infer/models/instructor-only/models--hkunlp--instructor-large/snapshots/54e5ffb8d484de506e59443b07dc819fb15c7233",
+      "license": "apache-2.0",
+      "files": {
+        "1_Pooling/config.json": {
+          "sha256": "f2fa6333d3899e2f9368e2e2741ece8e74160337b3698f475f6e0f7f28e396fe",
+          "bytes": 270,
+          "advertised_lfs_sha256": null
+        },
+        "2_Dense/config.json": {
+          "sha256": "d8dfe28f975c278029485521b90a9b2ad7f11f551a862fb772e38973050a22a9",
+          "bytes": 116,
+          "advertised_lfs_sha256": null
+        },
+        "2_Dense/pytorch_model.bin": {
+          "sha256": "a6e82cba0876dacbadccdea565c9e19e29848d994d23968bd1343b8f0f762bdc",
+          "bytes": 3146603,
+          "advertised_lfs_sha256": "a6e82cba0876dacbadccdea565c9e19e29848d994d23968bd1343b8f0f762bdc"
+        },
+        "config.json": {
+          "sha256": "288bd87665d009d9746c8bd93d150aafa13cf5c5a8da199c2f046bae0fcddcb1",
+          "bytes": 1529,
+          "advertised_lfs_sha256": null
+        },
+        "config_sentence_transformers.json": {
+          "sha256": "f631e4bd49910419948c5e9134ab07e0d63b22b8cebbe6875f99a0712bcadd4d",
+          "bytes": 122,
+          "advertised_lfs_sha256": null
+        },
+        "modules.json": {
+          "sha256": "41251094dfd3e7ff81a85ba97b3f4788df47e4039f1bc5037575b43c028beb40",
+          "bytes": 461,
+          "advertised_lfs_sha256": null
+        },
+        "pytorch_model.bin": {
+          "sha256": "fb7f63752cf10103be938bc50dfad0b6fa1e63bc67b963471fc827838d9bbb41",
+          "bytes": 1339823867,
+          "advertised_lfs_sha256": "fb7f63752cf10103be938bc50dfad0b6fa1e63bc67b963471fc827838d9bbb41"
+        },
+        "sentence_bert_config.json": {
+          "sha256": "ec8e29d6dcb61b611b7d3fdd2982c4524e6ad985959fa7194eacfb655a8d0d51",
+          "bytes": 53,
+          "advertised_lfs_sha256": null
+        },
+        "special_tokens_map.json": {
+          "sha256": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+          "bytes": 2201,
+          "advertised_lfs_sha256": null
+        },
+        "spiece.model": {
+          "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+          "bytes": 791656,
+          "advertised_lfs_sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+        },
+        "tokenizer.json": {
+          "sha256": "72fb264ef4324ec23bc4e8b94167134eaf031b2048fd51a2c2f5a329c7695847",
+          "bytes": 2422360,
+          "advertised_lfs_sha256": null
+        },
+        "tokenizer_config.json": {
+          "sha256": "c31a902ec8f6335e196f500d15c9f974e5c69715b7d375642555c32113b3fdf3",
+          "bytes": 2407,
+          "advertised_lfs_sha256": null
+        }
+      }
+    },
+    "observed_profile": {
+      "tokenizer_max_length": 512,
+      "parameter_dtype": "torch.float32",
+      "constructor_max_seq_length": 512,
+      "max_seq_length": 2048,
+      "pooling_include_prompt": [
+        false
+      ],
+      "encode_calls": [
+        {
+          "texts": 87201,
+          "batch_size": 4,
+          "normalize_embeddings": true,
+          "prompt": ""
+        },
+        {
+          "texts": 51,
+          "batch_size": 4,
+          "normalize_embeddings": true,
+          "prompt": "Represent this query for retrieving relevant documents: "
+        }
+      ]
+    },
+    "cache_descriptor": {
+      "ordered_documents_sha256": "b4a5e0f4a4e52c9f4f28c93a47ed9d110f0f2f54042d3bd6c98c4c37acbf5c02",
+      "domain": "cardano",
+      "model_revision": "54e5ffb8d484de506e59443b07dc819fb15c7233",
+      "tokenizer_revision": "54e5ffb8d484de506e59443b07dc819fb15c7233",
+      "retrieval_source_sha256": "b207b0d61130b01a9b3c31215c6a5d66cdb8f4b8b83b579898979850639310e4",
+      "input_serialization": {
+        "query": "Represent this query for retrieving relevant documents: ",
+        "document": ""
+      },
+      "embedding_dtype": "native FP32; actual parameter dtype recorded by hook",
+      "max_length": 2048,
+      "batch_size": 4,
+      "encode_parameters": "unchanged author defaults",
+      "normalization": "unchanged author normalization",
+      "cutoff_policy": "TEMPO original exclusion metadata, no added known-at filter",
+      "versions": {
+        "torch": "2.14.1",
+        "transformers": "4.40.0",
+        "sentence-transformers": "3.1.1",
+        "numpy": "1.26.4"
+      }
+    },
+    "cache_receipt": {
+      "embeddings_sha256": "efca5ba9b13bacb627934993e245c7467e4ebd7b47cd1c271323c5885949f8ea",
+      "mapping_sha256": "d41e43251370dafd6a3ffa0b4406d64188bd1ca115a8909f063f814be32df1d3",
+      "descriptor_sha256": "bf18b2c4ed0e9e927df744fdda3485df10ae4bba94be60408f1a5d3c86b6ee5c",
+      "shape": [
+        87201,
+        768
+      ],
+      "dtype": "float32",
+      "mapping_order": "input document order",
+      "cache_policy": "exclusive per-run cold cache; reuse disabled"
+    },
+    "peak_torch_allocated_bytes": 4875470848,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  },
+  "summary_sha256": "3541185959d4a2deb0d78b61f57e7194031a905855f40b68a433727769147993",
+  "metric_roles": {
+    "Oracle NDCG@*": "Gold-assisted released diagnostic only; not a candidate-constrained ceiling (independent fixture found out-of-top100 tie leakage).",
+    "NDCG/MAP/Recall/P/MRR": "Released relevance metrics; original definitions retained."
+  },
+  "deviations": [
+    "Missing InstructorEmbedding added to independent environment",
+    "Optional unused vLLM imports deferred; BM25/metric functions unchanged",
+    "True relevance/answer fields projected out; isolated inference and offline evaluation",
+    "Dataset/model inputs pinned; current unpinned package resolution differs from unspecified author environment"
+  ],
+  "evaluator_runtime": {
+    "run_id": "tempo-cardano-inst-l-20261107T203540Z",
+    "utc_start": "2026-11-07T22:39:30.880410+00:00",
+    "utc_finish": "2026-11-07T22:39:42.069085+00:00",
+    "python": "3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]",
+    "python_executable": "/home/nigel/miniforge3/envs/tempo-native/bin/python",
+    "evaluator_entry_point_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+    "wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "same_process": true,
+    "summary_sha256": "3541185959d4a2deb0d78b61f57e7194031a905855f40b68a433727769147993",
+    "module_files": {
+      "pytrec_eval_ext": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+        "sha256": "35dc7177a5d39931b4f5ebda334624325923f3719c062f63f7fbe7906aa108f9"
+      },
+      "pytrec_eval": {
+        "path": "/home/nigel/miniforge3/envs/tempo-native/lib/python3.10/site-packages/pytrec_eval/__init__.py",
+        "sha256": "29abd1d7a7e8c94eb6df0c6aef589e92dd9763eabaa84109dbb1f458ce6bc436"
+      }
+    },
+    "installed_distribution_metadata": {
+      "pytrec-eval": {
+        "distribution_version": "0.5",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Qido9a2fYTi26KFs0UlqsUqMQPJRnlQFFfaNKPdTcDA",
+            "matches_imported_bytes": false
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "6pUZGWcwb-jyJQHGOrdP7f00x_b7SZUyZcAsOmnsHQs",
+            "matches_imported_bytes": false
+          }
+        ]
+      },
+      "pytrec-eval-terrier": {
+        "distribution_version": "0.5.11",
+        "record_entries": [
+          {
+            "module": "pytrec_eval",
+            "record_path": "pytrec_eval/__init__.py",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "KavR16foyU623wxq71iekt2XY-q6qEEJ27H0WM5rxDY",
+            "matches_imported_bytes": true
+          },
+          {
+            "module": "pytrec_eval_ext",
+            "record_path": "pytrec_eval_ext.cpython-310-x86_64-linux-gnu.so",
+            "record_hash_algorithm": "sha256",
+            "record_hash_value": "Ndxxd6XTmTG09evaM0YkMlkj83GcBi9j9_vnkGqhCPk",
+            "matches_imported_bytes": true
+          }
+        ]
+      }
+    },
+    "evaluator_class_mro": [
+      "pytrec_eval.RelevanceEvaluator",
+      "pytrec_eval.RelevanceEvaluator",
+      "builtins.object"
+    ],
+    "interpretation": "Module bytes observed in this evaluation process; distribution version alone does not identify an overwritten import."
+  }
+}

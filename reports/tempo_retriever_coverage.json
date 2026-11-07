@@ -240,11 +240,19 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 6,
+      "completed_domains": 7,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 5,
+      "matching_domain_rounding": 6,
       "runs": {
+        "cardano": {
+          "run_id": "tempo-cardano-inst-l-20261107T203540Z",
+          "queries": 51,
+          "documents": 87201,
+          "ndcg10": 0.14613,
+          "author_target_percentage": 14.6,
+          "within_one_decimal_rounding_interval": true
+        },
         "economics": {
           "run_id": "tempo-economics-inst-l-20261107T060432Z",
           "queries": 83,
