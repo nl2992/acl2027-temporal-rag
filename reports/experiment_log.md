@@ -149,3 +149,5 @@ Resource attribution correction: post-Bitcoin boot counters show only118 pages s
 2026-11-07 — `python scripts/drafts/run_tempo_instructor_enabled.py --domain cardano` run tempo-cardano-inst-l-20261107T203520Z failed resource admission on inactive extra swap, before preparation or inference. Reactivated the existing swap files with `wsl -d Ubuntu-24.04 -u root -- swapon /swap-research` and `wsl -d Ubuntu-24.04 -u root -- swapon /swap-research-extra`. Repeated the same Cardano command, session 48161, run tempo-cardano-inst-l-20261107T203540Z; preparation complete, outcome pending.
 
 2026-11-07 — Cardano session 48161 exited 0 after inference and evaluation. `python scripts/report_tempo_retrievers.py` accepted tempo-cardano-inst-l-20261107T203540Z: 51 queries, 87,201 documents, ordinary nDCG@10 0.14613, matching published 14.6% rounded; INSTRUCTOR-L coverage 7/13, six rounded matches. Repaired-environment retrieval only; temporal judge remains unrun.
+
+2026-11-07 — Started `python scripts/drafts/run_tempo_instructor_enabled.py --domain travel` as session 38203, run tempo-travel-inst-l-20261107T224038Z; preparation complete, outcome pending.

@@ -93,3 +93,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-07 — Cardano INSTRUCTOR-L run tempo-cardano-inst-l-20261107T203540Z started after reactivating research swap; preparation complete.
 
 2026-11-07 — Cardano INSTRUCTOR-L completed: 51 queries, 87,201 documents, ordinary nDCG@10 0.14613, matching published 14.6% after rounding. Coverage 7/13, six rounded matches; Monero discrepancy remains. Temporal judge remains unrun.
+
+2026-11-07 — Travel INSTRUCTOR-L run tempo-travel-inst-l-20261107T224038Z started; preparation complete.
