@@ -240,10 +240,10 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 3,
+      "completed_domains": 4,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 3,
+      "matching_domain_rounding": 4,
       "runs": {
         "iota": {
           "run_id": "tempo-iota-inst-l-20261106T082048Z",
@@ -267,6 +267,14 @@
           "documents": 28785,
           "ndcg10": 0.14633,
           "author_target_percentage": 14.6,
+          "within_one_decimal_rounding_interval": true
+        },
+        "workplace": {
+          "run_id": "tempo-workplace-inst-l-20261106T215345Z",
+          "queries": 36,
+          "documents": 64659,
+          "ndcg10": 0.36237,
+          "author_target_percentage": 36.2,
           "within_one_decimal_rounding_interval": true
         }
       }
