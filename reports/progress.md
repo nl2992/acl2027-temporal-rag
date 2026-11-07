@@ -1,6 +1,6 @@
 # Progress
 
-Current verified state (2026-11-07): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 11/13 domains complete, all matching rounded targets; HSM failed twice with confirmed kernel out-of-memory kills, including a retry with extra swap. History remains pending. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L has 5/13 domains complete, all matching author-rounded ordinary nDCG@10; Economics completed with nDCG@10 0.17467 (published 17.5% rounded). Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
+Current verified state (2026-11-07): TEMPO BM25 has 13/13 domains matching author-rounded ordinary nDCG@10, macro 0.107878. BGE has 11/13 domains complete, all matching rounded targets; HSM failed twice with confirmed kernel out-of-memory kills, including a retry with extra swap. History remains pending. The historical integrity audit remains WARN for earlier provenance gaps. INSTRUCTOR-L has 6/13 domains complete: five match author-rounded ordinary nDCG@10; Monero nDCG@10 0.16599 does not match published 16.9% rounded. Qwen access is deferred. Full dense coverage, temporal judge metrics, FRESCO/Re3/Q-TIE and the stronger-baseline gate remain incomplete. Combinatorial search stays locked. See tempo_retriever_coverage.md and the dated entries below.
 
 Updated: 2026-11-05. Research status: P0 REPRO_PARTIAL; TEMPO reproduction in progress. Combinatorial search locked until the full baseline registry is resolved.
 
@@ -87,3 +87,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-07 — Economics INSTRUCTOR-L full-domain run completed: 83 queries, 93,756 documents, ordinary nDCG@10 0.17467, matching the published 17.5% after rounding. Coverage is 5/13; temporal judge metrics and the full baseline registry remain incomplete.
 
 2026-11-07 — Monero INSTRUCTOR-L run tempo-monero-inst-l-20261107T080705Z has started; preparation completed and inference is in progress.
+
+2026-11-07 — Monero INSTRUCTOR-L full-domain run completed: 65 queries, 85,093 documents, ordinary nDCG@10 0.16599 versus published 16.9%; it does not match after rounding. Coverage is 6/13 with five rounded matches. This is ordinary retrieval only; temporal judge and the full baseline registry remain incomplete.

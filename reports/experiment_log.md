@@ -143,3 +143,5 @@ Resource attribution correction: post-Bitcoin boot counters show only118 pages s
 2026-11-07 — Economics session 41532 exited 0 after inference and evaluation. `python scripts/report_tempo_retrievers.py` accepted tempo-economics-inst-l-20261107T060432Z: 83 queries, 93,756 documents, ordinary nDCG@10 0.17467, matching published 17.5% rounded; INSTRUCTOR-L coverage 5/13, all rounded matches. This is repaired-environment ordinary retrieval, not full TEMPO reproduction; temporal judge remains unrun.
 
 2026-11-07 — Started `python scripts/drafts/run_tempo_instructor_enabled.py --domain monero` as session 59432, run tempo-monero-inst-l-20261107T080705Z; preparation complete and inference started. Outcome pending.
+
+2026-11-07 — Monero session 59432 exited 0 after inference and evaluation. `python scripts/report_tempo_retrievers.py` accepted tempo-monero-inst-l-20261107T080705Z: 65 queries, 85,093 documents, ordinary nDCG@10 0.16599 versus published 16.9%; outside one-decimal rounding interval. INSTRUCTOR-L coverage 6/13, five rounded matches. Repaired-environment retrieval only; temporal judge remains unrun. No result tuning.

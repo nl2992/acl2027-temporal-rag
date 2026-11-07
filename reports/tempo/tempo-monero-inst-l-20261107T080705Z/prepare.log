@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-monero-inst-l-20261107T080705Z",
+  "benchmark": "TEMPO",
+  "domain": "monero",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "6a0e7417942fcf76295befaddc5e246d4a35582c57ec6939d17c434f93dba594",
+    "documents": "f76335aa33f2c0a72388feef220330d0ffe52979b1b1aecc95b2b9c15fa530e6"
+  },
+  "input_sha256": "5ad7a6dd7ab6968c7b2c314d99e99b44fe10ee9dbe2e72dd84037d0d19b193f9",
+  "gold_sha256": "181377222721eaf37fae301d5a6073a854f2b91c797baec5df959d780e6b1a12",
+  "queries": 65,
+  "documents": 85093,
+  "original_queries": 65,
+  "original_documents": 85093,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "inst-l",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}
