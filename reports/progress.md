@@ -89,3 +89,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-07 — Monero INSTRUCTOR-L run tempo-monero-inst-l-20261107T080705Z has started; preparation completed and inference is in progress.
 
 2026-11-07 — Monero INSTRUCTOR-L full-domain run completed: 65 queries, 85,093 documents, ordinary nDCG@10 0.16599 versus published 16.9%; it does not match after rounding. Coverage is 6/13 with five rounded matches. This is ordinary retrieval only; temporal judge and the full baseline registry remain incomplete.
+
+2026-11-07 — Cardano INSTRUCTOR-L run tempo-cardano-inst-l-20261107T203540Z started after reactivating research swap; preparation complete.
