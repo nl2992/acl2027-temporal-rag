@@ -240,11 +240,19 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 4,
+      "completed_domains": 5,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 4,
+      "matching_domain_rounding": 5,
       "runs": {
+        "economics": {
+          "run_id": "tempo-economics-inst-l-20261107T060432Z",
+          "queries": 83,
+          "documents": 93756,
+          "ndcg10": 0.17467,
+          "author_target_percentage": 17.5,
+          "within_one_decimal_rounding_interval": true
+        },
         "iota": {
           "run_id": "tempo-iota-inst-l-20261106T082048Z",
           "queries": 10,
