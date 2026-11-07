@@ -85,3 +85,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-06 — Genealogy BGE completed: 115 queries and 156,228 documents, ordinary nDCG@10 0.22041, matching the author-rounded 22.0% target. Coverage is 10/13, all ten matching rounded targets. Politics has started; temporal judge and full SOTA reproduction remain incomplete.
 
 2026-11-07 — Economics INSTRUCTOR-L full-domain run completed: 83 queries, 93,756 documents, ordinary nDCG@10 0.17467, matching the published 17.5% after rounding. Coverage is 5/13; temporal judge metrics and the full baseline registry remain incomplete.
+
+2026-11-07 — Monero INSTRUCTOR-L run tempo-monero-inst-l-20261107T080705Z has started; preparation completed and inference is in progress.
