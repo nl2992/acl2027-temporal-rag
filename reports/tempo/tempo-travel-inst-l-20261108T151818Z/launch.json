@@ -1,6 +1,6 @@
 {
   "run_id": "tempo-travel-inst-l-20261108T151818Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-08T15:18:18.038987+00:00",
   "command": [
     "scripts/drafts/run_tempo_instructor_enabled.py",
@@ -30,6 +30,15 @@
     "inference": {
       "utc": "2026-11-08T15:19:45.781753+00:00",
       "host_disk_free_bytes": 16823762944
+    },
+    "evaluation": {
+      "utc": "2026-11-08T18:49:58.430020+00:00",
+      "host_disk_free_bytes": 16537391104
     }
-  }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-08T18:50:32.917871+00:00"
 }

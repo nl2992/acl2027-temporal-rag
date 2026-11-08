@@ -240,10 +240,10 @@
       "runs": {}
     },
     "Inst-L": {
-      "completed_domains": 7,
+      "completed_domains": 8,
       "expected_domains": 13,
       "full_macro_ndcg10": null,
-      "matching_domain_rounding": 6,
+      "matching_domain_rounding": 7,
       "runs": {
         "cardano": {
           "run_id": "tempo-cardano-inst-l-20261107T203540Z",
@@ -291,6 +291,14 @@
           "documents": 28785,
           "ndcg10": 0.14633,
           "author_target_percentage": 14.6,
+          "within_one_decimal_rounding_interval": true
+        },
+        "travel": {
+          "run_id": "tempo-travel-inst-l-20261108T151818Z",
+          "queries": 100,
+          "documents": 177677,
+          "ndcg10": 0.24973,
+          "author_target_percentage": 25.0,
           "within_one_decimal_rounding_interval": true
         },
         "workplace": {

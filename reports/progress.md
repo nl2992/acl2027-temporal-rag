@@ -103,3 +103,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-08 — After user freed disk space (16,875,110,400 bytes observed free), Travel INSTRUCTOR-L retry tempo-travel-inst-l-20261108T151818Z launched; result pending.
 
 2026-11-08 — Corrected stale TEMPO summaries in the baseline registry and local compute note to match the existing coverage report. The Travel retry remains live; no new result is claimed.
+
+2026-11-08 — Travel INSTRUCTOR-L retry tempo-travel-inst-l-20261108T151818Z completed: 100 queries, 177,677 documents, ordinary nDCG@10 0.24973, matching the published 25.0% on rounding. INSTRUCTOR-L coverage is 8/13, with seven rounded matches. Temporal judge remains unmeasured. A separate local supervisor is being configured for the remaining five domains; this does not make other methods complete.
