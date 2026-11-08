@@ -6,7 +6,7 @@ User direction (2026-11-04): continue locally, document limits, and consider ren
 
 - RTX 4060 Laptop GPU: 8,188 MiB. WSL has approximately 7.6 GiB system RAM and 2 GiB initial swap, plus an 8 GiB temporary swap file when activated.
 - All eight full P0 backbone/domain runs completed. Base retrieval matches the prescribed nDCG tolerance; six automatic TimelyRAG cells miss. This is partial repaired reproduction.
-- TEMPO BM25 completed all thirteen domains with ordinary nDCG matching published rounding. BGE completed 11/13 domains, all matching author rounding; INSTRUCTOR-L completed 7/13, with six rounded matches. Travel INSTRUCTOR-L is running. See `tempo_retriever_coverage.md` for current coverage. Temporal judge metrics remain unmeasured.
+- TEMPO BM25 completed all thirteen domains with ordinary nDCG matching published rounding. BGE completed 11/13 domains, all matching author rounding; INSTRUCTOR-L completed 8/13, with seven rounded matches. Bitcoin INSTRUCTOR-L retry is running. See `tempo_retriever_coverage.md` for current coverage. Temporal judge metrics remain unmeasured.
 
 ## Remaining method requirements
 

@@ -35,8 +35,12 @@ def main():
     for p in (ROOT / 'reports' / 'tempo').glob('tempo-*-inst-l-durable-*'):
         if p.is_dir():
             paths.extend(str(x.relative_to(ROOT)) for x in p.iterdir() if x.is_file() and x.name in FILES)
+    for domain in ('hsm', 'history'):
+        for p in (ROOT / 'reports' / 'tempo').glob(f'tempo-{domain}-bge-*'):
+            if p.is_dir():
+                paths.extend(str(x.relative_to(ROOT)) for x in p.iterdir() if x.is_file() and x.name in FILES)
     paths.extend(str(p.relative_to(ROOT)) for p in (ROOT / 'reports').glob('tempo-*-inst-l-durable-*-supervisor.log'))
-    for name in ('durable_instructor_queue.log', 'tempo_retriever_coverage.json', 'tempo_retriever_coverage.md'):
+    for name in ('durable_instructor_queue.log', 'bge_handoff_status.txt', 'bge_handoff.log', 'tempo_retriever_coverage.json', 'tempo_retriever_coverage.md'):
         p = ROOT / 'reports' / name
         if p.is_file():
             paths.append(str(p.relative_to(ROOT)))
