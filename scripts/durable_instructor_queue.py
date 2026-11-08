@@ -1,5 +1,6 @@
 """Sequential local continuation; stop on any unresolved attempt or error."""
 import datetime
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -21,6 +22,10 @@ def main():
         attempts = [p for p in attempts if not (p.name == 'tempo-bitcoin-inst-l-durable-20261108T203712Z'
                     and set(x.name for x in p.iterdir()) == {'launch.json', 'source_changes.patch'}
                     and json.loads((p / 'launch.json').read_text(encoding='utf-8')).get('status') == 'failed')]
+        # The scheduler and WSL worker were verified stopped after this interrupted run.
+        attempts = [p for p in attempts if not (p.name == 'tempo-bitcoin-inst-l-durable-20261108T203801Z'
+                    and hashlib.sha256((p / 'launch.json').read_bytes()).hexdigest() == 'c56ef1df57a72570dc118d00288d82f300524eb5aec14689f2f8a72c1c7f017f'
+                    and not (p / 'manifest.json').exists())]
         if attempts:
             if len(attempts) != 1:
                 raise RuntimeError(f'{domain}: ambiguous attempts')
