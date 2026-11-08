@@ -99,3 +99,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-08 — Travel run tempo-travel-inst-l-20261107T224038Z terminated during inference, last logged batch 5,649/44,420; no score. WSL subsequently reported uptime under one minute, consistent with a restart, but cause is unverified. Retry stopped at the host disk admission threshold; no inference started.
 
 2026-11-08 — Cleared rebuildable Linux pip cache (3.5 GiB inside WSL) and Windows pip cache (264 files). Linux `python3 -m pip cache purge` failed because system Python lacks pip; removed the verified /home/nigel/.cache/pip contents and ran `wsl -d Ubuntu-24.04 -u root -- fstrim -v /`. Host free space after cleanup was 12,736,114,688 bytes, still below the 12 GiB (12,884,901,888-byte) guard. No experiment launched. An attempt to remove the research-generated temporary skill source directory was rejected by automatic command policy; it was not removed.
+
+2026-11-08 — After user freed disk space (16,875,110,400 bytes observed free), Travel INSTRUCTOR-L retry tempo-travel-inst-l-20261108T151818Z launched; result pending.
