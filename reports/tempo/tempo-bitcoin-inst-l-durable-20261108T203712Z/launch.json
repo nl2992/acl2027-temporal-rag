@@ -1,0 +1,22 @@
+{
+  "run_id": "tempo-bitcoin-inst-l-durable-20261108T203712Z",
+  "status": "failed",
+  "utc_start": "2026-11-08T20:37:12.255295+00:00",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\drafts\\run_tempo_instructor_enabled.py",
+    "--domain",
+    "bitcoin",
+    "--run-id",
+    "tempo-bitcoin-inst-l-durable-20261108T203712Z"
+  ],
+  "project_sha": "6bc143e8c5e8bfe3d9936b5077ae13247de84a88",
+  "project_dirty": "?? reports/durable_instructor_queue.log\n?? reports/tempo-bitcoin-inst-l-durable-20261108T203712Z-supervisor.log\n",
+  "inference_worker_sha256": "73eadaa698f545a642c51b72ad95a3c80a4848bbc07698c96190194de1e412c7",
+  "evaluator_entry_sha256": "9f0e5555495972ea6cb076d46fe11b2b4052cf1295cb066e2093b53bf601c3ee",
+  "launcher_sha256": "ab0dd6897a113ea45d960034611daa44ffc5383173ccb6ea21280e6225c7f72b",
+  "evaluator_wrapper_sha256": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+  "stager_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "owner_lock_sha256": "55ac17741314a0b8740d217f6117a6143c65a983cb1fa1a2093aee0fd0bfcca1",
+  "error": "",
+  "utc_finish": "2026-11-08T20:37:13.672818+00:00"
+}

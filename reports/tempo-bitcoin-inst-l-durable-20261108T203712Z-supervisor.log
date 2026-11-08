@@ -1,0 +1,9 @@
+TEMPO_RUN_ID tempo-bitcoin-inst-l-durable-20261108T203712Z
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\\u6587\u4ef6\ChatGPT\ACL 2027\scripts\drafts\run_tempo_instructor_enabled.py", line 99, in <module>
+    check_resources()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\nigel\OneDrive\\u6587\u4ef6\ChatGPT\ACL 2027\scripts\drafts\run_tempo_instructor_enabled.py", line 78, in check_resources
+    assert memory['SwapTotal']>=9*1024**2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

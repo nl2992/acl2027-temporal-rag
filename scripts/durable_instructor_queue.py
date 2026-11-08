@@ -17,6 +17,10 @@ def note(message):
 def main():
     for domain in DOMAINS:
         attempts = list((ROOT / 'reports' / 'tempo').glob(f'tempo-{domain}-inst-l-durable-*'))
+        # This specific failed admission created no staged input or inference.
+        attempts = [p for p in attempts if not (p.name == 'tempo-bitcoin-inst-l-durable-20261108T203712Z'
+                    and set(x.name for x in p.iterdir()) == {'launch.json', 'source_changes.patch'}
+                    and json.loads((p / 'launch.json').read_text(encoding='utf-8')).get('status') == 'failed')]
         if attempts:
             if len(attempts) != 1:
                 raise RuntimeError(f'{domain}: ambiguous attempts')
@@ -28,10 +32,10 @@ def main():
             continue
         # Restore only the existing, project-created swap files; fail closed if missing.
         for swap in ('/swap-research', '/swap-research-extra'):
-            result = subprocess.run(['wsl', '-d', 'Ubuntu-24.04', '-u', 'root', '--',
-                'bash', '-c', 'grep -Fq " $1 " /proc/swaps || swapon "$1"', 'swap-check', swap])
-            if result.returncode:
-                raise RuntimeError(f'Could not activate {swap}')
+            command = ['wsl', '-d', 'Ubuntu-24.04', '-u', 'root', '--']
+            active = subprocess.check_output(command + ['swapon', '--noheadings', '--raw', '--show=NAME'], text=True).split()
+            if swap not in active:
+                subprocess.run(command + ['swapon', swap], check=True)
         run = f'tempo-{domain}-inst-l-durable-{datetime.datetime.now(datetime.timezone.utc):%Y%m%dT%H%M%SZ}'
         note(f'START {run}')
         with (ROOT / 'reports' / f'{run}-supervisor.log').open('ab') as output:
