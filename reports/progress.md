@@ -95,3 +95,5 @@ Current update (2026-11-05): QuantBGE completed34queries/28,785docs, ordinary nD
 2026-11-07 — Cardano INSTRUCTOR-L completed: 51 queries, 87,201 documents, ordinary nDCG@10 0.14613, matching published 14.6% after rounding. Coverage 7/13, six rounded matches; Monero discrepancy remains. Temporal judge remains unrun.
 
 2026-11-07 — Travel INSTRUCTOR-L run tempo-travel-inst-l-20261107T224038Z started; preparation complete.
+
+2026-11-08 — Travel run tempo-travel-inst-l-20261107T224038Z terminated during inference, last logged batch 5,649/44,420; no score. WSL subsequently reported uptime under one minute, consistent with a restart, but cause is unverified. Retry stopped at the host disk admission threshold; no inference started.
