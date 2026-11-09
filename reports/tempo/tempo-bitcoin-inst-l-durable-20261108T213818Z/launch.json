@@ -1,6 +1,6 @@
 {
   "run_id": "tempo-bitcoin-inst-l-durable-20261108T213818Z",
-  "status": "running",
+  "status": "complete",
   "utc_start": "2026-11-08T21:38:18.568220+00:00",
   "command": [
     "C:\\Users\\nigel\\OneDrive\\\u6587\u4ef6\\ChatGPT\\ACL 2027\\scripts\\drafts\\run_tempo_instructor_enabled.py",
@@ -32,6 +32,15 @@
     "inference": {
       "utc": "2026-11-08T21:39:42.532761+00:00",
       "host_disk_free_bytes": 15553114112
+    },
+    "evaluation": {
+      "utc": "2026-11-09T00:31:09.471587+00:00",
+      "host_disk_free_bytes": 14779564032
     }
-  }
+  },
+  "evaluation_wrapper_checks": {
+    "immediately_before_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3",
+    "immediately_after_evaluation": "414345f385faab91f48b1a7ae631458047bfe9d757cc7947b991df8800f1b0a3"
+  },
+  "utc_finish": "2026-11-09T00:31:27.357055+00:00"
 }
