@@ -1,0 +1,25 @@
+{
+  "run_id": "tempo-genealogy-inst-l-durable-20261111T164842Z",
+  "benchmark": "TEMPO",
+  "domain": "genealogy",
+  "smoke": false,
+  "dataset_revision": "1dba7027d0afa628993c6dd794e9b68c657a6fac",
+  "raw_file_sha256": {
+    "examples": "98e00e196d563802e343df5b7041a4694da6eb7b6579284442ebd99ee906e889",
+    "documents": "739169c19da86178d5b870a3eaaca41d1b1af32e979f3da382515a7c0d378485"
+  },
+  "input_sha256": "990eabc82b2a038f7d7d65e2b432f1a48b692fa2d0659dfff97e2da89bf34569",
+  "gold_sha256": "5b732c215a36f74bd73139c0f72f2ab4b4de4d16656a834c0c99af618ae203fa",
+  "queries": 115,
+  "documents": 156228,
+  "original_queries": 115,
+  "original_documents": 156228,
+  "source_sha": "8731487254e0988eaf2ca4ae3e93ff587fec64d0",
+  "excluded_id_policy": "Released negative_ids passed unchanged as author exclusion metadata; true positive IDs and answers removed from worker input.",
+  "model": "inst-l",
+  "repaired_sha": "4bd4324017810ebede72492a3ed869910d668fa7",
+  "preparation_script_sha256": "bdc5b59b63134ec125c48117537c289727da00b7cefb2d1248a31d1f73857f3d",
+  "duplicate_document_ids": 0,
+  "missing_gold_references": 0,
+  "missing_exclusion_references": 0
+}

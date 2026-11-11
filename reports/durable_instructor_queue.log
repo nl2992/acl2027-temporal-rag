@@ -2,3 +2,4 @@
 2026-11-08T20:37:13.699539+00:00 STOP RuntimeError: tempo-bitcoin-inst-l-durable-20261108T203712Z: runner exited 1
 2026-11-08T20:38:01.116897+00:00 START tempo-bitcoin-inst-l-durable-20261108T203801Z
 2026-11-08T21:38:18.255035+00:00 START tempo-bitcoin-inst-l-durable-20261108T213818Z
+2026-11-11T16:48:42.119362+00:00 START tempo-genealogy-inst-l-durable-20261111T164842Z
