@@ -38,10 +38,12 @@ import os
 split1 = json.load(open("annotation/split_v1.json"))   # frozen before expansion: 9 dev / 5 test families
 fams = sorted({c["family"] for c in cases})
 split3 = json.load(open("annotation/split_v3.json")) if os.path.exists("annotation/split_v3.json") else {}
+split3.update(json.load(open("annotation/split_v4.json")) if os.path.exists("annotation/split_v4.json") else {})
 split = {f: split1.get(f) or split3.get(f) or ("test2" if int(hashlib.md5(f.encode()).hexdigest(), 16) % 3 == 0 else "dev2") for f in fams}
 dev = [c for c in cases if split[c["family"]] in ("dev", "dev2") and gold(c)]   # lambda selection: all dev families (never test)
 test = [c for c in cases if split[c["family"]] in ("test", "test2") and gold(c)]
 test3 = [c for c in cases if split[c["family"]] == "test3" and gold(c)]
+test4 = [c for c in cases if split[c["family"]] == "test4" and gold(c)]
 test1 = [c for c in test if split[c["family"]] == "test"]; test2 = [c for c in test if split[c["family"]] == "test2"]
 print("families:", {v: sum(x == v for x in split.values()) for v in ("dev", "test", "dev2", "test2")}, "| cases dev/test1/test2:", len(dev), len(test1), len(test2))
 GRID = [0, .25, .5, 1, 2, 4]

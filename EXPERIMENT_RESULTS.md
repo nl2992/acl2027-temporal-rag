@@ -96,3 +96,19 @@ Reading: always applying a temporal rule to every query is harmful (nDCG .98 -> 
 | test3 fresh (1,393) | .60/.02 | .23/.19 | .11/.14 | .13/.35 | **.20 / .23** |
 
 For reference on test3: BM25 .19/.44, best single-clock baseline .35/.55 (B6) or .33/.16 (B3), B4v1 .65/.00, B4v2 .70/.00. Reading: a recency/relevance gate helps current queries (.26 -> .60 on test3 vs BM25) but cannot express "the latest version published/effective by a past date", so dated queries stay near BM25 level. Caveats: constant gates, not a learned model; freshness measured on publication only.
+
+## Dev error analysis and second fresh batch test4 (2026-11-24; `dev_errors.py`, `dev_pool_sweep.py`, `eval_test4.py`, output `data/pilot/test4_output.txt`)
+**Dev error analysis (848 dev cases, B4 v2, K=20, delta=1.5):** 73% correct; errors: 10% gold removed by the gate or absent from the pool, 9% a different family ranked first, 6% no eligible candidate, 1% tie (two rules with the same date). So most errors are first-stage recall and gating, not temporal logic. **Dev sweep** of pool size and gate width: K=20/delta 1.5 .732; K=50/delta 1.5 .829 (best), K=100 .829, K=200 .801; selected K=50, delta=1.5 on dev only.
+
+**test4 confirmatory batch:** 100 families never used before (the leftover pool of 227 unused families, sampled with seed 4 into `annotation/split_v4.json`), 1,299 cases, 2,765 documents in the shared corpus; two additional rules whose API effective date contradicts their DATES text were excluded (2023-23882, 2015-10055); dates verified 2,765/2,765. Baselines are reported at K=20 and K=50 so the larger pool does not favour our method.
+
+| method (top-1 overall / inadmissible) | K=20 | K=50 |
+|---|---|---|
+| B0 BM25 | .23 / .42 | .23 / .42 |
+| B2 publication cutoff | .25 / .52 | .19 / .53 |
+| B3 valid filter | .33 / .16 | .26 / .19 |
+| B6 soft distance (approx.) | .35 / .53 | .35 / .57 |
+| B4 v1 (lambda 2) | .65 / .00 | .61 / .00 |
+| **B4 v2 (delta 1.5)** | .74 / .00 | **.79 / .00** |
+
+Family-cluster bootstrap (100 families), top-1 gain of v2@50: over B3@20 +.46 [.36,.57]; over B6@20 +.43 [.34,.53]; over B2@20 +.54 [.45,.63]; over v1@50 +.17 [.07,.27]; over v2@20 +.05 [-.01,.12]. Reading: the headline replicates on a second fresh batch; larger pools hurt the single-clock baselines and v1 but help v2, so the semantic gate is what makes the method robust to pool size (this resolves the test3 result where v2 vs v1 was +.05 [-.03,.14] at K=20). Per-intent v2@50: current .78, valid-at .82, known-at .93, valid-known .69. Remaining errors on test4 are deliberately not inspected.
