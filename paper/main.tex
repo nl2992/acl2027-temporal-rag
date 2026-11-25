@@ -1,36 +1,68 @@
 \documentclass[11pt]{article}
 \usepackage[review]{acl}
-\usepackage{times,latexsym,booktabs,amsmath,graphicx,xcolor}
+\usepackage{times,latexsym,booktabs,amsmath,graphicx,xcolor,tikz}
 \usepackage[T1]{fontenc}
+\usetikzlibrary{arrows.meta}
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 \title{Two Clocks for Temporal Evidence Retrieval: \\ Valid Time versus Known Time in Versioned Official Documents}
 \author{Anonymous ACL submission}
 \begin{document}
 \maketitle
 \begin{abstract}
-Temporal retrievers typically rank evidence using a single time signal: a recency preference, a query interval, or one document timestamp. Historical questions can, however, constrain two different clocks: when a rule \emph{applied} (valid time) and when it could have been \emph{known} (publication time), and the two disagree whenever a rule is announced before it takes effect, takes effect retroactively, or is later corrected. We formalise a query as a target time $t$, an information horizon $h$ and an intent, build a corpus of 1{,}870 Federal Register final rules in 205 recurring rule families with effective dates verified against each rule's own text, and show that single-clock rankers return evidence that is inadmissible under the requested semantics for 16--55\% of queries. Routing queries to the matching clock and restricting candidates to admissible evidence raises top-1 accuracy from at most 0.35 to 0.65--0.70 on 100 held-out families. \todo{human-annotated natural-language queries and agreement; real Q-TIE comparison}
+Temporal retrievers usually rank evidence with a single time signal: a recency preference, a query interval, or one document timestamp. Historical questions can constrain two different clocks, though: when a rule \emph{applied} (valid time) and when it could have been \emph{known} (publication time). The two disagree whenever a rule is announced before it takes effect, takes effect retroactively, or is later corrected. We formalize a query as a target time $t$, an information horizon $h$ and an intent. We build a corpus of 1{,}870 Federal Register final rules in 205 recurring rule families, with effective dates verified against each rule's own text. With labels derived from rule metadata, single-clock rankers return evidence that is inadmissible under the requested semantics for 16 to 55\% of queries. Routing each query to the matching clock and restricting candidates to admissible evidence raises top-1 accuracy from at most 0.35 to between 0.65 and 0.70 on 100 held-out families. \todo{human-annotated natural-language queries and agreement; real Q-TIE comparison}
 \end{abstract}
 
 \section{Introduction}
-Retrieval-augmented systems increasingly face questions about the past: which rule governed a transaction last year, or what an analyst could have known on a given date. Temporal retrievers and re-rankers such as Q-TIE~\cite{qtie2026} and Re$^3$~\cite{re32025} model when a query asks about, or how recent a document should be, but compare queries to a single document time. In official sources a document has at least two relevant times. A final rule is published on one date, takes effect on another, and may be corrected later. A question about what \emph{applied} on May~20 and a question about what was \emph{known} on May~20 then have different correct answers, and a one-clock ranker cannot serve both.
+Retrieval-augmented systems increasingly face questions about the past: which rule governed a transaction last year, or what an analyst could have known on a given date. Temporal retrievers and re-rankers such as Q-TIE~\cite{qtie2026} and Re$^3$~\cite{re32025} model when a query asks about, or how recent a document should be, but, as we read them, they compare the query to a single document time.
 
-The distinction between valid and transaction time is classical~\cite{jensen1996} and is argued for legal retrieval~\cite{demartim2026}; bitemporal filters exist in agent memory stores~\cite{niksarli2026}. What is missing, to our knowledge, is a measurement of how single-clock rankers fail on versioned authoritative documents, and a query formulation that makes the choice of clock explicit. We contribute (i) the $(t,h,\text{intent})$ formulation; (ii) a verified real-world corpus and probe protocol; (iii) a measured comparison of single-clock baselines with intent-routed two-clock eligibility; and (iv) an analysis of missing timestamps, corrections and harm to ordinary queries.
+In official sources a document has at least two relevant times. Consider the Consumer Financial Protection Bureau's annual Regulation Z threshold adjustments (Figure~\ref{fig:clocks}). The rule published on 1 August 2019 (Federal Register 2019-16300) takes effect on 1 January 2020, 153 days later. The rule it replaces (2018-18209) was published on 27 August 2018 and took effect on 1 January 2019. Asked on 1 November 2019, ``which threshold rule applied?'' has the 2018 rule as its answer, while ``which threshold rule could an analyst have found?'' has the 2019 rule. A ranker that prefers recent documents, or that cuts off by publication date, answers one question correctly and the other wrongly, and a validity filter does the reverse.
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=0.41cm,y=0.5cm,font=\scriptsize]
+  \draw[-{Stealth}] (-0.3,0) -- (16.9,0);
+  \foreach \x/\l in {0/{Aug 18},4.2/{Jan 19},11.1/{Aug 19},14.1/{Nov 19},16.1/{Jan 20}} {\draw (\x,0.1) -- (\x,-0.1); \node[below,font=\tiny] at (\x,-0.1) {\l};}
+  \draw[line width=1.6pt] (0,1) -- (4.2,1); \fill (0,1) circle (2pt); \draw[fill=white] (4.2,1) circle (2pt);
+  \node[above] at (2.1,1.05) {2018-18209};
+  \draw[line width=1.6pt,dashed] (11.1,1) -- (16.1,1); \fill (11.1,1) circle (2pt); \draw[fill=white] (16.1,1) circle (2pt);
+  \node[above] at (12.4,1.05) {2019-16300};
+  \draw[densely dotted] (14.1,-0.1) -- (14.1,2.2); \node[above] at (14.1,2.2) {query};
+  \node[anchor=west] at (0,2.2) {valid-at $\rightarrow$ 2018-18209};
+  \node[anchor=west] at (0,3.0) {known-at $\rightarrow$ 2019-16300};
+\end{tikzpicture}
+\caption{Two clocks on one rule family (Regulation Z annual threshold adjustments). Each bar runs from publication (filled dot) to effective date (open dot). The query is dated 1 November 2019 ($t{=}h$) and has a different correct answer under each intent: the 2018 rule is the one in force, the 2019 rule is the latest one published.}\label{fig:clocks}
+\end{figure}
+
+Making the right choice poses three challenges. The system must infer from natural language which clock a query constrains. Versions of one rule often share most of their text, so semantic relevance alone separates them poorly and must be combined with time, without letting time pull in unrelated documents. And effective dates are sometimes missing or unreliable. We address these with an intent router, hard eligibility under the requested semantics, and a semantic gate on the candidate pool. The distinction between valid and transaction time is classical~\cite{jensen1996}, has been argued for legal retrieval~\cite{demartim2026}, and appears as a filter in agent memory stores~\cite{niksarli2026}. We found no measurement of how single-clock rankers fail on versioned authoritative documents, and no query formulation that makes the choice of clock explicit.
+
+We contribute (i) the $(t,h,\text{intent})$ formulation (Section~\ref{sec:form}); (ii) a verified real-world corpus and probe protocol (Section~\ref{sec:data}); (iii) a comparison of single-clock baselines with intent-routed two-clock eligibility (Sections~\ref{sec:method} and~\ref{sec:exp}); and (iv) an analysis of missing timestamps, corrections and harm to ordinary queries (Section~\ref{sec:exp}).
 
 \section{Related Work}
-\textbf{Temporal retrieval.} Q-TIE maps a query's temporal constraint to an interval and re-ranks against document time~\cite{qtie2026}; Re$^3$ balances relevance and recency with a query-aware gate~\cite{re32025}; IA-RAG represents facts as intervals with Allen relations~\cite{iarag2026}; FRESCO studies evolving semantic conflict~\cite{fresco2026}; TimelyRAG studies temporal reranking over evolving documents~\cite{timelyrag2026}. \todo{TEMPO, TEMPS, MRAG, TimeR$^4$, HoH, PAT-Questions after full-text read}
-\textbf{Bitemporal modelling.} Valid and transaction time are standard in temporal databases~\cite{jensen1996}; recent work applies them to legal retrieval as a design argument~\cite{demartim2026} and to agent memory as a storage and filter mechanism~\cite{niksarli2026}. We study the ranking consequences on a versioned document collection.
+\textbf{Temporal retrieval.} Q-TIE maps a query's temporal constraint to an interval and re-ranks against document time~\cite{qtie2026}. Re$^3$ balances relevance and recency with a query-aware gate~\cite{re32025}. IA-RAG represents facts as intervals related by Allen's algebra~\cite{iarag2026}, FRESCO targets evolving semantic conflict~\cite{fresco2026}, and TimelyRAG reranks over overlapping, evolving documents~\cite{timelyrag2026}. \todo{TEMPO, TEMPS, MRAG, TimeR$^4$, HoH, PAT-Questions after full-text read}
 
-\section{Problem Formulation}
-A query has target time $t$, an information horizon $h$ (the latest time evidence may be known) and an intent. A document $d$ has publication time $p_d$ (our proxy for when it became known) and effective time $e_d$ (valid-from). We define four intents with a single best version as gold: \emph{current} (latest with $e_d\le \tau$, $p_d\le\tau$, $\tau$ = today); \emph{valid-at} (latest $e_d\le t$; later publication allowed); \emph{known-at} (latest $p_d\le h$); \emph{valid-known} (latest with $e_d\le t$ and $p_d\le h$). A returned document is \emph{inadmissible} if it violates the constraints of the intent. Correction notices are evaluated separately: a correction is published at $p_k>p_0$; a known-at query with $h<p_k$ requires the original, and a retrospective query ($h=\tau$) requires the corrected record.
+\textbf{Bitemporal modeling.} Valid and transaction time are standard in temporal databases~\cite{jensen1996}. Recent work applies them to legal retrieval as a design argument~\cite{demartim2026} and to agent memory as a storage and filter mechanism~\cite{niksarli2026}. We study what they mean for ranking on a versioned document collection.
 
-\section{Data}
-We collect Federal Register final rules (US government works; reuse terms to be confirmed before release) from 2010--2026 for 150+ CFR parts. A family is a set of documents with the same digit-masked title, at least four versions across at least three years, with either two rules whose effective date is at least 14 days after publication or one retroactive rule. The corpus has 1{,}870 rules in 205 families and 2{,}689 probe cases placed between a rule's publication and effective date (retroactive rules between effective and publication), so the clocks disagree by construction. Every effective date is found verbatim in the rule's DATES text (1{,}870/1{,}870 after excluding one conflicting rule). Splits are by family: 9 dev + 56 dev2 families for selection, 5 + 35 held-out, and a fresh batch of 100 families (\texttt{test3}) sampled before any evaluation. \todo{human-written natural-language queries and relevance judgments, inter-annotator agreement}
+\section{Problem Formulation}\label{sec:form}
+A query has a target time $t$, an information horizon $h$ (the latest time at which evidence may be known) and an intent. A document $d$ has a publication time $p_d$, which we use as a proxy for when it became known, and an effective time $e_d$ (valid-from). We define four intents, each with a single best version as gold. \emph{Current}: the latest document with $e_d\le \tau$ and $p_d\le\tau$, where $\tau$ is today. \emph{Valid-at}: the latest with $e_d\le t$, with later publication allowed. \emph{Known-at}: the latest with $p_d\le h$. \emph{Valid-known}: the latest with $e_d\le t$ and $p_d\le h$. A returned document is \emph{inadmissible} if it violates the constraints of the intent. Correction notices are evaluated separately. A correction is published at $p_k>p_0$, where $p_0$ is the original's publication time. A known-at query with $h<p_k$ requires the original, and a retrospective query ($h=\tau$) requires the corrected record.
 
-\section{Method}
-\textbf{Router.} A cue-based router maps a query to an intent (date-free $\to$ current; knowledge cues without validity cues $\to$ known-at; validity plus restriction cues $\to$ valid-known; otherwise valid-at), and a regex parser extracts $t$ and $h$. \textbf{Eligibility.} Keep candidates satisfying the intent's constraints. \textbf{Ranking.} V1 scores $z(\text{BM25})-\lambda\log(1+g/30)$ with $g$ the gap in days on the intent's clock ($\lambda$ chosen on dev). V2 keeps eligible candidates whose $z$-score is within $\delta$ of the best semantic score in the pool, then orders by temporal gap. Missing effective dates are handled by dropping the candidate (abstention) rather than imputing from publication time.
+\section{Data}\label{sec:data}
+We collect Federal Register final rules from 2010 to 2026 (US government works; reuse terms to be confirmed before release), drawn from 84 CFR parts and, for the fresh batch, 28 whole CFR titles. A family is a set of documents with the same digit-masked title and at least four versions across at least three years. It must also contain either two rules whose effective date is at least 14 days after publication or one retroactive rule; the first mining pass used only the first condition. The corpus has 1{,}870 rules in 205 families and 2{,}689 probe cases. Each case is placed between a rule's publication and effective date (between effective and publication for retroactive rules), so the clocks disagree by construction. Every effective date appears verbatim in the rule's DATES text (1{,}870 of 1{,}870 after excluding one conflicting rule). Splits are by family: 9 dev and 56 dev2 families for selection, 5 and 35 held-out families, and a fresh batch of 100 families (\texttt{test3}) sampled before any evaluation. \todo{human-written natural-language queries and relevance judgments, inter-annotator agreement}
 
-\section{Experiments}
-\textbf{Baselines.} B0 BM25; B2 publication cutoff at $h$; B3 effective-date filter at $t$; B6 soft temporal distance on publication date (a TimelyRAG-style approximation, not a reproduction); a Q-TIE-style point-interval scorer and a Re$^3$-style relevance/recency gate (both approximations built from the papers' descriptions; official Q-TIE code was unavailable). One-sided-interval methods with a single document clock are bounded by B2 and B3.
+\section{Method}\label{sec:method}
+\textbf{Router.} A cue-based router maps a query to an intent: date-free queries go to current, knowledge cues without validity cues to known-at, validity plus restriction cues to valid-known, and everything else to valid-at. A regex parser extracts $t$ and $h$. \textbf{Eligibility.} We keep the candidates $E$ that satisfy the intent's constraints. \textbf{Ranking.} Let $z_d$ be the $z$-scored BM25 score of $d$ within the candidate pool and $g_d$ the gap in days between the intent's reference time and $d$'s time on the intent's clock. V1 ranks $E$ by
+\begin{equation}\label{eq:v1}
+s_1(d) = z_d - \lambda \log\!\left(1 + g_d/30\right),
+\end{equation}
+with $\lambda$ chosen on dev. V2 first applies a semantic gate and then orders by temporal gap:
+\begin{equation}\label{eq:v2}
+\begin{split}
+\mathcal{G} &= \{d \in E : z_d \ge \max_{d'} z_{d'} - \delta\},\\
+&\text{rank } \mathcal{G} \text{ by } (g_d,\,-z_d),
+\end{split}
+\end{equation}
+where the maximum is taken over the whole pool, not only $E$. A candidate with a missing effective date is dropped (the system abstains) instead of being imputed from its publication time.
+
+\section{Experiments}\label{sec:exp}
+\textbf{Baselines.} B0 is BM25. B2 is a publication cutoff at $h$, and B3 an effective-date filter at $t$. B6 is a soft temporal distance on publication date, a TimelyRAG-style approximation and not a reproduction. We also built a Q-TIE-style point-interval scorer and a Re$^3$-style relevance and recency gate; both are approximations from the papers' descriptions, because the official Q-TIE code was unavailable. A one-sided-interval method with a single document clock is bounded by B2 and B3.
 
 \begin{table}[t]\centering\small
 \begin{tabular}{lcccc}\toprule
@@ -39,25 +71,42 @@ B0 BM25 & .26 & .27 & .17 & .11 \\
 B2 pub.\ cutoff & .27 & .03 & .77 & .33 \\
 B3 valid filter & .29 & .61 & .02 & .23 \\
 B6 soft dist.\ & .41 & .41 & .77 & .06 \\
-B4 v1 ($\lambda{=}2$) & .62 & .64 & .83 & .57 \\
-B4 v2 ($\delta{=}1.5$) & .80 & .69 & .77 & .65 \\\bottomrule
+B4 v1 ($\lambda{=}2$) & .62 & .64 & \textbf{.83} & .57 \\
+B4 v2 ($\delta{=}1.5$) & \textbf{.80} & \textbf{.69} & .77 & \textbf{.65} \\\bottomrule
 \end{tabular}
-\caption{Top-1 accuracy on the fresh held-out batch (100 families, 1{,}393 cases); configuration frozen before evaluation. Overall: BM25 .19, B2 .30, B3 .33, B6 .35, v1 .65, v2 .70; inadmissible-top-1 rates 0.44, 0.52, 0.16, 0.55, 0 and 0. Labels derive from the same timestamps as the eligibility rule, so zero inadmissibility is by construction.}\label{tab:main}
+\caption{Top-1 accuracy on the fresh held-out batch (100 families, 1{,}393 cases) for the current (cur.), valid-at (valid), known-at (known) and valid-known (v-k) intents; the configuration was frozen before evaluation. Overall: BM25 .19, B2 .30, B3 .33, B6 .35, v1 .65, v2 .70. Inadmissible top-1 rates, in the same order: 0.44, 0.52, 0.16, 0.55, 0 and 0. Labels derive from the same timestamps as the eligibility rule, so zero inadmissibility holds by construction.}\label{tab:main}
 \end{table}
 
-\textbf{Main result.} Each single-clock baseline fails on the intent it does not model (B2: 0.03 on valid-at; B3: 0.02 on known-at). Routed eligibility improves overall top-1 by $0.32$--$0.46$ (family-cluster bootstrap on 100 families: v2 vs B3 $+.37$ [.24,.53]; vs B2 $+.40$ [.29,.54]; vs B6 $+.35$ [.25,.47]). The semantic gate's gain over $\lambda$-weighting is not significant ($+.05$ [$-.03$,.14]).
+\textbf{Main result.} Each single-clock baseline fails on the intent it does not model (B2 reaches 0.03 on valid-at, B3 0.02 on known-at). Over B2, B3 and B6, v2 improves overall top-1 by 0.40, 0.37 and 0.35 (family-cluster bootstrap on 100 families: vs B2 $+.40$ [.29,.54]; vs B3 $+.37$ [.24,.53]; vs B6 $+.35$ [.25,.47]). The semantic gate's gain over $\lambda$-weighting is not significant ($+.05$ [$-.03$,.14]).
 
-\textbf{Corrections.} On 106 correction chains (212 cases) a cutoff at the target time returns the superseded original for every retrospective query (top-1 0.00), whereas a cutoff at the routed horizon with the semantic gate reaches 0.87 (known-at 0.99).
+\begin{table}[t]\centering\small
+\begin{tabular}{lcc}\toprule
+Variant & top-1 & inadm. \\\midrule
+Full v2 & .70 & .00 \\
+$-$ routing (always valid-at) & .46 & .12 \\
+$-$ routing (always known-at) & .37 & .44 \\
+$-$ eligibility (gate and gap only) & .14 & .79 \\
+$-$ semantic gate (eligibility and gap) & .58 & .00 \\\bottomrule
+\end{tabular}
+\caption{Ablation of v2 on the fresh batch (1{,}393 cases) with the frozen configuration. Removing routing, eligibility or the gate each lowers top-1; eligibility carries the most.}\label{tab:abl}
+\end{table}
 
-\textbf{Missing dates.} Hiding 30\% of effective dates lowers top-1 from 0.87 to 0.71 with no inadmissible results when candidates are dropped; imputing effective time from publication time adds 1--10 points but returns inadmissible evidence for 5--55\% of queries.
+\textbf{Ablation.} Table~\ref{tab:abl} isolates each component. Without eligibility, top-1 falls to 0.14 and 79\% of top results are inadmissible. Fixing one intent for every query gives 0.46 or 0.37, so routing matters as well. Dropping the semantic gate costs 0.12.
 
-\textbf{Ordinary queries.} Always applying a temporal rule to topic-only queries drops nDCG@10 from 0.98 to 0.46; routing with the gate retains 0.92.
+\textbf{Corrections.} On 106 correction chains (212 cases), a cutoff at the target time returns the superseded original for every retrospective query (top-1 0.00). A cutoff at the routed horizon with the semantic gate reaches 0.87 on retrospective queries and 0.99 on known-at queries.
+
+\textbf{Missing dates.} Hiding 30\% of effective dates lowers top-1 from 0.87 to 0.71 and produces no inadmissible results when candidates are dropped. Imputing effective time from publication time adds 1 to 10 points of top-1 but returns inadmissible evidence for 5 to 55\% of queries.
+
+\textbf{Ordinary queries.} Applying a temporal rule to every topic-only query drops nDCG@10 from 0.98 to 0.46. Routing with the gate keeps it at 0.92.
+
+\section{Conclusion}
+Historical evidence questions constrain either when a rule applied, when it could have been known, or both. In our experiments on versioned Federal Register rules, rankers that use one clock fail on the other intent, and routing each query to the matching clock with hard eligibility removes the inadmissible results, though not all errors. The evidence so far rests on labels derived from rule metadata, so the next step is human-judged relevance on independently written queries and a comparison with the official Q-TIE system.
 
 \section{Limitations}
-Gold labels are derived from the same timestamps used by eligibility, so inadmissibility is zero by construction and relevance is single-gold; human-annotated, independently written queries and relevance judgments are not yet reported. Publication time is a proxy for knowledge time. All data come from one jurisdiction and document type. The intent router and date parser were developed on author-written queries. Q-TIE and Re$^3$ are approximated, not reproduced; the official Q-TIE repository was unavailable. The semantic-gate variant was designed after inspecting aggregate error categories on earlier splits and its gain over simple weighting did not replicate on the fresh batch. Random timestamp masking does not model systematic missingness.
+Gold labels come from the same timestamps that eligibility uses, so inadmissibility is zero by construction and relevance is single-gold. Human-annotated, independently written queries and relevance judgments have not been reported. All experiments use BM25 as the semantic scorer; dense retrievers are untested. Publication time is only a proxy for knowledge time, and all data come from one jurisdiction and document type. The intent router and date parser were developed on author-written queries. Q-TIE and Re$^3$ are approximated, not reproduced, and the official Q-TIE repository was unavailable. We designed the semantic-gate variant after inspecting aggregate error categories on earlier splits, and its gain over simple weighting did not replicate on the fresh batch. Random timestamp masking does not model systematic missingness.
 
 \section*{Ethics Statement}
-The corpus consists of public-domain US government rules; no personal data are involved. Reuse terms of any released resource should be confirmed.
+The corpus consists of public-domain US government rules and contains no personal data. Reuse terms for any released resource should be confirmed.
 
 \bibliography{references}
 \end{document}
