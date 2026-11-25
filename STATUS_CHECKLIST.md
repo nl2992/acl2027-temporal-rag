@@ -3,7 +3,7 @@ Legend: DONE, PARTIAL, TODO-auto (I can do it), BLOCKED-human (needs the team).
 
 ## Days 1-2 / orientation
 - DONE repo + branches listed, Mac checked (M4, 16 GB), deadline verified (4 Jan 2027), RESEARCH_DIRECTION.md.
-- DONE-PARTIAL (A9, 2026-11-23: Q-TIE, IA-RAG, legal-RAG, bitemporal memory read in full; TEMPS/HoH/MRAG/TimeR4/Re3 body/FRESCO body still unread) literature pass: abstracts/snippets only; full text of bitemporal graph papers, the legal-RAG paper, TEMPS, HoH, MRAG not read. (remaining reading: TEMPS, HoH, MRAG, TimeR4, Re3/FRESCO bodies = TODO-auto A9b)
+- DONE-PARTIAL (A9, 2026-11-23: Q-TIE, IA-RAG, legal-RAG, bitemporal memory read in full; TEMPS/HoH/MRAG/TimeR4/Re3 body/FRESCO body still unread) literature pass: abstracts/snippets only; full text of bitemporal graph papers, the legal-RAG paper, TEMPS, HoH, MRAG not read. (A9b DONE 2026-11-24: TEMPO, TEMPS, MRAG, HoH, TimeR4, PAT-Questions, Re3, FRESCO read; WikiRecentChanges not locatable)
 - DONE (A10, 2026-11-23: branch holds logs, manifests, summaries and scripts only; no candidate pools or predictions) `origin/codex/experiment-backup` only listed, not mined for reusable candidates (prompt: reuse cached pools if exist; none on this Mac).
 
 ## Pilot / data

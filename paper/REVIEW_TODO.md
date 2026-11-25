@@ -4,6 +4,6 @@ Done: humanizer pass; paper-polish pass (hedged "as we read them" for Q-TIE/Re3,
 
 Remaining (cannot be fixed by editing):
 - MAJOR: no human-annotated queries or relevance judgments; labels are metadata-derived (annotation sheets out, none returned).
-- MAJOR: related work incomplete (TEMPO, TEMPS, MRAG, TimeR4, HoH, PAT-Questions unread); red TODOs mark them.
+- DONE: related work read and integrated (A9b); Re3 is the closest prior art, a real Re3/Re2Bench comparison is still missing.
 - MAJOR: BM25 only; Q-TIE and Re3 only approximated.
 - MINOR: bibliography notes ("bibliographic details to be verified" for Jensen and Snodgrass; Re3 v1 withdrawn note) to resolve; the paper is 4 pages against an 8-page limit, so room exists for the missing material.
