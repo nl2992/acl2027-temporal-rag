@@ -19,3 +19,13 @@ results/**
 *.zip
 vendor/*
 !vendor/.gitkeep
+paper/acl-style-files/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.blg
+paper/*.bbl
+paper/build.log
+annotation/GOLD_KEY_do_not_share_with_annotators.json
