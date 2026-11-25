@@ -7,3 +7,6 @@ Remaining (cannot be fixed by editing):
 - DONE: related work read and integrated (A9b); Re3 is the closest prior art, a real Re3/Re2Bench comparison is still missing.
 - MAJOR: BM25 only; Q-TIE and Re3 only approximated.
 - MINOR: bibliography notes ("bibliographic details to be verified" for Jensen and Snodgrass; Re3 v1 withdrawn note) to resolve; the paper is 4 pages against an 8-page limit, so room exists for the missing material.
+
+## Update 2026-11-25
+Paper rewritten around valid-to semantics with test5 as the clean batch, dense replication, ablation on test5 and a blind-judge section. Open: human annotation, a real Re3/Q-TIE comparison (no public Re3 code found), parser misses and withdrawn/delayed/confirmation notices, larger dense models.

@@ -9,7 +9,7 @@ def meth(name, c, K):
     q = query(c); s, p = pool_of(q, K); t, h = D(c["t"]), D(c["h"]); zs = z(s, p)
     if name == "B0": return p
     if name == "B2": return sorted([i for i in p if pub(i) <= h], key=lambda i: (pub(i), s[i]), reverse=True)
-    if name == "B3": return sorted([i for i in p if eff(i) <= t], key=lambda i: (eff(i), s[i]), reverse=True)
+    if name == "B3": return sorted([i for i in p if inforce(i, t)], key=lambda i: (eff(i), s[i]), reverse=True)
     if name == "B6": return sorted(p, key=lambda i: zs[i] - 4.0 * math.log1p(abs((t - pub(i)).days) / 30), reverse=True)
     it = route(q)
     if name == "v1": return sorted([i for i in p if elig(i, c, it)], key=lambda i: zs[i] - 2.0 * math.log1p(gapdays(i, c, it) / 30), reverse=True)

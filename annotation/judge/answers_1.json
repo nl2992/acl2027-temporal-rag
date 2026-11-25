@@ -1,0 +1,22 @@
+{
+"J001":{"choice":"2012-4975","confidence":"medium","note":"2012-4708 and 2012-4975 both cover Feb 28, 2012; the later-effective one (Feb 27) taken as controlling."},
+"J002":{"choice":"2012-29394","confidence":"high","note":"Effective Nov 30 through Dec 31, 2012, latest in effect on Dec 2."},
+"J003":{"choice":"2013-05933","confidence":"high","note":"2014-04821 not effective until Mar 31, 2014, so the 2013 rule was still in force."},
+"J004":{"choice":"2014-20413","confidence":"high","note":"Most recent published by Sept 13, 2014 (published Aug 27), though effective Oct 1."},
+"J005":{"choice":"NONE","confidence":"medium","note":"No candidate covers June 24, 2013; the July 4 deviation was not yet effective and the Oct-Dec 2012 one had ended."},
+"J006":{"choice":"NONE","confidence":"medium","note":"2018-12284 starts July 2, 2018; other deviations were single-day or ended earlier."},
+"J007":{"choice":"2026-20356","confidence":"high","note":"Effective Oct 2, 2026 through Dec 31, covers Oct 3 (published after, allowed by looking back)."},
+"J008":{"choice":"NONE","confidence":"medium","note":"The only covering rule (2021-25217) was published Nov 19, after the cutoff."},
+"J009":{"choice":"2018-01266","confidence":"high","note":"Latest published by Feb 10, 2018, though effective Feb 26."},
+"J010":{"choice":"2020-11462","confidence":"high","note":"Only delay published by Aug 16, 2020."},
+"J011":{"choice":"2026-17821","confidence":"medium","note":"Most recently published by Sept 9, 2026 is a correction; 2026-17333 is the latest non-correction."},
+"J012":{"choice":"2025-00273","confidence":"low","note":"Original rule 2024-26821 and its correction 2025-00273 share the Jan 19, 2025 effective date; chose the latest."},
+"J013":{"choice":"NONE","confidence":"medium","note":"The only covering rule (2023-21844) was published Oct 3, 2023, after the cutoff."},
+"J014":{"choice":"NONE","confidence":"medium","note":"The only covering rule (2022-01371) was published Jan 25, 2022, after the cutoff."},
+"J015":{"choice":"2014-20842","confidence":"high","note":"Effective Sept 4, 2014, the latest in force; 2014-18501 not effective until 2015."},
+"J016":{"choice":"2020-15409","confidence":"medium","note":"Effective July 13, 2020 (published after, allowed by looking back); earlier year-long rules also in effect."},
+"J017":{"choice":"2019-02171","confidence":"medium","note":"Feb 10-Mar 10, 2019 action, latest published and in effect by Mar 8; 2019-02148 also covers."},
+"J018":{"choice":"2015-07938","confidence":"high","note":"Effective Apr 2, 2015, covers Apr 4 (published later, allowed by looking back)."},
+"J019":{"choice":"2021-25719","confidence":"high","note":"Most recent published by Dec 14, 2021 (Nov 26, effective Jan 1, 2022)."},
+"J020":{"choice":"2014-12396","confidence":"medium","note":"June 1-Aug 31, 2014 action is latest published and in effect; 2014-10222 also in effect."}
+}

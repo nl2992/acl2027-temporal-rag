@@ -1,0 +1,22 @@
+{
+"J001": {"choice": "NONE", "confidence": "medium", "note": "Only one-off deviations; none covered June 1, 2017."},
+"J002": {"choice": "2021-26494", "confidence": "high", "note": "Effective Jan 6, 2022; the Sept 26, 2022 rule was not yet effective."},
+"J003": {"choice": "2024-20783", "confidence": "medium", "note": "2025 direct final rule was withdrawn effective Feb 26, 2026, so the 2024 rule remains the latest in force."},
+"J004": {"choice": "NONE", "confidence": "high", "note": "Quota windows run Oct/Nov to Dec 31; none covers Sept 26, 2016."},
+"J005": {"choice": "2018-07262", "confidence": "high", "note": "Latest published by April 19, 2018."},
+"J006": {"choice": "2026-10935", "confidence": "low", "note": "Confirmation of the June 16, 2026 effective date; the underlying direct final rule 2026-06373 is the alternative."},
+"J007": {"choice": "2024-30247", "confidence": "medium", "note": "Effective Jan 1, 2025 until the 2025-2026 specifications; latest such rule."},
+"J008": {"choice": "2018-23571", "confidence": "medium", "note": "Effective Oct 24, 2018 through Dec 31; 2018-23137 (Oct 22) is the earlier overlapping one."},
+"J009": {"choice": "2018-13917", "confidence": "high", "note": "Effective June 25, 2018 through Dec 31, 2018; published later but may be used."},
+"J010": {"choice": "2014-13553", "confidence": "medium", "note": "Latest final assessment rate effective before July 5, 2018; the 2018 rule was effective July 20."},
+"J011": {"choice": "2012-29876", "confidence": "medium", "note": "Effective Dec 6, 2012; 2013-03202 also applicable to Dec 2012 is an alternative."},
+"J012": {"choice": "NONE", "confidence": "medium", "note": "Deviations are one-off; none covered Sept 23, 2018."},
+"J013": {"choice": "NONE", "confidence": "high", "note": "All candidates expired by Dec 31 of their year; none in force Nov 23, 2026."},
+"J014": {"choice": "NONE", "confidence": "high", "note": "2019-20181 was published Sept 18; earlier 2019 rule expired Sept 1."},
+"J015": {"choice": "2016-00909", "confidence": "high", "note": "In force Jan 15 through Apr 30, 2016; the April 14 increase was published April 19."},
+"J016": {"choice": "NONE", "confidence": "high", "note": "The July 2021 action was published July 21; earlier candidates had expired."},
+"J017": {"choice": "NONE", "confidence": "high", "note": "2022-00042 was published Jan 6, 2022; earlier candidates had expired."},
+"J018": {"choice": "2023-15976", "confidence": "low", "note": "2025 rules were delayed or pending; latest clearly effective candidate is July 2023."},
+"J019": {"choice": "2016-07011", "confidence": "low", "note": "Tie with 2016-07010, both published March 29, 2016."},
+"J020": {"choice": "2023-05762", "confidence": "medium", "note": "2024-03013 was effective March 18, 2024, after the date; prior list is latest in force."}
+}

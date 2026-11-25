@@ -1,0 +1,22 @@
+{
+"J021":{"choice":"2026-17511","confidence":"high","note":"Latest effective rule (Sept 28, 2026) before the date."},
+"J022":{"choice":"2015-13601","confidence":"high","note":"Effective May 29 through Aug 31, 2015 covers May 31."},
+"J023":{"choice":"2021-02127","confidence":"high","note":"Effective Jan 21, 2021 through Sept 1, 2021."},
+"J024":{"choice":"2025-14147","confidence":"medium","note":"July 28, 2025 correction is the most recent published; the June 24 rule is the alternative."},
+"J025":{"choice":"2013-06428","confidence":"low","note":"All deviations expired; the April 2013 rule is the only non-temporary one still standing."},
+"J026":{"choice":"2016-07149","confidence":"high","note":"Effective April 29, 2016; the 2018 rule was not effective until April 13, 2018."},
+"J027":{"choice":"2012-23837","confidence":"high","note":"Most recently published before Nov 3, 2012."},
+"J028":{"choice":"NONE","confidence":"medium","note":"No deviation published by then covers Sept 29, 2018."},
+"J029":{"choice":"2023-19253","confidence":"high","note":"Latest effective rule (Oct 10, 2023)."},
+"J030":{"choice":"2023-15289","confidence":"high","note":"Effective July 15 through Dec 31, 2023 covers July 17."},
+"J031":{"choice":"NONE","confidence":"medium","note":"No deviation covers Oct 12, 2012."},
+"J032":{"choice":"NONE","confidence":"high","note":"All candidates expired by Dec 31 of their years."},
+"J033":{"choice":"2019-15061","confidence":"high","note":"Published July 16, 2019, most recent by July 31, 2019."},
+"J034":{"choice":"NONE","confidence":"high","note":"Latest candidate expired June 30, 2021."},
+"J035":{"choice":"NONE","confidence":"high","note":"Latest candidate expired Dec 31, 2025."},
+"J036":{"choice":"2019-22364","confidence":"medium","note":"2020 rule not effective until Dec 4, 2020; the 2019 rule was in force."},
+"J037":{"choice":"2012-8293","confidence":"high","note":"Most recently published by May 29, 2012."},
+"J038":{"choice":"2021-00570","confidence":"high","note":"Published Jan 14, 2021, most recent by Jan 30, 2021."},
+"J039":{"choice":"2018-03990","confidence":"high","note":"Published Feb 28, 2018, most recent by March 30, 2018."},
+"J040":{"choice":"2024-13230","confidence":"medium","note":"The 2025 rule and correction were not effective until Aug 25, 2025, so the 2024 rule governed."}
+}

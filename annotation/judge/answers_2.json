@@ -1,0 +1,22 @@
+{
+"J021": {"choice": "2014-08782", "confidence": "high", "note": "Latest published before Apr 26, 2014 is the Apr 17 deviation."},
+"J022": {"choice": "2023-28486", "confidence": "medium", "note": "Published Dec 27 but effective Dec 21-31, 2023, covering Dec 24; later publication allowed."},
+"J023": {"choice": "2022-13446", "confidence": "high", "note": "Published June 29, 2022, most recent before July 14, 2022."},
+"J024": {"choice": "2025-00112", "confidence": "medium", "note": "Latest published by Mar 23, 2025 (Jan 7) effective through Dec 31, 2025; 2025-05041 published after."},
+"J025": {"choice": "2024-05281", "confidence": "medium", "note": "2026-22213 not effective until Dec 29, 2026, so the 2024 rule is in force on Nov 29."},
+"J026": {"choice": "NONE", "confidence": "medium", "note": "No candidate covers 2026; all expired Dec 31 of earlier years."},
+"J027": {"choice": "2017-04069", "confidence": "medium", "note": "Published Mar 3, 2017, most recent published though effective Mar 20."},
+"J028": {"choice": "2026-20637", "confidence": "high", "note": "Effective Oct 7 through Dec 31, 2026, covers Nov 23, 2026."},
+"J029": {"choice": "2025-03192", "confidence": "low", "note": "Feb 27, 2025 notice appears to delay effective date of 2025 specs; alternative 2024-29451."},
+"J030": {"choice": "2020-11462", "confidence": "high", "note": "Only delay published by Nov 13, 2020."},
+"J031": {"choice": "2018-16068", "confidence": "high", "note": "Latest published before Aug 4, 2018 (Jul 27)."},
+"J032": {"choice": "2026-00479", "confidence": "high", "note": "2026 quotas effective through Dec 31, 2026."},
+"J033": {"choice": "2021-17293", "confidence": "high", "note": "Published Aug 13, 2021."},
+"J034": {"choice": "2019-05283", "confidence": "high", "note": "Published Mar 20, 2019."},
+"J035": {"choice": "NONE", "confidence": "low", "note": "2025-12600 in force Jul 4 but published Jul 7; nothing earlier covers 2025."},
+"J036": {"choice": "2021-00207", "confidence": "medium", "note": "Published Jan 12, 2021, not yet effective on Jan 27; alternative 2016-29752 as the one in force."},
+"J037": {"choice": "2022-04374", "confidence": "high", "note": "Latest candidate."},
+"J038": {"choice": "2016-09629", "confidence": "high", "note": "Published Apr 26, 2016; 2016-11381 published May 16."},
+"J039": {"choice": "2022-23244", "confidence": "medium", "note": "Effective Oct 21 through Dec 31, 2022, latest in force on Oct 23, 2022."},
+"J040": {"choice": "2026-02882", "confidence": "high", "note": "Published Feb 13, 2026."}
+}

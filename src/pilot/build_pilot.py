@@ -11,7 +11,7 @@ def _get(u, tries=8):
 D = dt.date.fromisoformat
 fam = json.load(open("data/pilot/families_all.json"))
 # drop families dominated by negative/zero lag noise; keep those with clear pub<eff gaps
-EXCLUDE = {"2015-13717", "2023-23882", "2015-10055"}  # API effective_on (2015-07-27) contradicts its own DATES text (June 10, 2015); 2023-23882 and 2015-10055 likewise conflict with their DATES text (found when verifying test4)
+EXCLUDE = {"2015-13717", "2023-23882", "2015-10055", "2023-12630"}  # API effective_on (2015-07-27) contradicts its own DATES text (June 10, 2015); 2023-23882 and 2015-10055 likewise conflict with their DATES text (found when verifying test4)
 fam = {k: [d for d in v if d["document_number"] not in EXCLUDE] for k, v in fam.items()}
 fam = {k: v for k, v in fam.items() if len(v) >= 4}
 corpus = {}

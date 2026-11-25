@@ -19,10 +19,10 @@ def gapdays(i, c, it):
     return max((ref - clock).days, 0)
 def elig(i, c, it):
     t, h = D(c["t"]), D(c["h"])
-    if it == "current": return eff(i) <= h and pub(i) <= h
+    if it == "current": return inforce(i, h) and pub(i) <= h
     if it == "known_at": return pub(i) <= h
-    if it == "valid_at": return eff(i) <= t
-    return eff(i) <= t and pub(i) <= h
+    if it == "valid_at": return inforce(i, t)
+    return inforce(i, t) and pub(i) <= h
 def twoclock(c, lam, router=True):
     q = query(c); it = route(q) if router else c["intent"]
     s = bm25(q); pool = sorted(s, key=s.get, reverse=True)[:20]; zs = z(s, pool)
@@ -33,17 +33,20 @@ def b6(c, lam):  # soft symmetric distance of publication time to target time, n
     return sorted(pool, key=lambda i: zs[i] - lam * math.log1p(abs((t - pub(i)).days) / 30), reverse=True)
 def score(rk, c):
     g = gold(c); r = rk
+    if g == "NONE": return (int(not r), int(bool(r) and not admissible(r[0], c)), 1.0 if not r else 0.0)   # nothing in the family was admissible: abstaining is correct; any answer is a miss
     return (int(bool(r) and r[0] == g), int(bool(r) and not admissible(r[0], c)), 1 / math.log2(r.index(g) + 2) if g in r[:10] else 0.0)
 import os
 split1 = json.load(open("annotation/split_v1.json"))   # frozen before expansion: 9 dev / 5 test families
 fams = sorted({c["family"] for c in cases})
 split3 = json.load(open("annotation/split_v3.json")) if os.path.exists("annotation/split_v3.json") else {}
 split3.update(json.load(open("annotation/split_v4.json")) if os.path.exists("annotation/split_v4.json") else {})
+split3.update(json.load(open("annotation/split_v5.json")) if os.path.exists("annotation/split_v5.json") else {})
 split = {f: split1.get(f) or split3.get(f) or ("test2" if int(hashlib.md5(f.encode()).hexdigest(), 16) % 3 == 0 else "dev2") for f in fams}
 dev = [c for c in cases if split[c["family"]] in ("dev", "dev2") and gold(c)]   # lambda selection: all dev families (never test)
 test = [c for c in cases if split[c["family"]] in ("test", "test2") and gold(c)]
 test3 = [c for c in cases if split[c["family"]] == "test3" and gold(c)]
 test4 = [c for c in cases if split[c["family"]] == "test4" and gold(c)]
+test5 = [c for c in cases if split[c["family"]] == "test5" and gold(c)]
 test1 = [c for c in test if split[c["family"]] == "test"]; test2 = [c for c in test if split[c["family"]] == "test2"]
 print("families:", {v: sum(x == v for x in split.values()) for v in ("dev", "test", "dev2", "test2")}, "| cases dev/test1/test2:", len(dev), len(test1), len(test2))
 GRID = [0, .25, .5, 1, 2, 4]
@@ -91,7 +94,7 @@ for nm, cs in [("test1 (orig 5 fam)", test1), ("test2 (35 new fam)", test2)]:
 cat = collections.Counter()
 for c in test2:
     r = twoclock(c, lam4); g = gold(c)
-    if r and r[0] != g: cat["wrong version, same family" if C[r[0]]["family"] == C[g]["family"] else "other family"] += 1
+    if r and r[0] != g: cat["wrong version, same family" if (g in C and C[r[0]]["family"] == C[g]["family"]) else "other family"] += 1
     elif not r: cat["no eligible candidate"] += 1
 print("B4 errors on test2:", dict(cat), "of", len(test2))
 
@@ -113,7 +116,7 @@ print("cluster bootstrap test2 B4v2 - B3: %.3f [%.3f, %.3f]" % cboot("B4v2_gated
 cat = collections.Counter()
 for c in test2:
     r = gated(c, d4); g = gold(c)
-    cat["ok" if r and r[0] == g else ("none eligible" if not r else ("same family wrong version" if C[r[0]]["family"] == C[g]["family"] else "other family"))] += 1
+    cat["ok" if r and r[0] == g else ("none eligible" if not r else ("same family wrong version" if (g in C and C[r[0]]["family"] == C[g]["family"]) else "other family"))] += 1
 print("B4v2 outcomes test2:", dict(cat))
 
 # ---- test3: fresh confirmatory batch, FROZEN config set before mining (lambda=2, delta=1.5, router v2); nothing selected on it.

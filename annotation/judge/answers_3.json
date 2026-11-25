@@ -1,0 +1,22 @@
+{
+"J041":{"choice":"2023-25026","confidence":"medium","note":"Latest effective version (Dec 21, 2023)."},
+"J042":{"choice":"NONE","confidence":"medium","note":"No 2017 action published by Apr 15, 2017; earlier ones expired."},
+"J043":{"choice":"2026-17333","confidence":"medium","note":"Latest effective by Nov 2026; 2026-17821 is a correction effective Sept 21."},
+"J044":{"choice":"2021-07723","confidence":"high","note":"Latest effective rule."},
+"J045":{"choice":"2025-03192","confidence":"medium","note":"Most recently published by Mar 15, 2025 (delay notice for 2025 specs)."},
+"J046":{"choice":"NONE","confidence":"medium","note":"2017-16449 published after Aug 2; earlier ones expired Dec 31, 2016."},
+"J047":{"choice":"2023-26660","confidence":"high","note":"Effective Dec 1-31, 2023 covers Dec 3."},
+"J048":{"choice":"2020-13031","confidence":"high","note":"Most recent published by Jul 19, 2020."},
+"J049":{"choice":"2015-11831","confidence":"high","note":"Latest published before May 27, 2015."},
+"J050":{"choice":"2020-26217","confidence":"high","note":"Effective Nov 23, 2020 through year end."},
+"J051":{"choice":"2020-26105","confidence":"high","note":"Effective Nov 20, 2020 through year end."},
+"J052":{"choice":"2026-04166","confidence":"high","note":"Latest effective."},
+"J053":{"choice":"NONE","confidence":"low","note":"All candidates expired by Dec 2025; 2025-19772 is the latest if forced."},
+"J054":{"choice":"NONE","confidence":"low","note":"2020 quotas expired Dec 31, 2020; 2020-02533 is the matching version if forced."},
+"J055":{"choice":"2025-21791","confidence":"low","note":"Two rules published Dec 3, 2025 with same effective date; choice between them arbitrary."},
+"J056":{"choice":"2020-25741","confidence":"medium","note":"2021-25443 not effective until Dec 23, 2021; 2020 rule effective Dec 9, 2020 was latest in force."},
+"J057":{"choice":"NONE","confidence":"medium","note":"All adjustments expired Dec 31, 2021 or earlier."},
+"J058":{"choice":"2024-29375","confidence":"medium","note":"Latest in force May 27, 2025 (effective Jan 3, 2025); 2025-08023 effective Jun 11."},
+"J059":{"choice":"2022-21483","confidence":"high","note":"Latest published by Oct 19, 2022; 2022-22936 published Oct 21."},
+"J060":{"choice":"2021-15986","confidence":"medium","note":"Permanent rule; later temporary rules expired."}
+}

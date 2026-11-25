@@ -1,0 +1,22 @@
+{
+"J101": {"choice": "2023-01163", "confidence": "high", "note": "Effective Jan 20, 2023 through May 31, 2023 covers Jan 21."},
+"J102": {"choice": "NONE", "confidence": "medium", "note": "The only rule covering April 16, 2025 was published April 18, after the cutoff; the others are expired or future."},
+"J103": {"choice": "2025-07602", "confidence": "medium", "note": "The confirmation of the June 3, 2025 effective date is the latest; the direct final rule 2025-04651 is the alternative."},
+"J104": {"choice": "2023-28834", "confidence": "high", "note": "Latest version, effective May 1, 2024."},
+"J105": {"choice": "2019-27628", "confidence": "high", "note": "Published April 17, 2020, the latest published by May 2, 2020, though effective May 18."},
+"J106": {"choice": "2013-06763", "confidence": "high", "note": "Effective March 22, 2013 supersedes the March 3 rule on March 23."},
+"J107": {"choice": "2026-07250", "confidence": "high", "note": "Latest, effective May 14, 2026."},
+"J108": {"choice": "2017-26624", "confidence": "medium", "note": "The only rule applicable to the 2017 specifications."},
+"J109": {"choice": "2018-08935", "confidence": "high", "note": "The August 2018 rules take effect Sept 28, after the date."},
+"J110": {"choice": "2020-28505", "confidence": "medium", "note": "Supplemental interim rule effective Dec 2020; the April 5, 2021 rule was not yet effective."},
+"J111": {"choice": "2012-28045", "confidence": "high", "note": "The April 1, 2013 rule is effective only May 1, 2013."},
+"J112": {"choice": "2021-15806", "confidence": "medium", "note": "Latest published by Aug 10, 2021; its effective date is Aug 25 and a deviation is also in play."},
+"J113": {"choice": "2025-19677", "confidence": "high", "note": "Effective Oct 25, 2025, published later but governs Oct 26."},
+"J114": {"choice": "2015-15763", "confidence": "medium", "note": "The 2016 rule takes effect Aug 23, 2016, so the 2015 rule was still in force on July 24, 2016."},
+"J115": {"choice": "2021-26957", "confidence": "high", "note": "Latest published by Dec 23, 2021."},
+"J116": {"choice": "2013-22412", "confidence": "low", "note": "The interim rule's effective date was delayed to Jan 2014, so the delay notice is the controlling item; 2013-19422 is the alternative."},
+"J117": {"choice": "NONE", "confidence": "low", "note": "The 2017 rule expired Jan 1, 2018 and the 2018 rule starts June 1, 2018."},
+"J118": {"choice": "2024-13194", "confidence": "medium", "note": "The December 2023 rule is effective Dec 15, 2026, after today, so the latest in-force version is 2024-13194."},
+"J119": {"choice": "2023-07014", "confidence": "high", "note": "Effective April 2, 2023 through June 10, 2023."},
+"J120": {"choice": "2023-07998", "confidence": "high", "note": "Latest, effective June 5, 2023."}
+}
