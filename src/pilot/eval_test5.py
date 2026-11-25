@@ -14,7 +14,7 @@ def meth(name, c, K):
     it = route(q)
     if name == "v1": return sorted([i for i in p if elig(i, c, it)], key=lambda i: zs[i] - 2.0 * math.log1p(gapdays(i, c, it) / 30), reverse=True)
     zmax = max(zs.values()); ok = [i for i in p if elig(i, c, it) and zs[i] >= zmax - 1.5]
-    return sorted(ok, key=lambda i: (gapdays(i, c, it), -zs[i]))
+    return sorted(ok, key=lambda i: (gapdays(i, c, it), *tie(i), -zs[i]))
 print("test5: families", len({c['family'] for c in test5}), "cases", len(test5))
 R = {}
 for K in (20, 50):

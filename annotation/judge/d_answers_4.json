@@ -1,0 +1,22 @@
+{
+"J061": {"choice": "2021-25908", "confidence": "high", "note": "Published Nov 30, 2021, latest before Dec 16, 2021."},
+"J062": {"choice": "2017-04778", "confidence": "medium", "note": "The April 2018 rules were not effective until May 2018, so the 2017 rule still governed."},
+"J063": {"choice": "NONE", "confidence": "medium", "note": "Event-specific zones; none effective on May 23, 2017."},
+"J064": {"choice": "2019-23378", "confidence": "medium", "note": "2022-03689 was effective March 28, 2022, after the date, so the 2019 rule was the latest in effect."},
+"J065": {"choice": "2011-29561", "confidence": "low", "note": "2013-11750 was not yet effective; latest earlier effective rule chosen, though these are event-specific and NONE is arguable."},
+"J066": {"choice": "2020-14298", "confidence": "medium", "note": "2021-13448 became effective July 26, 2021, after the date."},
+"J067": {"choice": "NONE", "confidence": "medium", "note": "All candidates are one-day event rules long expired."},
+"J068": {"choice": "2019-03777", "confidence": "medium", "note": "Effective April 3, 2019; 2019-07818 not effective until May 20."},
+"J069": {"choice": "2024-17578", "confidence": "high", "note": "Latest effective rule."},
+"J070": {"choice": "2018-08689", "confidence": "high", "note": "Published April 25, 2018, the latest published by May 10, 2018."},
+"J071": {"choice": "2022-25192", "confidence": "medium", "note": "Effective Jan 9, 2023; 2023-28765 is a later delayed-provision notice, arguable."},
+"J072": {"choice": "NONE", "confidence": "medium", "note": "Single-day event rules, all expired."},
+"J073": {"choice": "2018-23242", "confidence": "medium", "note": "Latest effective by April 30, 2019; 2019-07395 effective May 15, 2019."},
+"J074": {"choice": "NONE", "confidence": "medium", "note": "2018-15671 not effective until Aug 19, 2018; nothing else in force."},
+"J075": {"choice": "2020-27418", "confidence": "high", "note": "Published Dec 18, 2020."},
+"J076": {"choice": "2020-26866", "confidence": "high", "note": "Published Dec 11, 2020; 2020-27418 was after Dec 17."},
+"J077": {"choice": "2012-12674", "confidence": "medium", "note": "Latest published and effective by June 13, 2012 (May 24); others effective later in June."},
+"J078": {"choice": "2011-10342", "confidence": "medium", "note": "Latest rule in effect on Aug 21, 2011; the August 2011 rules were effective Sept 6."},
+"J079": {"choice": "2018-16039", "confidence": "medium", "note": "2023-01470 not effective until March 2, 2023."},
+"J080": {"choice": "2022-22819", "confidence": "high", "note": "Effective Jan 1, 2023; 2023-25048 effective Jan 1, 2024."}
+}

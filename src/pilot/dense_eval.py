@@ -23,7 +23,7 @@ def meth(name, c, K, delta=1.5):
     it = route(q)
     if name == "v1": return sorted([i for i in p if elig(i, c, it)], key=lambda i: zs[i] - 2.0 * math.log1p(gapdays(i, c, it) / 30), reverse=True)
     zmax = max(zs.values()); ok = [i for i in p if elig(i, c, it) and zs[i] >= zmax - delta]
-    return sorted(ok, key=lambda i: (gapdays(i, c, it), -zs[i]))
+    return sorted(ok, key=lambda i: (gapdays(i, c, it), *tie(i), -zs[i]))
 mt = lambda cs, K, d: st.mean(score(meth("v2", c, K, d), c)[0] for c in cs)
 print("DEV sweep (dense) top-1 by (K, delta):")
 best = None

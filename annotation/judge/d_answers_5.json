@@ -1,0 +1,22 @@
+{
+"J081": {"choice": "2023-04392", "confidence": "high", "note": "2024-17578 was published but not yet effective (Sept 16, 2024)."},
+"J082": {"choice": "2024-31701", "confidence": "high", "note": "Latest rule, effective Feb 18, 2025."},
+"J083": {"choice": "2015-03184", "confidence": "medium", "note": "2016-10306 not effective until June 8, 2016; prior is the 2015 rule."},
+"J084": {"choice": "2010-19057", "confidence": "medium", "note": "2011-17759 and 2011-20456 not yet effective on Aug 27, 2011; latest effective is Oct 2010."},
+"J085": {"choice": "2017-16291", "confidence": "medium", "note": "2018-16517 not effective until Oct 1, 2018; title mismatch ignored."},
+"J086": {"choice": "2019-17814", "confidence": "high", "note": "Latest effective rule."},
+"J087": {"choice": "2022-03689", "confidence": "high", "note": "2023-04392 effective Apr 5, 2023, after the date."},
+"J088": {"choice": "NONE", "confidence": "medium", "note": "All candidates are event-limited and expired."},
+"J089": {"choice": "2015-32099", "confidence": "medium", "note": "Latest effective before Nov 14, 2018 among candidates; 2018-23608 effective Nov 29."},
+"J090": {"choice": "2013-17108", "confidence": "medium", "note": "Only non-event-limited rule effective before date; 2019-03777 effective Apr 3, 2019."},
+"J091": {"choice": "NONE", "confidence": "high", "note": "All event-limited, expired."},
+"J092": {"choice": "2012-5590", "confidence": "high", "note": "Effective Apr 9, 2012; 2012-7057 effective May 7."},
+"J093": {"choice": "2022-22819", "confidence": "high", "note": "Most recent published by Nov 25, 2022."},
+"J094": {"choice": "NONE", "confidence": "high", "note": "All time-limited and expired."},
+"J095": {"choice": "2021-27798", "confidence": "high", "note": "Most recent published by Jan 11, 2022."},
+"J096": {"choice": "2018-10765", "confidence": "high", "note": "Latest effective rule."},
+"J097": {"choice": "2018-16539", "confidence": "low", "note": "FY2023 rule not published yet; fell back to the 2018 hospice rule in force."},
+"J098": {"choice": "2011-32411", "confidence": "low", "note": "2011-30378 and 2011-32411 both effective Dec 29, 2011; chose later publication."},
+"J099": {"choice": "2016-09288", "confidence": "medium", "note": "2016-21996 not effective until Oct 14, 2016."},
+"J100": {"choice": "2010-15641", "confidence": "medium", "note": "2012-8947 effective June 18, 2012, after date."}
+}

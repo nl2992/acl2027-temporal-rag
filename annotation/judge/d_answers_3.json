@@ -1,0 +1,22 @@
+{
+"J041": {"choice": "2019-11267", "confidence": "high", "note": "Latest published on or before June 19, 2019 (June 4, 2019)."},
+"J042": {"choice": "NONE", "confidence": "high", "note": "All candidates were time-limited and expired long before 2026."},
+"J043": {"choice": "2022-22530", "confidence": "low", "note": "Latest effective item before Dec 24, 2022 (Oct 2022); 2022-25192 not effective until Jan 9, 2023; 2022-06517 is the alternative."},
+"J044": {"choice": "2019-26448", "confidence": "high", "note": "Effective Jan 8, 2020; 2019-28501 not effective until Feb 12, 2020."},
+"J045": {"choice": "2011-29466", "confidence": "medium", "note": "Latest effective on or before Feb 1, 2012 (Dec 16, 2011); 2012-582 effective Feb 16."},
+"J046": {"choice": "2012-26779", "confidence": "high", "note": "Published on Nov 6, 2012 itself."},
+"J047": {"choice": "2012-25810", "confidence": "high", "note": "Effective Nov 21, 2012."},
+"J048": {"choice": "2018-23349", "confidence": "medium", "note": "Latest effective amendment; earlier rules remain in force for other parts."},
+"J049": {"choice": "2012-24307", "confidence": "high", "note": "2012-26505 was published Oct 29, after the cutoff."},
+"J050": {"choice": "2015-14865", "confidence": "high", "note": "2016-03808 not effective until Sept 12, 2016."},
+"J051": {"choice": "2016-21996", "confidence": "high", "note": "Published Sept 14, 2016, most recent before Sept 29."},
+"J052": {"choice": "2019-18336", "confidence": "high", "note": "Effective Sept 26, 2019; 2019-25058 rescissions effective Dec 23."},
+"J053": {"choice": "NONE", "confidence": "medium", "note": "2012-10484 effective May 24 not yet; 2010 rule expired."},
+"J054": {"choice": "2018-14946", "confidence": "medium", "note": "Latest effective (Aug 13, 2018)."},
+"J055": {"choice": "2011-10342", "confidence": "medium", "note": "Latest effective before Aug 21, 2011 (June 1, 2011); later ones effective Sept 2011 or later."},
+"J056": {"choice": "2014-20681", "confidence": "high", "note": "Most recent published before Oct 18, 2014."},
+"J057": {"choice": "2018-23608", "confidence": "high", "note": "2019-25428 effective Dec 26, 2019, after the date."},
+"J058": {"choice": "2019-26448", "confidence": "high", "note": "Effective Jan 8, 2020; 2019-28501 effective Feb 12."},
+"J059": {"choice": "NONE", "confidence": "medium", "note": "2021-17402 effective Sept 5, 2021; all others long expired."},
+"J060": {"choice": "2024-26981", "confidence": "high", "note": "Most recent effective Reserve Requirements rule."}
+}

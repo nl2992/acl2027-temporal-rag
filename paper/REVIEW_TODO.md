@@ -10,3 +10,6 @@ Remaining (cannot be fixed by editing):
 
 ## Update 2026-11-25
 Paper rewritten around valid-to semantics with test5 as the clean batch, dense replication, ablation on test5 and a blind-judge section. Open: human annotation, a real Re3/Q-TIE comparison (no public Re3 code found), parser misses and withdrawn/delayed/confirmation notices, larger dense models.
+
+## Update 2026-11-26
+Paper numbers moved to level-2 validity (VALID_TO=2). The ablation table now shows level-2 numbers (src/pilot/ablation_test5.py with VALID_TO=2). Judgments are LLM-agent judgments, not human; human annotation files have not been returned.

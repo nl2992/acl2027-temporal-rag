@@ -7,7 +7,7 @@ with contextlib.redirect_stdout(io.StringIO()):
 def run(c, intent=None, eligible=True, gate=1.5):
     q = query(c); it = intent or route(q); s = bm25(q); pool = sorted(s, key=s.get, reverse=True)[:50]; zs = z(s, pool); zmax = max(zs.values())
     ok = [i for i in pool if (elig(i, c, it) if eligible else True) and zs[i] >= zmax - gate]
-    return sorted(ok, key=lambda i: (gapdays(i, c, it), -zs[i]))
+    return sorted(ok, key=lambda i: (gapdays(i, c, it), *tie(i), -zs[i]))
 V = {"B4 v2 (full: routing + eligibility + gate)": lambda c: run(c),
      "- routing (always valid-at)": lambda c: run(c, "valid_at"),
      "- routing (always known-at)": lambda c: run(c, "known_at"),

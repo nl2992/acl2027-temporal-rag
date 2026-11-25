@@ -1,0 +1,22 @@
+{
+"J101": {"choice": "2010-10404", "confidence": "high", "note": "Latest published on or before May 20, 2010 is May 5, 2010."},
+"J102": {"choice": "2025-06899", "confidence": "high", "note": "Published April 23, 2025, though effective May 23."},
+"J103": {"choice": "2022-25192", "confidence": "medium", "note": "Latest rule published by then that was effective (Jan 9, 2023); some provisions delayed."},
+"J104": {"choice": "2013-00556", "confidence": "high", "note": "Published Jan 17, 2013, latest before Feb 2."},
+"J105": {"choice": "2019-07818", "confidence": "low", "note": "Latest with no stated end date; may be a temporary zone so NONE is possible."},
+"J106": {"choice": "2012-26779", "confidence": "high", "note": "Published Nov 6, 2012."},
+"J107": {"choice": "2021-05414", "confidence": "high", "note": "Latest effective version."},
+"J108": {"choice": "2020-28756", "confidence": "medium", "note": "2021-11758 not effective until July 29, 2021; 2020-28756 effective Mar 12, 2021 was latest in force."},
+"J109": {"choice": "2016-03808", "confidence": "high", "note": "Latest published by June 3, 2016."},
+"J110": {"choice": "2018-25400", "confidence": "high", "note": "2019-21559 not effective until Jan 1, 2020."},
+"J111": {"choice": "2018-11068", "confidence": "high", "note": "Latest effective version."},
+"J112": {"choice": "2011-11133", "confidence": "high", "note": "Published May 9, 2011."},
+"J113": {"choice": "2010-2610", "confidence": "medium", "note": "2011-21946 not effective until Dec 27, 2011; earlier rule effective Apr 2010 governed."},
+"J114": {"choice": "2022-19612", "confidence": "high", "note": "Latest effective version."},
+"J115": {"choice": "2024-26981", "confidence": "high", "note": "Published Nov 20, 2024."},
+"J116": {"choice": "2026-00005", "confidence": "high", "note": "Latest effective version."},
+"J117": {"choice": "2012-17705", "confidence": "low", "note": "Two rules published July 20, 2012; 17705 has the higher document number, 17694 covers Aug 11 though."},
+"J118": {"choice": "2015-17061", "confidence": "medium", "note": "Latest published/effective (Sept 14, 2015)."},
+"J119": {"choice": "NONE", "confidence": "low", "note": "Zone effective June 15, 2024; correction of May 16 does not itself govern May 23."},
+"J120": {"choice": "2013-28211", "confidence": "medium", "note": "2024-18114 not effective until Oct 21, 2024; 2013 rule effective Nov 2016 was latest in force."}
+}

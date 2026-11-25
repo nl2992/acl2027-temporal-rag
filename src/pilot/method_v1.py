@@ -103,7 +103,7 @@ print("B4 errors on test2:", dict(cat), "of", len(test2))
 def gated(c, delta):
     q = query(c); it = route(q); s = bm25(q); pool = sorted(s, key=s.get, reverse=True)[:20]; zs = z(s, pool); zmax = max(zs.values())
     ok = [i for i in pool if elig(i, c, it) and zs[i] >= zmax - delta]
-    return sorted(ok, key=lambda i: (gapdays(i, c, it), -zs[i]))
+    return sorted(ok, key=lambda i: (gapdays(i, c, it), *tie(i), -zs[i]))
 DG = [0.25, 0.5, 1, 1.5, 2, 3, 100]
 d4 = max(DG, key=lambda d: mean_top1(lambda c: gated(c, d), dev))
 print("\nB4v2 gated: dev-selected delta =", d4)

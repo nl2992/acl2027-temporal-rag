@@ -1,0 +1,22 @@
+{
+"J001":{"choice":"NONE","confidence":"high","note":"All candidates were time-limited and expired long before today."},
+"J002":{"choice":"2023-26935","confidence":"medium","note":"Open-ended additions; latest effective one taken as controlling."},
+"J003":{"choice":"2012-2599","confidence":"high","note":"Latest published before Feb 21, 2012."},
+"J004":{"choice":"2015-31252","confidence":"medium","note":"2016-21637 not yet effective on Oct 28, 2016; 2015-31252 is latest in force."},
+"J005":{"choice":"2017-12954","confidence":"medium","note":"Latest of a series of staged effective-date notices for the same order."},
+"J006":{"choice":"2018-09969","confidence":"medium","note":"2018-20239 not effective until Oct 19, 2018."},
+"J007":{"choice":"2012-5385","confidence":"high","note":"2012-13301 effective July 31, 2012, after the date; 2012-5385 effective April 6, 2012."},
+"J008":{"choice":"2024-01167","confidence":"low","note":"Jan 25, 2024 notice sets effective dates for delayed provisions; truncated, 2023-13035 is the alternative."},
+"J009":{"choice":"2024-10783","confidence":"high","note":"Correction published May 16, 2024 is the latest before May 23."},
+"J010":{"choice":"2014-21849","confidence":"high","note":"Latest published before Nov 11, 2014."},
+"J011":{"choice":"2023-05743","confidence":"high","note":"Latest published before April 12, 2023."},
+"J012":{"choice":"2022-16214","confidence":"high","note":"Only FY2023 rule; the others are other fiscal years."},
+"J013":{"choice":"2016-03808","confidence":"medium","note":"2017-05480 published after date; 2016-03808 effective Sept 2016 is latest in force."},
+"J014":{"choice":"NONE","confidence":"medium","note":"Only 2026-18279 covers Sept 6 but was published Sept 8; nothing else in force."},
+"J015":{"choice":"2018-15052","confidence":"medium","note":"2020-09877 effective July 2, 2020 not yet; 2018-15052 latest in force."},
+"J016":{"choice":"2013-09307","confidence":"high","note":"Latest published before May 7, 2013."},
+"J017":{"choice":"2010-19057","confidence":"medium","note":"2011 notices published or effective after Aug 14, 2011 are not yet in force."},
+"J018":{"choice":"2013-01449","confidence":"high","note":"2013-06754 effective April 25, 2013, after the date."},
+"J019":{"choice":"2025-20935","confidence":"high","note":"Latest published before Dec 10, 2025 (effective later)."},
+"J020":{"choice":"NONE","confidence":"medium","note":"2013-17108 not effective until Aug 19, 2013; others expired."}
+}

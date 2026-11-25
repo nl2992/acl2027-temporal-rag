@@ -1,0 +1,22 @@
+{
+"J021":{"choice":"NONE","confidence":"medium","note":"All candidates are one-time event rules that expired long before Nov 2026."},
+"J022":{"choice":"2011-31725","confidence":"medium","note":"The 2012 rules were delayed to Oct 28, 2013 per 2013-10604, so the Dec 2011 interim rule was the one in force."},
+"J023":{"choice":"2024-10485","confidence":"medium","note":"Latest effective rule in the packet; permanent amendments."},
+"J024":{"choice":"2015-08756","confidence":"high","note":"Latest published before May 2, 2015."},
+"J025":{"choice":"2012-24546","confidence":"medium","note":"Latest effective rule in the packet."},
+"J026":{"choice":"2011-17253","confidence":"medium","note":"Latest rule effective by Jan 13, 2012; 2011-31919 took effect Feb 13, 2012."},
+"J027":{"choice":"2024-18114","confidence":"high","note":"Latest effective rule (Oct 21, 2024)."},
+"J028":{"choice":"NONE","confidence":"medium","note":"2022-16802 took effect Aug 21, 2022, after Aug 13; no other rule covers that date."},
+"J029":{"choice":"NONE","confidence":"medium","note":"2012-20830 was effective only Sept 23, 2012; nothing in force Sept 8."},
+"J030":{"choice":"2019-21774","confidence":"high","note":"Latest published before Oct 25, 2019."},
+"J031":{"choice":"2024-30697","confidence":"high","note":"Latest annual adjustment in the packet."},
+"J032":{"choice":"2014-08338","confidence":"high","note":"Latest published before May 16, 2014."},
+"J033":{"choice":"2023-26212","confidence":"high","note":"2024-26981 became effective Dec 20, 2024, after Dec 5."},
+"J034":{"choice":"2017-16294","confidence":"high","note":"Latest published before Sept 2, 2017."},
+"J035":{"choice":"2025-22814","confidence":"high","note":"Published Dec 15, 2025, before Dec 23."},
+"J036":{"choice":"NONE","confidence":"medium","note":"All are one-time event rules that have expired; if a latest rule is wanted it would be 2026-13031."},
+"J037":{"choice":"2021-04998","confidence":"medium","note":"2024-16935 not effective until Sept 16, 2024; latest effective earlier is 2021-04998."},
+"J038":{"choice":"2024-01634","confidence":"low","note":"Latest effective rule in the packet; many partial amendments make this ambiguous."},
+"J039":{"choice":"2010-14296","confidence":"medium","note":"2011-25344 effective Nov 3, 2011, after the date."},
+"J040":{"choice":"2012-10484","confidence":"high","note":"Latest published before May 12, 2012."}
+}
