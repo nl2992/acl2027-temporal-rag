@@ -145,3 +145,6 @@ Audit finding: the earlier test5 tables took intent from a four-keyword template
 | v2, title cut to 4 words | .35 / .33 |
 
 v2 minus gated B3: +.28 [.25,.31] BM25, +.24 [.21,.28] dense. **Not met: the success criterion in RESEARCH_DIRECTION.md** ("beats every single-clock baseline on its own intents, no worse on current queries"): with BM25 gated B3 equals v2 on valid-at (.81) and beats it on current (.77 vs .68; 22 of 100 current queries are misrouted because the title contains a year), and gated B2 beats v2 on known-at (.88 vs .81). With dense, v2 is ahead by .03 on valid-at and known-at and behind on current (.58 vs .72).
+
+## Router over the two gated baselines (2026-11-25; `router_switch.py`; `reports/pilot_router_switch_{bm25,dense}.txt`)
+The cue router sends each query to gated B3 (current, valid-at, valid-known) or gated B2 (known-at), assignment chosen on dev. test5 top-1: .67 BM25 / .62 dense, against v2 .78 / .71; v2 minus this control +.11 [.06,.16] / +.10 [.05,.15]. v2 gains on valid-known (.75 vs .40 BM25, where both constraints are needed), loses on current (.68 vs .77) and known-at BM25 (.81 vs .85). Post hoc control. The paper does not report it yet. `llm_rerank.py` (LLM re-ranker baseline) is written but has not produced results.

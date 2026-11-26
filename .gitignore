@@ -29,3 +29,4 @@ paper/*.blg
 paper/*.bbl
 paper/build.log
 annotation/GOLD_KEY_do_not_share_with_annotators.json
+annotation/human_v2/returned/

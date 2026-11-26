@@ -1,0 +1,8 @@
+scorer: bge-small-en-v1.5
+gated baseline settings (K, delta): {'B2': (50, 1.5), 'B3': (50, 1.5)}
+dev-chosen baseline per routed intent: {'current': 'B3', 'valid_at': 'B3', 'known_at': 'B2', 'valid_known': 'B3'}
+B2 gated                                             top1 0.236  inadm 0.578  | current 0.30 valid_at 0.03 known_at 0.74 valid_known 0.13
+B3 gated                                             top1 0.470  inadm 0.128  | current 0.72 valid_at 0.73 known_at 0.00 valid_known 0.42
+router over B2/B3 gated                              top1 0.615  inadm 0.127  | current 0.72 valid_at 0.73 known_at 0.71 valid_known 0.42
+v2                                                   top1 0.715  inadm 0.000  | current 0.58 valid_at 0.76 known_at 0.77 valid_known 0.66
+v2 minus router-over-baselines: 0.100 [0.052, 0.148]

@@ -1,0 +1,8 @@
+scorer: BM25
+gated baseline settings (K, delta): {'B2': (100, 1.5), 'B3': (50, 1.5)}
+dev-chosen baseline per routed intent: {'current': 'B3', 'valid_at': 'B3', 'known_at': 'B2', 'valid_known': 'B3'}
+B2 gated                                             top1 0.262  inadm 0.548  | current 0.31 valid_at 0.01 known_at 0.88 valid_known 0.14
+B3 gated                                             top1 0.496  inadm 0.149  | current 0.77 valid_at 0.81 known_at 0.00 valid_known 0.40
+router over B2/B3 gated                              top1 0.670  inadm 0.146  | current 0.77 valid_at 0.81 known_at 0.85 valid_known 0.40
+v2                                                   top1 0.780  inadm 0.000  | current 0.68 valid_at 0.81 known_at 0.81 valid_known 0.75
+v2 minus router-over-baselines: 0.110 [0.063, 0.163]
