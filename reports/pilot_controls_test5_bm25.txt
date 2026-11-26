@@ -1,0 +1,55 @@
+scorer: BM25 | dev cases 854 | test5 cases 1252, families 100
+gold NONE 358 (0.286 = top-1 of always abstaining)
+test5 topics: {'other': 413, 'fishery/quota': 546, 'drawbridge': 293}
+router accuracy on template queries: 0.974
+
+## main table (router + parser)
+B0 ungated                                           top1 0.185  inadm 0.626  | current 0.17 valid_at 0.28 known_at 0.22 valid_known 0.07
+B0 gated                                             top1 0.185  inadm 0.626  | current 0.17 valid_at 0.28 known_at 0.22 valid_known 0.07
+    dev-selected: ungated K=20, gated K=20 delta=0.5
+B2 ungated                                           top1 0.214  inadm 0.531  | current 0.20 valid_at 0.01 known_at 0.78 valid_known 0.10
+B2 gated                                             top1 0.262  inadm 0.548  | current 0.31 valid_at 0.01 known_at 0.88 valid_known 0.14
+    dev-selected: ungated K=20, gated K=100 delta=1.5
+B3 ungated                                           top1 0.378  inadm 0.150  | current 0.54 valid_at 0.66 known_at 0.00 valid_known 0.27
+B3 gated                                             top1 0.496  inadm 0.149  | current 0.77 valid_at 0.81 known_at 0.00 valid_known 0.40
+    dev-selected: ungated K=20, gated K=50 delta=1.5
+B6 ungated                                           top1 0.328  inadm 0.615  | current 0.26 valid_at 0.41 known_at 0.76 valid_known 0.01
+B6 gated                                             top1 0.333  inadm 0.616  | current 0.32 valid_at 0.41 known_at 0.78 valid_known 0.01
+    dev-selected: ungated K=20, gated K=50 delta=2.0
+require both clocks, no router                       top1 0.451  inadm 0.000  | current 0.43 valid_at 0.41 known_at 0.00 valid_known 0.75
+    dev-selected: K=50 delta=1.5
+v2 dev-selected K=100 delta=1.5; reported with the frozen K=50 delta=1.5
+v1                                                   top1 0.557  inadm 0.002  | current 0.38 valid_at 0.60 known_at 0.88 valid_known 0.37
+v2                                                   top1 0.780  inadm 0.000  | current 0.68 valid_at 0.81 known_at 0.81 valid_known 0.75
+
+## ablation (router + parser)
+fixed valid_at                                       top1 0.472  inadm 0.149  | current 0.43 valid_at 0.81 known_at 0.00 valid_known 0.41
+fixed known_at                                       top1 0.268  inadm 0.514  | current 0.43 valid_at 0.02 known_at 0.84 valid_known 0.15
+fixed valid_known                                    top1 0.451  inadm 0.000  | current 0.43 valid_at 0.41 known_at 0.00 valid_known 0.75
+no eligibility                                       top1 0.071  inadm 0.899  | current 0.31 valid_at 0.05 known_at 0.13 valid_known 0.01
+no eligibility, absolute gap                         top1 0.331  inadm 0.605  | current 0.31 valid_at 0.41 known_at 0.76 valid_known 0.01
+no semantic gate                                     top1 0.447  inadm 0.002  | current 0.25 valid_at 0.53 known_at 0.66 valid_known 0.28
+
+## diagnostics
+v2, oracle intent and dates (case metadata)          top1 0.796  inadm 0.000  | current 0.78 valid_at 0.81 known_at 0.84 valid_known 0.75
+v2, template keywords + metadata (first reported)    top1 0.796  inadm 0.000  | current 0.78 valid_at 0.81 known_at 0.84 valid_known 0.75
+v2, oracle family                                    top1 0.979  inadm 0.000  | current 0.85 valid_at 1.00 known_at 0.96 valid_known 1.00
+v2, title cut to 4 words                             top1 0.347  inadm 0.000  | current 0.37 valid_at 0.29 known_at 0.47 valid_known 0.33
+
+## Q-TIE-style and Re3-style stand-ins (not reproductions); strength chosen on dev, K=20
+qtie_pub (lambda=4)                                  top1 0.328  inadm 0.615  | current 0.26 valid_at 0.41 known_at 0.76 valid_known 0.01
+qtie_eff (lambda=4)                                  top1 0.316  inadm 0.598  | current 0.24 valid_at 0.40 known_at 0.72 valid_known 0.01
+re3 (gates 1, 0)                                     top1 0.191  inadm 0.623  | current 0.24 valid_at 0.28 known_at 0.22 valid_known 0.07
+
+## family-cluster bootstrap, top-1 of v2 minus
+  v1                                   0.224 [0.162, 0.298]
+  require both clocks, no router       0.329 [0.296, 0.362]
+  B0 ungated                           0.595 [0.519, 0.665]
+  B0 gated                             0.595 [0.519, 0.665]
+  B2 ungated                           0.566 [0.482, 0.645]
+  B2 gated                             0.518 [0.443, 0.588]
+  B3 ungated                           0.403 [0.346, 0.465]
+  B3 gated                             0.284 [0.252, 0.314]
+  B6 ungated                           0.452 [0.371, 0.530]
+  B6 gated                             0.447 [0.376, 0.513]
+  no semantic gate                     0.333 [0.247, 0.429]

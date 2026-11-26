@@ -131,3 +131,17 @@ Per intent v2@50 (BM25): current .78, valid-at .80, known-at .84, valid-known .7
 **Provenance note.** All judgments in this section and the previous one come from LLM agents (Claude Sonnet) launched from this session, not from human annotators; the human annotation sheets (`annotation/*.csv`) have not been returned to this repository. Any human annotation done elsewhere has to be scored from the returned files before it can be reported.
 
 Level-2 ablation on test5 (VALID_TO=2, pool 50, frozen): full v2 .80/.00; always valid-at .50/.15; always known-at .27/.63; no eligibility .07/.91; no semantic gate .45/.00 (top-1 / inadmissible).
+
+## Controls on test5 and paper correction (2026-11-25; `controls_test5.py`; outputs `reports/pilot_controls_test5_{bm25,dense}.{txt,json}`)
+Audit finding: the earlier test5 tables took intent from a four-keyword template matcher and t/h from case metadata (not the router and parser the paper describes), and the baselines had no semantic gate. Primary numbers are now router + parser from query text; baseline pool/delta are chosen on dev. These controls are post hoc (test5 had been evaluated), with no setting chosen on test5.
+
+| top-1, BM25 / dense | value |
+|---|---|
+| B3 validity filter, ungated / gated | .38 / .38, then .50 / .47 |
+| both clocks required, no router | .45 / .41 |
+| routed v2 | .78 / .71 |
+| v2 with oracle intent and dates | .80 / .73 |
+| v2 given the gold family | .98 / .98 |
+| v2, title cut to 4 words | .35 / .33 |
+
+v2 minus gated B3: +.28 [.25,.31] BM25, +.24 [.21,.28] dense. **Not met: the success criterion in RESEARCH_DIRECTION.md** ("beats every single-clock baseline on its own intents, no worse on current queries"): with BM25 gated B3 equals v2 on valid-at (.81) and beats it on current (.77 vs .68; 22 of 100 current queries are misrouted because the title contains a year), and gated B2 beats v2 on known-at (.88 vs .81). With dense, v2 is ahead by .03 on valid-at and known-at and behind on current (.58 vs .72).

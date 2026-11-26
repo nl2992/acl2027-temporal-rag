@@ -13,3 +13,6 @@ Paper rewritten around valid-to semantics with test5 as the clean batch, dense r
 
 ## Update 2026-11-26
 Paper numbers moved to level-2 validity (VALID_TO=2). The ablation table now shows level-2 numbers (src/pilot/ablation_test5.py with VALID_TO=2). Judgments are LLM-agent judgments, not human; human annotation files have not been returned.
+
+## Update 2026-11-25 (audit and correction)
+Main results now use the described router and parser; gated baselines, a no-router control, gold-family and truncated-title diagnostics added; Table 2 replaced by Figure 4; Figure 1 redrawn so bars show when a rule is in force; Figures 2-3 added (figure style after ChenLiu-1996/figures4papers, code written here). 6 pages. Open: red TODOs, "to be verified" bibliography notes, corrections/missing-date/ordinary-query analyses still in the earlier setting, no LLM re-ranker baseline, v2 does not beat gated single-clock baselines on their own intents. The line-number ruler overlaps text; `acl.sty` is identical to the copy in `acl-style-files/`, cause not diagnosed.

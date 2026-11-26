@@ -1,0 +1,198 @@
+{
+ "abstain_always": 0.28594249201277955,
+ "n": 1252,
+ "methods": {
+  "B0 ungated": {
+   "top1": 0.1853035143769968,
+   "inadmissible": 0.6261980830670927,
+   "current": 0.17,
+   "valid_at": 0.2841163310961969,
+   "known_at": 0.21705426356589147,
+   "valid_known": 0.07158836689038031
+  },
+  "B0 gated": {
+   "top1": 0.1853035143769968,
+   "inadmissible": 0.6261980830670927,
+   "current": 0.17,
+   "valid_at": 0.2841163310961969,
+   "known_at": 0.21705426356589147,
+   "valid_known": 0.07158836689038031
+  },
+  "B2 ungated": {
+   "top1": 0.21405750798722045,
+   "inadmissible": 0.5311501597444089,
+   "current": 0.2,
+   "valid_at": 0.006711409395973154,
+   "known_at": 0.7751937984496124,
+   "valid_known": 0.10067114093959731
+  },
+  "B2 gated": {
+   "top1": 0.26198083067092653,
+   "inadmissible": 0.547923322683706,
+   "current": 0.31,
+   "valid_at": 0.013422818791946308,
+   "known_at": 0.8837209302325582,
+   "valid_known": 0.14093959731543623
+  },
+  "B3 ungated": {
+   "top1": 0.3777955271565495,
+   "inadmissible": 0.1501597444089457,
+   "current": 0.54,
+   "valid_at": 0.6644295302013423,
+   "known_at": 0.003875968992248062,
+   "valid_known": 0.27069351230425054
+  },
+  "B3 gated": {
+   "top1": 0.4960063897763578,
+   "inadmissible": 0.1485623003194888,
+   "current": 0.77,
+   "valid_at": 0.8098434004474273,
+   "known_at": 0.003875968992248062,
+   "valid_known": 0.40492170022371365
+  },
+  "B6 ungated": {
+   "top1": 0.3282747603833866,
+   "inadmissible": 0.6150159744408946,
+   "current": 0.26,
+   "valid_at": 0.41387024608501116,
+   "known_at": 0.7596899224806202,
+   "valid_known": 0.008948545861297539
+  },
+  "B6 gated": {
+   "top1": 0.3330670926517572,
+   "inadmissible": 0.615814696485623,
+   "current": 0.32,
+   "valid_at": 0.407158836689038,
+   "known_at": 0.7751937984496124,
+   "valid_known": 0.006711409395973154
+  },
+  "require both clocks, no router": {
+   "top1": 0.4512779552715655,
+   "inadmissible": 0,
+   "current": 0.43,
+   "valid_at": 0.4116331096196868,
+   "known_at": 0.003875968992248062,
+   "valid_known": 0.7539149888143176
+  },
+  "v1": {
+   "top1": 0.5567092651757188,
+   "inadmissible": 0.001597444089456869,
+   "current": 0.38,
+   "valid_at": 0.5973154362416108,
+   "known_at": 0.875968992248062,
+   "valid_known": 0.3713646532438479
+  },
+  "v2": {
+   "top1": 0.7803514376996805,
+   "inadmissible": 0,
+   "current": 0.68,
+   "valid_at": 0.8120805369127517,
+   "known_at": 0.810077519379845,
+   "valid_known": 0.7539149888143176
+  },
+  "fixed valid_at": {
+   "top1": 0.4720447284345048,
+   "inadmissible": 0.1485623003194888,
+   "current": 0.43,
+   "valid_at": 0.8120805369127517,
+   "known_at": 0.003875968992248062,
+   "valid_known": 0.4116331096196868
+  },
+  "fixed known_at": {
+   "top1": 0.26757188498402557,
+   "inadmissible": 0.5143769968051118,
+   "current": 0.43,
+   "valid_at": 0.020134228187919462,
+   "known_at": 0.8449612403100775,
+   "valid_known": 0.14541387024608501
+  },
+  "fixed valid_known": {
+   "top1": 0.4512779552715655,
+   "inadmissible": 0,
+   "current": 0.43,
+   "valid_at": 0.4116331096196868,
+   "known_at": 0.003875968992248062,
+   "valid_known": 0.7539149888143176
+  },
+  "no eligibility": {
+   "top1": 0.07108626198083066,
+   "inadmissible": 0.8993610223642172,
+   "current": 0.31,
+   "valid_at": 0.049217002237136466,
+   "known_at": 0.12790697674418605,
+   "valid_known": 0.006711409395973154
+  },
+  "no eligibility, absolute gap": {
+   "top1": 0.3314696485623003,
+   "inadmissible": 0.6054313099041534,
+   "current": 0.31,
+   "valid_at": 0.407158836689038,
+   "known_at": 0.7596899224806202,
+   "valid_known": 0.013422818791946308
+  },
+  "no semantic gate": {
+   "top1": 0.4472843450479233,
+   "inadmissible": 0.001597444089456869,
+   "current": 0.25,
+   "valid_at": 0.5302013422818792,
+   "known_at": 0.6627906976744186,
+   "valid_known": 0.2841163310961969
+  },
+  "v2, oracle intent and dates (case metadata)": {
+   "top1": 0.7955271565495208,
+   "inadmissible": 0,
+   "current": 0.78,
+   "valid_at": 0.8120805369127517,
+   "known_at": 0.8449612403100775,
+   "valid_known": 0.7539149888143176
+  },
+  "v2, template keywords + metadata (first reported)": {
+   "top1": 0.7955271565495208,
+   "inadmissible": 0,
+   "current": 0.78,
+   "valid_at": 0.8120805369127517,
+   "known_at": 0.8449612403100775,
+   "valid_known": 0.7539149888143176
+  },
+  "v2, oracle family": {
+   "top1": 0.9792332268370607,
+   "inadmissible": 0,
+   "current": 0.85,
+   "valid_at": 1,
+   "known_at": 0.9573643410852714,
+   "valid_known": 1
+  },
+  "v2, title cut to 4 words": {
+   "top1": 0.3466453674121406,
+   "inadmissible": 0,
+   "current": 0.37,
+   "valid_at": 0.28859060402684567,
+   "known_at": 0.46511627906976744,
+   "valid_known": 0.33109619686800895
+  },
+  "qtie_pub (lambda=4)": {
+   "top1": 0.3282747603833866,
+   "inadmissible": 0.6150159744408946,
+   "current": 0.26,
+   "valid_at": 0.41387024608501116,
+   "known_at": 0.7596899224806202,
+   "valid_known": 0.008948545861297539
+  },
+  "qtie_eff (lambda=4)": {
+   "top1": 0.31629392971246006,
+   "inadmissible": 0.5982428115015974,
+   "current": 0.24,
+   "valid_at": 0.40492170022371365,
+   "known_at": 0.7248062015503876,
+   "valid_known": 0.008948545861297539
+  },
+  "re3 (gates 1, 0)": {
+   "top1": 0.19089456869009586,
+   "inadmissible": 0.6230031948881789,
+   "current": 0.24,
+   "valid_at": 0.2841163310961969,
+   "known_at": 0.21705426356589147,
+   "valid_known": 0.07158836689038031
+  }
+ }
+}
