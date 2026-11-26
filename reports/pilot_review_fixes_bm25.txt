@@ -1,0 +1,32 @@
+scorer: BM25
+
+## two-date probes, h = t-180 days: 447 cases, no answer 0.579, router says valid_known 0.000, gold differs from the h=t gold 0.181
+  B2 gated                           top1 0.060  inadm 0.886
+  B3 gated                           top1 0.633  inadm 0.152
+  require both clocks, no router     top1 0.640  inadm 0.152
+  router over B2/B3 gated            top1 0.633  inadm 0.152
+  v2                                 top1 0.367  inadm 0.506
+  parser returns the right (t, h) with the true intent: 0.000
+  diagnostic: v2, true intent and dates top1 0.767  inadm 0.000
+
+## two-date probes, h = t+365 days: 447 cases, no answer 0.217, router says valid_known 0.000, gold differs from the h=t gold 0.425
+  B2 gated                           top1 0.128  inadm 0.834
+  B3 gated                           top1 0.745  inadm 0.000
+  require both clocks, no router     top1 0.747  inadm 0.000
+  router over B2/B3 gated            top1 0.745  inadm 0.000
+  v2                                 top1 0.747  inadm 0.000
+  parser returns the right (t, h) with the true intent: 1.000
+  diagnostic: v2, true intent and dates top1 0.747  inadm 0.000
+
+## notices on known-at cases (258): gold is a notice in 2, v2 top result is a notice in 2
+
+## router errors on Codex-written questions: errors / errors that change v2's top result / hit with routed, with true intent
+  current      30 /  0 / 18 vs 18 of 30
+  valid_at      2 /  2 / 18 vs 20 of 30
+  known_at     17 / 15 / 10 vs 23 of 30
+  valid_known  12 /  3 / 14 vs 16 of 30
+
+## families with non-overlapping CFR parts: 20 of 405; in test5 8 of 100 (115 cases)
+  without them (1137 cases) B3 gated                   top1 0.535
+  without them (1137 cases) router over B2/B3 gated    top1 0.709
+  without them (1137 cases) v2                         top1 0.829

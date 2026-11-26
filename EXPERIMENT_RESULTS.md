@@ -148,3 +148,33 @@ v2 minus gated B3: +.28 [.25,.31] BM25, +.24 [.21,.28] dense. **Not met: the suc
 
 ## Router over the two gated baselines (2026-11-25; `router_switch.py`; `reports/pilot_router_switch_{bm25,dense}.txt`)
 The cue router sends each query to gated B3 (current, valid-at, valid-known) or gated B2 (known-at), assignment chosen on dev. test5 top-1: .67 BM25 / .62 dense, against v2 .78 / .71; v2 minus this control +.11 [.06,.16] / +.10 [.05,.15]. v2 gains on valid-known (.75 vs .40 BM25, where both constraints are needed), loses on current (.68 vs .77) and known-at BM25 (.81 vs .85). Post hoc control. The paper does not report it yet. `llm_rerank.py` (LLM re-ranker baseline) is written but has not produced results.
+
+## 2026-11-26: Codex stand-in study and LLM re-ranker (not human data)
+
+Codex models played the writers (A gpt-6.1-sol, B gpt-6.1-terra) and labellers (C gpt-6.1-sol, D gpt-6-astra) of `annotation/human_v2/TODO.md`, with no shell, file or web tools. Script: `src/pilot/codex_sim.py`; files: `annotation/codex_sim/`, `reports/codex_sim/`. 120 test5 cases, 29 with no answer.
+
+- Writers: 35 of 120 questions were sent back once for breaking a writing rule; 8 still break one and were kept.
+- Labellers agreed on 40/40 shared cases and matched the metadata key on 117/120. They share a vendor and read the same DATES text the key is parsed from, so this does not stand in for human agreement.
+- Router accuracy falls from .92 (template) to .49 (Codex-written). The parser still finds the dates in all cases (true intent given).
+
+Top-1 against the metadata key (BM25 / dense):
+
+| system | template | Codex-written |
+|---|---|---|
+| B3 gated | .53 / .51 | .42 / .49 |
+| router over B2/B3 gated | .73 / .69 | .51 / .57 |
+| routed v2 | .76 / .68 | .50 / .57 |
+| v2, true intent and dates | .81 / .73 | .64 / .74 |
+
+On Codex-written questions v2 minus router-over-baselines is -.01 [-.05, .03] (BM25) and .00 [-.06, .07] (dense).
+
+LLM re-ranker (gpt-6.1-sol through `codex exec`, BM25 candidates; `src/pilot/llm_rerank.py --codex [--codexq]`):
+
+| candidates | template, seed-12 sample (v2 .82) | Codex-written, study sample (v2 .50) |
+|---|---|---|
+| gated pool | .78, minus v2 -.04 [-.11, .02] | .71, minus v2 +.21 [.13, .29] |
+| BM25 top 20 | .78, minus v2 -.03 [-.13, .07] | .77, minus v2 +.27 [.18, .35] |
+
+The two samples are different sets of 120 test5 cases. The re-ranker shares a model family with writer A and labeller C. The Claude CLI version of the re-ranker has not been run.
+
+Also fixed: `make_human_sheets.py` sampled without the end-of-validity setting, leaving 22 no-answer cases of 120; the sheets were regenerated (29) before being sent to anyone.

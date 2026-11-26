@@ -23,7 +23,7 @@ Times are estimates; time your first five and tell the owner if they are far off
 
 ## Rules for everyone
 
-- **Do not open** `annotation/GOLD_KEY*`, `annotation/judge/`, `reports/`, `data/`, `src/` or the paper.
+- **Do not open** `annotation/GOLD_KEY*`, `annotation/judge/`, `annotation/codex_sim/`, `reports/`, `data/`, `src/` or the paper.
 - **Do not push filled sheets to GitHub.** This repository is public. Send files to the owner directly.
 - Do not discuss cases with each other until everything is returned.
 - Do not use ChatGPT, Claude or any other AI to write questions or choose answers.

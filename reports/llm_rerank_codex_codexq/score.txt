@@ -1,0 +1,13 @@
+gated: models ['gpt-6.1-sol'] | mean candidates 9.2 | gold available 0.775 | invalid ids 0
+top20: models ['gpt-6.1-sol'] | mean candidates 20.0 | gold available 0.850 | invalid ids 0
+
+120 test5 cases
+LLM re-ranker, gated         top1 0.708  inadm 0.008  | current 0.70 valid_at 0.73 known_at 0.77 valid_known 0.63
+LLM re-ranker, top20         top1 0.767  inadm 0.000  | current 0.80 valid_at 0.77 known_at 0.80 valid_known 0.70
+B3 gated                     top1 0.417  inadm 0.083  | current 0.60 valid_at 0.67 known_at 0.00 valid_known 0.40
+router over B2/B3 gated      top1 0.508  inadm 0.083  | current 0.60 valid_at 0.67 known_at 0.37 valid_known 0.40
+v2                           top1 0.500  inadm 0.033  | current 0.60 valid_at 0.60 known_at 0.33 valid_known 0.47
+
+family-cluster bootstrap, top-1 difference
+  LLM re-ranker, gated minus v2: 0.208 [0.132, 0.286]
+  LLM re-ranker, top20 minus v2: 0.267 [0.180, 0.353]

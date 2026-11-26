@@ -30,3 +30,7 @@ paper/*.bbl
 paper/build.log
 annotation/GOLD_KEY_do_not_share_with_annotators.json
 annotation/human_v2/returned/
+# model answers for the 120 cases the human labellers will get; keep local until the study is scored
+annotation/codex_sim/labeller_*.csv
+reports/codex_sim/raw/
+reports/llm_rerank*/*.json

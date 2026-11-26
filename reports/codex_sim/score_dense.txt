@@ -1,0 +1,33 @@
+scorer: bge-small-en-v1.5 | 120 cases | CODEX stand-in, not human data
+labellers on 40 shared cases: agreement 1.000, Cohen's kappa 1.000
+labeller answer vs metadata key: 0.975 on 120 cases (disagreements left out: 0)
+  labeller C vs key: 0.988
+  labeller D vs key: 0.963
+  disagreements with the key: {'labeller NONE': 2, 'key NONE': 1}
+router accuracy: template 0.917, codex-written 0.492
+parser finds the required dates (true intent given): 1.000
+
+## template questions, same 120 cases
+system                              vs key  vs labels   by question type (vs key)
+B2 gated                             0.333      0.333   current 0.37 valid_at 0.03 known_at 0.80 valid_known 0.13
+B3 gated                             0.508      0.483   current 0.73 valid_at 0.73 known_at 0.00 valid_known 0.57
+require both clocks, no router       0.292      0.283   current 0.33 valid_at 0.27 known_at 0.00 valid_known 0.57
+router over B2/B3 gated              0.692      0.667   current 0.73 valid_at 0.73 known_at 0.73 valid_known 0.57
+v1                                   0.425      0.433   current 0.23 valid_at 0.50 known_at 0.77 valid_known 0.20
+v2                                   0.675      0.667   current 0.60 valid_at 0.73 known_at 0.80 valid_known 0.57
+v2, oracle intent and dates          0.733      0.708   current 0.77 valid_at 0.73 known_at 0.87 valid_known 0.57
+
+## codex-written questions, same 120 cases
+system                              vs key  vs labels   by question type (vs key)
+B2 gated                             0.300      0.300   current 0.33 valid_at 0.03 known_at 0.73 valid_known 0.10
+B3 gated                             0.492      0.467   current 0.70 valid_at 0.70 known_at 0.00 valid_known 0.57
+require both clocks, no router       0.400      0.383   current 0.70 valid_at 0.27 known_at 0.00 valid_known 0.63
+router over B2/B3 gated              0.567      0.542   current 0.70 valid_at 0.70 known_at 0.30 valid_known 0.57
+v1                                   0.333      0.333   current 0.30 valid_at 0.43 known_at 0.40 valid_known 0.20
+v2                                   0.567      0.550   current 0.70 valid_at 0.67 known_at 0.37 valid_known 0.53
+v2, oracle intent and dates          0.742      0.725   current 0.70 valid_at 0.73 known_at 0.90 valid_known 0.63
+
+family-cluster bootstrap on codex-written questions, top-1 vs key
+  v2 minus router over B2/B3 gated          0.000 [-0.062, 0.068]
+  v2 minus B3 gated                         0.075 [0.000, 0.160]
+  v2 minus require both clocks, no router   0.167 [0.094, 0.242]

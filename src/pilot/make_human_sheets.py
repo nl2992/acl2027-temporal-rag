@@ -4,6 +4,7 @@
 120 test5 cases, 30 per question type, at most two per rule family, fixed seed. No gold answers are written anywhere."""
 import csv, json, os, sys, random, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+os.environ["VALID_TO"] = "2"   # same validity level as the evaluation, so no-answer cases are sampled at their natural rate
 from common import C, cases, gold
 
 OUT = "annotation/human_v2"
