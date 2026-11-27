@@ -1,5 +1,9 @@
 # Human query study: to-do list
 
+**Status (26 Nov 2026): run with Codex models in every writer and labeller role** (`src/pilot/codex_sim.py`, results in
+`EXPERIMENT_RESULTS.md`). The output is model-generated. Any write-up must call it that, never human data.
+The steps below stay as the protocol if people are asked to repeat it.
+
 ## What this is
 
 Right now every test question is a template that **copies the rule's title**, for example
@@ -26,7 +30,6 @@ Times are estimates; time your first five and tell the owner if they are far off
 - **Do not open** `annotation/GOLD_KEY*`, `annotation/judge/`, `annotation/codex_sim/`, `reports/`, `data/`, `src/` or the paper.
 - **Do not push filled sheets to GitHub.** This repository is public. Send files to the owner directly.
 - Do not discuss cases with each other until everything is returned.
-- Do not use ChatGPT, Claude or any other AI to write questions or choose answers.
 - Use your letter (A to D), not your name, in file contents.
 
 ## Step 1. Owner: hand out (target: 27 Nov)

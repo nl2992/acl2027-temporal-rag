@@ -64,19 +64,20 @@ for it in INTENTS:
 import ast, collections
 def parts(i):
     r = C[i].get("cfr_references"); r = ast.literal_eval(r) if isinstance(r, str) else r or []
-    return {(str(x.get("title")), str(x.get("part"))) for x in r}
+    return {(str(x.get("title")), str(x.get("part"))) for x in r if str(x.get("part")) != "None"}   # a missing part is unknown, not a different part
 members = collections.defaultdict(list)
 for i in C: members[C[i]["family"]].append(i)
 def mixed(ids):   # more than one connected component under "shares a CFR part"
     groups = []
     for i in ids:
         p = parts(i)
+        if not p: continue   # no known part: cannot count for or against
         for g in [g for g in groups if g & p]: p |= g; groups.remove(g)
         groups.append(p)
     return len(groups) > 1
 bad = {f for f, v in members.items() if mixed(v)}
 tf = {c["family"] for c in test}; keep = [c for c in test if c["family"] not in bad]
-print(f"\n## families with non-overlapping CFR parts: {len(bad)} of {len(members)}; in test5 {len(bad & tf)} of {len(tf)} ({len(test) - len(keep)} cases)")
+print(f"\n## heuristically flagged families (known CFR parts do not overlap): {len(bad)} of {len(members)}; in test5 {len(bad & tf)} of {len(tf)} ({len(test) - len(keep)} cases)")
 for name, fn in (("B3 gated", lambda c: run("B3", c, *cfg["B3"])), ("router over B2/B3 gated", lambda c: run(SW[route2(query(c))], c, *cfg[SW[route2(query(c))]])),
                  ("v2", lambda c: run("v2", c, K, DL))):
     print(f"  without them ({len(keep)} cases) {name:26} top1 {top1(evaluate(fn, keep)):.3f}")

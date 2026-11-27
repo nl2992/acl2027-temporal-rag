@@ -178,3 +178,12 @@ LLM re-ranker (gpt-6.1-sol through `codex exec`, BM25 candidates; `src/pilot/llm
 The two samples are different sets of 120 test5 cases. The re-ranker shares a model family with writer A and labeller C. The Claude CLI version of the re-ranker has not been run.
 
 Also fixed: `make_human_sheets.py` sampled without the end-of-validity setting, leaving 22 no-answer cases of 120; the sheets were regenerated (29) before being sent to anyone.
+
+## 2026-11-26: adjudication and citation check (both by Codex models)
+
+- Disagreements between labellers and the metadata key (3): a third model (gpt-6-astra), shown both answers unlabelled, sided with the labeller on 2 (a one-day time window; a rule "applicable" from an earlier date and in effect through a later one) and with the key on 1. The key was not edited.
+- Citation check (gpt-6.1-sol with web search, `reports/citation_check/codex.md`): all 12 works exist. Two draft claims of novelty were wrong: TimelyRAG excludes documents inserted after the query's insertion time (checked here against the PDF), and Niksarli and Baheti give separate valid-time and transaction-time query filters (checked here against the arXiv HTML; only the valid-time one is evaluated there). Paper corrected.
+- Not yet applied to references.bib, and not independently checked: Jensen and Snodgrass pages 311-352; published EMNLP 2026 versions of TEMPS and TEMPO; ACL 2025 pages for HoH; MRAG also published in Findings of EMNLP 2025.
+
+## 2026-11-26 (ARIS round 4, loop finished: 4/10, not ready)
+Round 4 found that some effective_on values are expiry dates (confirmed on 2021-02121, 2021-02127, 2022-01530; at least one study case has a wrong gold NONE for this reason). Screen: src/pilot/screen_date_roles.py flags 19 of 3650 (false positives included), 2 in test5. Paper no longer claims text-verified effective dates. Evaluated dates and scores unchanged.

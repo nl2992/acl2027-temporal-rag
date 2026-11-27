@@ -34,3 +34,4 @@ annotation/human_v2/returned/
 annotation/codex_sim/labeller_*.csv
 reports/codex_sim/raw/
 reports/llm_rerank*/*.json
+reports/codex_sim/adjudication_local.txt

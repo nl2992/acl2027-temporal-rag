@@ -173,3 +173,9 @@ Regenerated the human study sheets (sampling bug). Ran a Codex stand-in for writ
 
 ## 2026-11-26 (ARIS review loop)
 Round 1: 3/10; round 2: 4/10 (both not ready). Added to the paper: router-over-baselines control, model-written questions, re-ranker, two-date probes (parser swaps dates on the wording used), title-cluster audit (20/405 clusters cite non-overlapping CFR parts); judge agreement rescored from saved answers (106 and 110 of 120). Round 3 stopped on a Codex usage limit. Scripts: src/pilot/review_fixes.py; review files in review-stage/ (local).
+
+## 2026-11-26 (ARIS round 3: 4/10, not ready)
+The family screen treated a missing CFR part as a different part; corrected to 18/405 flagged (6/100 test5, 59 cases) and described as a heuristic. Paper now states the 200-character truncation of DATES text for judges and re-ranker and says title clusters in the conclusion. The earlier "20 of 405" is superseded.
+
+## 2026-11-26 (ARIS round 4, loop finished: 4/10, not ready)
+Round 4 found that some effective_on values are expiry dates (confirmed on 2021-02121, 2021-02127, 2022-01530; at least one study case has a wrong gold NONE for this reason). Screen: src/pilot/screen_date_roles.py flags 19 of 3650 (false positives included), 2 in test5. Paper no longer claims text-verified effective dates. Evaluated dates and scores unchanged.

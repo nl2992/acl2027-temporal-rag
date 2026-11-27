@@ -26,7 +26,7 @@ scorer: bge-small-en-v1.5
   known_at     17 / 16 / 11 vs 27 of 30
   valid_known  12 /  3 / 16 vs 19 of 30
 
-## families with non-overlapping CFR parts: 20 of 405; in test5 8 of 100 (115 cases)
-  without them (1137 cases) B3 gated                   top1 0.500
-  without them (1137 cases) router over B2/B3 gated    top1 0.646
-  without them (1137 cases) v2                         top1 0.759
+## heuristically flagged families (known CFR parts do not overlap): 18 of 405; in test5 6 of 100 (59 cases)
+  without them (1193 cases) B3 gated                   top1 0.484
+  without them (1193 cases) router over B2/B3 gated    top1 0.631
+  without them (1193 cases) v2                         top1 0.739

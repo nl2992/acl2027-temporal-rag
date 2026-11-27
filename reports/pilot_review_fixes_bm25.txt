@@ -26,7 +26,7 @@ scorer: BM25
   known_at     17 / 15 / 10 vs 23 of 30
   valid_known  12 /  3 / 14 vs 16 of 30
 
-## families with non-overlapping CFR parts: 20 of 405; in test5 8 of 100 (115 cases)
-  without them (1137 cases) B3 gated                   top1 0.535
-  without them (1137 cases) router over B2/B3 gated    top1 0.709
-  without them (1137 cases) v2                         top1 0.829
+## heuristically flagged families (known CFR parts do not overlap): 18 of 405; in test5 6 of 100 (59 cases)
+  without them (1193 cases) B3 gated                   top1 0.516
+  without them (1193 cases) router over B2/B3 gated    top1 0.695
+  without them (1193 cases) v2                         top1 0.811
