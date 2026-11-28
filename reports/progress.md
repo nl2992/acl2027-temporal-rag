@@ -128,3 +128,9 @@ The family screen treated a missing CFR part as a different part; corrected to 1
 
 ## 2026-11-26 (ARIS round 4, loop finished: 4/10, not ready)
 Round 4 found that some effective_on values are expiry dates (confirmed on 2021-02121, 2021-02127, 2022-01530; at least one study case has a wrong gold NONE for this reason). Screen: src/pilot/screen_date_roles.py flags 19 of 3650 (false positives included), 2 in test5. Paper no longer claims text-verified effective dates. Evaluated dates and scores unchanged.
+
+## 2026-11-27
+Paper recast as a failure analysis (new title, abstract, structure, summary table of failures, RQs and findings), checked with the HKUSTDial benchmark-paper-template and pre-submission-reviewer skills. No new experiments or numbers. Not yet re-reviewed by Codex.
+
+## 2026-11-27 (round 5 review: 3/10, not ready; reviewer gpt-6-luna high)
+Cheaper reviewer than rounds 1-4 (gpt-6-astra), so the score is not comparable. Fixed: "every system loses accuracy" overstated (dense v2 with true intent and dates does not drop); re-ranker gold availability now reported (.78/.85 on model-written, .91/.93 on templates); judge model (claude-sonnet-5-5) and instructions saved to annotation/judge/PROMPTS.md from session logs. Own check: conclusion wrongly said the date parser failed on rewritten questions; corrected. Not fixed (needs new evidence): replacement relations, date roles, independently written questions.
